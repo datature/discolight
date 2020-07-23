@@ -1,6 +1,6 @@
-from .fixtures.sample_image import sample_image, sample_image_wh_bboxes
-from .fixtures.sample_query import sample_query
-from .fixtures.bad_bboxes import query_bad_bboxes
+from fixtures.sample_image import sample_image, sample_image_wh_bboxes
+from fixtures.sample_query import sample_query
+from fixtures.bad_bboxes import query_bad_bboxes
 
 
 def pytest_addoption(parser):
