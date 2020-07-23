@@ -37,3 +37,25 @@ jobs:
           pip install -r requirements.txt
       - name: Run tests
         run: ./test.sh
+  
+  report_coverage:
+    runs-on: ubuntu-latest
+    name: Report Coverage to Codacy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+          architecture: x64
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Generate Coverage Report
+        run: ./coverage_report.sh
+      - name: Upload Report to Codacy
+        uses: codacy/codacy-coverage-reporter-action@v0.2.0
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_API }}
+          coverage-reports: cobertura.xml
+        
