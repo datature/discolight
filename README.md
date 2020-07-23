@@ -1,5 +1,6 @@
-![Discolight Commit Tests](https://github.com/datature/discolight/workflows/Discolight%20Commit%20Tests/badge.svg?branch=ian-refactoring)
-
+![Discolight Commit Tests](https://github.com/datature/discolight/workflows/Discolight%20Commit%20Tests/badge.svg?branch=master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/0ee00f7675c04c3184d7a95cbba9f28c)](https://www.codacy.com/gh/datature/discolight?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=datature/discolight&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/0ee00f7675c04c3184d7a95cbba9f28c)](https://www.codacy.com/gh/datature/discolight?utm_source=github.com&utm_medium=referral&utm_content=datature/discolight&utm_campaign=Badge_Coverage)
 # Discolight
 
 Flashy, ravey and state-of-the-art image augmentations to boost the
