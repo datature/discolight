@@ -1,11 +1,11 @@
 ---
 
 exclude_paths:
-  - tests/**
-  - doc/**
-  - sample_images/**
-  - fixtures/**
-  - conftest.py
-  - snapshots/**
-  - **.md
-  - **/__init__.py
+  - 'tests/**'
+  - 'doc/**'
+  - 'sample_images/**'
+  - 'fixtures/**'
+  - 'conftest.py'
+  - 'snapshots/**'
+  - '**.md'
+  - '**/__init__.py'
