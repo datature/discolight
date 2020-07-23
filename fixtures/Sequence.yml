@@ -1,0 +1,9 @@
+options:
+  augmentations:
+    - name: GrayScale
+      options: {}
+    - name: Rotate
+      options:
+        angle: 47
+        
+  

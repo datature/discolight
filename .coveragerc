@@ -1,0 +1,12 @@
+[run]
+branch = True
+source = src/
+omit = src/discolight/doc.py
+
+[report]
+fail_under = 90
+
+exclude_lines =
+    pragma: no cover
+
+    raise NotImplementedError

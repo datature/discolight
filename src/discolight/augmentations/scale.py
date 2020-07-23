@@ -1,0 +1,54 @@
+import cv2
+import numpy as np
+from discolight.params.params import Params
+from .bbox_utilities import bbox_utilities
+from .augmentation.types import Augmentation
+from .decorators.accepts_probs import accepts_probs
+
+
+@accepts_probs
+class Scale(Augmentation):
+    """Scales the given image"""
+    def __init__(self, scale_x, scale_y):
+        super().__init__()
+
+        self.scale_x = scale_x
+        self.scale_y = scale_y
+
+        self.resize_scale_x = 1 + self.scale_x
+        self.resize_scale_y = 1 + self.scale_y
+
+    @staticmethod
+    def params():
+        return Params().add("scale_x", "", float,
+                            0.2).add("scale_y", "", float, 0.2).ensure(
+                                lambda params: params["scale_x"] > -1,
+                                "scale_x cannot be less than -1").ensure(
+                                    lambda params: params["scale_y"] > -1,
+                                    "scale_y cannot be less than -1")
+
+    def augment(self, img, bboxes):
+
+        height, width, _ = img.shape
+        resize_scale_x = 1 + self.scale_x
+        resize_scale_y = 1 + self.scale_y
+        resized_img = cv2.resize(img,
+                                 None,
+                                 fx=resize_scale_x,
+                                 fy=resize_scale_y)
+        canvas = np.zeros(img.shape, dtype=np.uint8)
+        x_lim = int(min(resize_scale_x, 1) * width)
+        y_lim = int(min(resize_scale_y, 1) * height)
+        canvas[:y_lim, :x_lim, :] = resized_img[:y_lim, :x_lim, :]
+        rescaled_img = canvas
+
+        # code below transform the bboxes accordingly.
+        bboxes[:, :4] = bboxes[:, :4] * [
+            resize_scale_x,
+            resize_scale_y,
+            resize_scale_x,
+            resize_scale_y,
+        ]
+        bboxes = bbox_utilities.clip_box(bboxes, [0, 0, 1 + width, height],
+                                         0.25)
+        return rescaled_img, bboxes

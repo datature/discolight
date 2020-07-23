@@ -1,0 +1,54 @@
+input:
+  images:
+    loader: Directory
+    options:
+      directory: ./sample_images # The base path of where the images are stored
+
+  annotations:
+    loader: FourCornersCSV
+    options:
+      annotations_file: ./sample_images/annotations.csv # The CSV file with annotations
+      normalized: true
+output:
+  images:
+    writer: Directory
+    options:
+      directory: ./output_folder
+  annotations:
+    writer: FourCornersCSV
+    options:
+      annotations_file: ./output_folder/aug_annotations.csv
+      normalized: true
+augmentations:
+  - name: Sequence
+    options:
+      augmentations:
+        - name: Rotate
+        - name: GrayScale
+        - name: Sequence
+          options:
+            augmentations:
+              - name: Shear
+                options: {}
+              - name: GaussianNoise
+                options:
+                  mean: 0.3
+  - name: Rotate
+    options:
+      probs: 0.7
+      angle: 35
+  - name: GaussianNoise
+    options:
+      probs: 0.9
+  - name: Shear
+    options: {}
+  - name: Translate
+  - name: VerticalFlip
+  - name: RandomRotate
+  - name: SaltAndPepperNoise
+  - name: RandomHSV
+  - name: RandomEraser
+  - name: HorizontalFlip
+  - name: Scale
+save-original: true # Whether to save the original images to the output folder
+save-bbox: true # Whether bounding boxes should be drawn on the augmented images
