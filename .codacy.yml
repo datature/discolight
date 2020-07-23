@@ -5,3 +5,4 @@ exclude_paths:
   - fixtures/**/*
   - conftest.py
   - snapshots/**/*
+  - *.md
