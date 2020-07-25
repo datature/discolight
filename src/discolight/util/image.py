@@ -1,3 +1,4 @@
+"""Image loading and saving utilities."""
 import numpy as np
 import cv2
 
@@ -7,12 +8,10 @@ from discolight.augmentations.bbox_utilities.bbox_utilities import draw_rect
 
 def load_image_from_bytes(image_bytes):
     """
-    Constructs an OpenCV image from a byte array that can be used for
-    augmentation.
+    Construct an OpenCV image from a byte array for augmenting.
 
     The image will be loaded in HxWxC format in RGB colorspace
     """
-
     np_bytes = np.array(bytearray(image_bytes))
 
     image = cv2.imdecode(np_bytes, cv2.IMREAD_COLOR)
@@ -22,18 +21,17 @@ def load_image_from_bytes(image_bytes):
 
 def load_image(image_path):
     """
-    Loads an image from a file and prepares it for augmentation.
-    """
+    Load an image from a file and prepares it for augmentation.
 
+    The image will be loaded in HxWxC format in RGB colorspace.
+    """
     with open(image_path, "rb") as image_file:
         return load_image_from_bytes(image_file.read())
 
 
 def save_image(path, image, annotations=None):
     """
-    Saves an image loaded with load_image or load_image_from_bytes that has or
-    has not been augmented, optionally drawing the bounding boxes specified
-    in annotations.
+    Save an image loaded with load_image or load_image_from_bytes.
 
     Keyword Arguments:
 
@@ -46,7 +44,6 @@ def save_image(path, image, annotations=None):
                   of the image in red, or None if no annotations are to be
                   drawn.
     """
-
     img_copy = image.copy()
 
     if annotations is not None:

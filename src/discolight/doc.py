@@ -1,3 +1,4 @@
+"""A documentation generator for loaders, writers, and augmentations."""
 # flake8: noqa
 import inspect
 import os
@@ -173,7 +174,7 @@ Augmented Image
 
 
 def markdown_escape_filter(text):
-    """A jinja2 filter that will escape special characters in Markdown"""
+    """A jinja2 filter that will escape special characters in Markdown."""
     return text.replace("\\", "\\\\").replace("`", "\\`").replace(
         "*", "\\*").replace("_", "\\_").replace("{", "\\{").replace(
             "}", "\\}").replace("[", "\\[").replace("]", "\\]").replace(
@@ -198,10 +199,7 @@ image_writer_fy = image_writer_factory.make_image_writer_factory()
 
 
 def make_doc_object(obj):
-    """
-    Takes an object with a docstring and params and generates a dictionary
-    object that will be fed to the template used to generate documentation.
-    """
+    """Generate a description of an object for use in a template."""
     doc_object = {}
 
     doc_object["name"] = obj.__name__
@@ -264,10 +262,13 @@ def make_doc_object(obj):
 def make_augmentation_doc_object(augmentation, sample_image_path, output_dir,
                                  image_root):
     """
-    Takes an augmentation class and generates a dictionary object that will be
-    fed to the template used to generate documentation.
-    """
+    Generate an object for documenting an augmentation in a template.
 
+    This function invokes make_doc_object, and augments the returned
+    document object by augmenting a sample image from sample_image_path.
+    The augmented image will be stored in output_dir, and referenced in
+    the template as being inside image_root.
+    """
     doc_object = make_doc_object(augmentation)
 
     augmentation_instance = augmentation_fy(augmentation.__name__)
@@ -300,7 +301,15 @@ def make_augmentation_doc_object(augmentation, sample_image_path, output_dir,
 
 
 def document(sample_image_path, output_dir, image_root):
+    """
+    Produce documentation for loaders, writers, and annotations.
 
+    Finished documentation is written to stdout. The image in
+    sample_image_path will be used to showcase installed
+    augmentations. Augmented images will be stored in output_dir,
+    and referenced within the finished documentation as being
+    in image_root.
+    """
     annotation_ldrs_set = annotation_loader_factory.get_annotation_loader_set()
     annotation_wtrs_set = annotation_writer_factory.get_annotation_writer_set()
     image_ldrs_set = image_loader_factory.get_image_loader_set()
@@ -361,7 +370,7 @@ def document(sample_image_path, output_dir, image_root):
 
 
 def main():
-
+    """A command-line interface to the document function."""
     parser = argparse.ArgumentParser(
         description='Generate Discolight documentation')
 

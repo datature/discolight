@@ -1,8 +1,10 @@
+"""Utilities for manipulating image annotation bounding boxes."""
 import numpy as np
 import cv2
 
 
 def draw_rect(img, bboxes, color=None):
+    """Draw annotation bounding boxes on the image as red rectangles."""
     img = img.copy()
     bboxes = bboxes[:, :4]
     bboxes = bboxes.reshape(-1, 4)
@@ -16,10 +18,12 @@ def draw_rect(img, bboxes, color=None):
 
 
 def bbox_area(bbox):
+    """Compute the area of the annotation bounding box."""
     return (bbox[:, 2] - bbox[:, 0]) * (bbox[:, 3] - bbox[:, 1])
 
 
 def clip_box(bbox, clipping_box, alpha):
+    """Clip the given bounding box."""
     # TODO: AR CANNOT BE ZERO.
     np.seterr(divide="ignore", invalid="ignore")
     area = bbox_area(bbox)
@@ -36,6 +40,7 @@ def clip_box(bbox, clipping_box, alpha):
 
 
 def get_corners(bboxes):
+    """Get the corners of an array of annotation bounding boxes."""
     width = (bboxes[:, 2] - bboxes[:, 0]).reshape(-1, 1)
     height = (bboxes[:, 3] - bboxes[:, 1]).reshape(-1, 1)
 
@@ -65,6 +70,7 @@ def get_corners(bboxes):
 
 
 def rotate_box(corners, angle, center_x, center_y, height, width):
+    """Rotate a bounding box."""
     corners = corners.reshape(-1, 2)
     corners = np.hstack(
         (corners, np.ones((corners.shape[0], 1), dtype=type(corners[0][0]))))
@@ -87,6 +93,7 @@ def rotate_box(corners, angle, center_x, center_y, height, width):
 
 
 def get_enclosing_box(corners):
+    """Get the bounding box enclosing the given bounding boxes."""
     x_coords = corners[:, [0, 2, 4, 6]]
     y_coords = corners[:, [1, 3, 5, 7]]
     x_min = np.min(x_coords, 1).reshape(-1, 1)
@@ -98,6 +105,7 @@ def get_enclosing_box(corners):
 
 
 def letterbox_image(img, input_dimension):
+    """Resize the image to input_dimension, preserving aspect ratio."""
     input_dimension = (input_dimension, input_dimension)
     img_w, img_h = img.shape[1], img.shape[0]
     width, height = input_dimension

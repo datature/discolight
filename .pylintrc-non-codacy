@@ -57,7 +57,7 @@ confidence=
 # TODO: remove C0303 (trailing-white-space)
 # TODO: remove C0330 (disable the bad-continuous error)
 # TODO: remove C0123 (type check)
-disable=similarities,fixme,I0011,E1102,R1710,C0111, C0303, C0330, C0301,C0123,invalid-name,import-error
+disable=similarities,fixme,I0011,E1102,R1710,C0111, C0303, C0330, C0301,C0123,invalid-name
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

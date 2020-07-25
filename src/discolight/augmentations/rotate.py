@@ -1,3 +1,4 @@
+"""An augmentation to rotate an image."""
 import numpy as np
 import cv2
 from discolight.params.params import Params
@@ -8,8 +9,16 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Rotate(Augmentation):
-    """Rotates the given image"""
+    """Rotate the given image."""
+
     def __init__(self, angle):
+        """
+        Construct a Rotate augmentation.
+
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
 
         # cv2 rotates clockwise when angle is negative
@@ -17,10 +26,11 @@ class Rotate(Augmentation):
 
     @staticmethod
     def params():
+        """Return a Params object describing constructor parameters."""
         return Params().add("angle", "", float, 5)
 
     def augment(self, img, bboxes):
-
+        """Augment an image."""
         angle = self.angle
         height, width = img.shape[0], img.shape[1]
         center_x, center_y = width // 2, height // 2

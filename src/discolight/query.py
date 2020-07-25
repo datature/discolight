@@ -1,3 +1,4 @@
+"""A parser for YAML queries used by the Augmentor class."""
 import yamale
 
 schema = yamale.make_schema(content="""
@@ -27,10 +28,10 @@ augmentation:
 
 def load_query(filep):
     """
-    Loads a query from the open file fp, raising an exception if it does not
-    conform to the query schema
-    """
+    Load a YAML query from the open file fp.
 
+    An exception will be raised if the query is invalid.
+    """
     content = filep.read()
 
     query = yamale.make_data(content=content)

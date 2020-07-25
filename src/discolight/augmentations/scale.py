@@ -1,3 +1,4 @@
+"""An augmentation to scale an image."""
 import cv2
 import numpy as np
 from discolight.params.params import Params
@@ -8,8 +9,16 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Scale(Augmentation):
-    """Scales the given image"""
+    """Scale the given image."""
+
     def __init__(self, scale_x, scale_y):
+        """
+        Construct a Scale augmentation.
+
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
 
         self.scale_x = scale_x
@@ -20,6 +29,7 @@ class Scale(Augmentation):
 
     @staticmethod
     def params():
+        """Return a Params object describing constructor parameters."""
         return Params().add("scale_x", "", float,
                             0.2).add("scale_y", "", float, 0.2).ensure(
                                 lambda params: params["scale_x"] > -1,
@@ -28,7 +38,7 @@ class Scale(Augmentation):
                                     "scale_y cannot be less than -1")
 
     def augment(self, img, bboxes):
-
+        """Augment an image."""
         height, width, _ = img.shape
         resize_scale_x = 1 + self.scale_x
         resize_scale_y = 1 + self.scale_y

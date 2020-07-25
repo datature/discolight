@@ -1,3 +1,4 @@
+"""An augmentation that adds random noise to an image."""
 import random
 from math import floor
 import numpy as np
@@ -8,8 +9,16 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class SaltAndPepperNoise(ColorAugmentation):
-    """Adds salt and pepper or RGB noise to the given image"""
+    """Add salt and pepper or RGB noise to the given image."""
+
     def __init__(self, replace_probs, pepper, salt, noise_type):
+        """
+        Consntruct a SaltAndPepperNoise augmenation.
+
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
 
         self.replace_probs = replace_probs
@@ -19,6 +28,7 @@ class SaltAndPepperNoise(ColorAugmentation):
 
     @staticmethod
     def params():
+        """Return a Params object describing constructor parameters."""
         return Params().add("replace_probs", "", float, 0.1).add(
             "pepper", "The color of the pepper", int,
             0).add("salt", "The color of the salt", int,
@@ -35,7 +45,7 @@ class SaltAndPepperNoise(ColorAugmentation):
                                         "pepper must be between 0 and 255")
 
     def augment_img(self, img, _bboxes):
-
+        """Augment an image."""
         np.random.seed(floor(random.random() * 1000000))
 
         if self.noise_type == "SnP":

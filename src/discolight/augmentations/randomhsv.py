@@ -1,3 +1,4 @@
+"""An augmentation that randomly shifts an image's color space."""
 import random
 import numpy as np
 from discolight.params.params import Params
@@ -7,8 +8,16 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class RandomHSV(ColorAugmentation):
-    """Randomly shifts the color space of the given image"""
+    """Randomly shift the color space of the given image."""
+
     def __init__(self, hue, saturation, brightness):
+        """
+        Construct a RandomHSV augmentation.
+
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
 
         self.hue = hue
@@ -17,13 +26,14 @@ class RandomHSV(ColorAugmentation):
 
     @staticmethod
     def params():
+        """Return a Params object describing constructor parameters."""
         return Params().add("hue", "", tuple,
                             (0, 0)).add("saturation", "", tuple,
                                         (0, 0)).add("brightness", "", tuple,
                                                     (0, 0))
 
     def augment_img(self, img, _bboxes):
-
+        """Augment an image."""
         hue = random.randint(*self.hue)
         saturation = random.randint(*self.saturation)
         brightness = random.randint(*self.brightness)

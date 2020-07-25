@@ -1,15 +1,17 @@
+"""A CSV annotation writer that reads the bbox in x, y, w, h format."""
 from discolight.annotations import BoundingBox
 from .types import CSVRow, CSVAnnotationLoader
 
 
 class WidthHeightCSV(CSVAnnotationLoader):
     """
-    Loads annotations from a CSV file in the following format:
+    Loads annotations from a CSV file in the following format.
 
     image_name, x_min, y_min, width, height, label
     """
-    def get_csv_row(self, row):
 
+    def get_csv_row(self, row):
+        """Return the image and annotation from a CSV row."""
         x_min = float(row["x_min"])
         y_min = float(row["y_min"])
 

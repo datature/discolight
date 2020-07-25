@@ -1,3 +1,4 @@
+"""An augmentation that erases random parts of an image."""
 import random
 from discolight.params.params import Params
 from .augmentation.types import ColorAugmentation
@@ -7,10 +8,19 @@ from .decorators.accepts_probs import accepts_probs
 @accepts_probs
 class RandomEraser(ColorAugmentation):
     """
-    Randomly erases a rectangular area in the given image, replacing it with
-    random noise
+    Randomly erase a rectangular area in the given image.
+
+    The erased area is replaced with random noise.
     """
+
     def __init__(self, x_min, y_min, x_max, y_max):
+        """
+        Construct a RandomEraser augmentation.
+
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
         self.x_min = x_min
         self.y_min = y_min
@@ -19,13 +29,14 @@ class RandomEraser(ColorAugmentation):
 
     @staticmethod
     def params():
+        """Return a Params object describing constructor parameters."""
         return Params().add("x_min", "", float,
                             0).add("y_min", "", float,
                                    0).add("x_max", "", float,
                                           -1).add("y_max", "", float, -1)
 
-    def augment_img(self, img, bboxes):
-
+    def augment_img(self, img, _bboxes):
+        """Augment an image."""
         width, height, _ = img.shape[1], img.shape[0], img.shape[2]
         self.x_max = self.x_max if self.x_max >= 0 else width
         self.y_max = self.y_max if self.y_max >= 0 else height

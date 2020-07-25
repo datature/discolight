@@ -1,3 +1,4 @@
+"""An easy-to-use library interface for Discolight."""
 from .augmentations.augmentation.types import Augmentation
 from .augmentations.factory import (make_augmentations_factory,
                                     get_augmentations_set)
@@ -45,13 +46,14 @@ class DiscolightInterface:
         image = load_image(...)
         aug_img = seq(image)
     """
-    def __init__(self):
 
+    def __init__(self):
+        """Construct a new Discolight interface object."""
         self._aug_set = get_augmentations_set()
         self._factory = make_augmentations_factory()
 
     def __getattr__(self, name):
-
+        """Return a function to construct an augmenation."""
         if name not in self._aug_set:
             raise AttributeError("No such augmentation {}".format(name))
 
@@ -74,18 +76,31 @@ class DiscolightInterface:
             # constructor.
 
             class CallableAugmentation(Augmentation):
+                """An augmentation that can be invoked as a function."""
+
                 def __init__(self):
+                    """Construct a new callable augmentation."""
                     self.augmentation = augmentation
 
                 @staticmethod
                 def params():
+                    """Return the parameters for this augmenation."""
                     return augmentation.params()
 
                 def augment(self, img, bboxes):
+                    """Perform the given augmentation."""
                     return self.augmentation.augment(img, bboxes)
 
                 def __call__(self, image, annotations=None):
+                    """
+                    Perform the given augmentation.
 
+                    This method is invoked when you invoke an instance of
+                    this class as a function. Unlike the augment method,
+                    annotations can be optionally passed as a list of
+                    BoundingBox objects (conversion to and from the numpy
+                    array format is handled for you).
+                    """
                     if annotations is None:
                         return self.augmentation.get_img(image.copy())
 

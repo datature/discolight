@@ -1,3 +1,4 @@
+"""An augmentation to translate an image."""
 import numpy as np
 from discolight.params.params import Params
 from .bbox_utilities import bbox_utilities
@@ -7,8 +8,16 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Translate(Augmentation):
-    """Translates the given image"""
+    """Translate the given image."""
+
     def __init__(self, translate_x, translate_y):
+        """
+        Construct a Translate augmentation.
+
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
 
         self.translate_x = translate_x
@@ -19,6 +28,7 @@ class Translate(Augmentation):
 
     @staticmethod
     def params():
+        """Return a Params object describing constructor parameters."""
         return Params().add("translate_x", "", float,
                             0.2).add("translate_y", "", float, 0.2).ensure(
                                 lambda params: params["translate_x"] > 0 and
@@ -29,7 +39,7 @@ class Translate(Augmentation):
                                     "translate_y must be between 0 and 1")
 
     def augment(self, img, bboxes):
-
+        """Augment an image."""
         height, width, _ = img.shape
         translate_factor_x = self.translate_x
         translate_factor_y = self.translate_y

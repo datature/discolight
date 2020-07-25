@@ -1,11 +1,16 @@
+"""Decorators for augmentations."""
 import random
 from ..augmentation.types import Augmentation
 
 
+# yapf: disable
 def accepts_probs(augmentation):
     """
-    Adds a probs parameter to the given augmentation so that this
-    augmentation may be randomly applied.
+    Add support for randomized application to an augmentation.
+
+    Use this function as a decorator for augmentation classes. A probs
+    parameter will be added to your augmentation that determines the
+    probabililty of the augmentation being applied.
     """
     class AcceptsProbsAugmentation(Augmentation):
 
@@ -38,3 +43,4 @@ def accepts_probs(augmentation):
     AcceptsProbsAugmentation.__doc__ = augmentation.__doc__
 
     return AcceptsProbsAugmentation
+# yapf: enable

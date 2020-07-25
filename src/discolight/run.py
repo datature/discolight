@@ -1,3 +1,4 @@
+"""A command-line interface to the Augmentor class."""
 import argparse
 import sys
 
@@ -6,7 +7,7 @@ from .query import load_query
 
 
 def run(augmentor, command):
-
+    """Run a command in the given Augmentor class instance."""
     if command == "generate":
         augmentor.generate()
     else:
@@ -14,6 +15,12 @@ def run(augmentor, command):
 
 
 def main(args=None):
+    """
+    Construct an augmentor from command line arguments and run a command.
+
+    Arguments are taken from sys.argv by default, but can be passed as
+    an argument instead.
+    """
     parser = argparse.ArgumentParser(description="Augmentor")
 
     parser.add_argument("command",
