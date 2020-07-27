@@ -10,6 +10,13 @@ class JpegCompression(ColorAugmentation):
     """JPEG compress the given image."""
 
     def __init__(self, strength):
+        """
+        Construct a JPEG compression augmentation.
+
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
 
         self.strength = strength
