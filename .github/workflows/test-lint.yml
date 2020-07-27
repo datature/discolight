@@ -42,7 +42,7 @@ jobs:
   report_coverage:
     runs-on: ubuntu-latest
     name: Report Coverage to Codacy
-    if: github.repository == 'datature/discolight'
+    if: github.repository == 'datature/discolight' && github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
