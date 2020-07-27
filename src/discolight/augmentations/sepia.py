@@ -1,3 +1,4 @@
+"""An augmentation that adds sepia filter to an image."""
 import numpy as np
 from discolight.params.params import Params
 from .augmentation.types import ColorAugmentation
@@ -6,14 +7,15 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Sepia(ColorAugmentation):
-    """Returns a sepia version of the given image"""
+    """Returns a given image passed through the sepia filter."""
 
     @staticmethod
     def params():
+        """Return a Params object describing constructor parameters."""
         return Params()
 
     def augment_img(self, img, _bboxes):
-
+        """Augment an image."""
         sepia_img = np.zeros(img.shape)
         input_red, input_green, input_blue = (
             np.array(img[:, :, 0]),
