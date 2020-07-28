@@ -5,8 +5,8 @@ from discolight.params.params import Params
 
 
 class AnnotationWriter(ABC):
-    """
-    A class that saves annotation objects associated with images.
+
+    """A class that saves annotation objects associated with images.
 
     Annotation writers can be used in a with context.
     """
@@ -31,8 +31,7 @@ class AnnotationWriter(ABC):
 
     @abstractmethod
     def write_annotations_for_image(self, image_name, image, annotations):
-        """
-        Write the annotations for the given image.
+        """Write the annotations for the given image.
 
         Annotations are passed as a list of unnormalized BoundingBox
         objects.
@@ -41,8 +40,8 @@ class AnnotationWriter(ABC):
 
 
 class CSVAnnotationWriter(AnnotationWriter):
-    """
-    An abstract CSV annotation writer.
+
+    """An abstract CSV annotation writer.
 
     Concrete implementations of this class determine the columns and content
     of the CSV file by implementing the get_csv_fieldnames and get_csv_row
@@ -90,8 +89,7 @@ class CSVAnnotationWriter(AnnotationWriter):
 
     @abstractmethod
     def get_csv_row(self, image_name, image, annotation):
-        """
-        Return a CSV row for the given annotation and image.
+        """Return a CSV row for the given annotation and image.
 
         The row should be returned as a dictionary object where each field
         name returned in get_csv_fieldnames is defined as a key.

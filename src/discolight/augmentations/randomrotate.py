@@ -8,11 +8,11 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class RandomRotate(Augmentation):
+
     """Randomly rotate the given image."""
 
     def __init__(self, min_angle, max_angle):
-        """
-        Construct a RandomRotate augmentation.
+        """Construct a RandomRotate augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

@@ -9,11 +9,11 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Scale(Augmentation):
+
     """Scale the given image."""
 
     def __init__(self, scale_x, scale_y):
-        """
-        Construct a Scale augmentation.
+        """Construct a Scale augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

@@ -3,8 +3,8 @@ from discolight.result.result import Ok, Error
 
 
 class Params:
-    """
-    A function parameter type checker that gives detailed error messages.
+
+    """A function parameter type checker that gives detailed error messages.
 
     Function parameters can be specified with types and default values, and
     additional validation checks can also be added using the ensure method.
@@ -17,13 +17,11 @@ class Params:
         self.bound_type_casts = {}
 
     def add(self, name, description, data_type, default, required=False):
-        """
-        Add a new parameter.
+        """Add a new parameter.
 
         The current Params object is returned to support method chaining.
 
         Keyword arguments:
-
         name: The name of the parameter
         description: The description of the parameter
         data_type: The type of the parameter
@@ -41,8 +39,7 @@ class Params:
         return self
 
     def ensure(self, check, err):
-        """
-        Add a new validation condition.
+        """Add a new validation condition.
 
         The current Params object is returned to support method chaining.
 
@@ -56,8 +53,7 @@ class Params:
         return self
 
     def with_bound_type_cast(self, cast, real_cast):
-        """
-        Designate a different type cast to be applied.
+        """Designate a different type cast to be applied.
 
         The current Params object is returned to support method chaining.
 
@@ -70,8 +66,7 @@ class Params:
         return self
 
     def validate(self, params):
-        """
-        Validate the given set of parameters, returning a Result object.
+        """Validate the given set of parameters, returning a Result object.
 
         If the parameters are valid, an OK result will be returned containing
         the complete parameter set (including default values for
@@ -118,8 +113,7 @@ class Params:
         return Ok(complete_params)
 
     def call_with_params(self, func, params):
-        """
-        Apply func to the given set of parameters as a dictionary.
+        """Apply func to the given set of parameters as a dictionary.
 
         An exception will be raised if the given set of parameters is invalid.
         """

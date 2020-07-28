@@ -3,8 +3,8 @@ from abc import ABC, abstractmethod
 
 
 class ImageWriter(ABC):
-    """
-    A class that saves augmented images.
+
+    """A class that saves augmented images.
 
     Image writers can be used in a with context.
     """

@@ -7,8 +7,8 @@ from .annotations import (annotations_from_numpy_array,
 
 
 class DiscolightInterface:
-    """
-    A class that makes it easy to construct and perform augmentations.
+
+    """A class that makes it easy to construct and perform augmentations.
 
     Once instantiated, accessing a property A as a method will construct an
     augmentation that can be applied to an image and a set of annotations.
@@ -76,6 +76,7 @@ class DiscolightInterface:
             # constructor.
 
             class CallableAugmentation(Augmentation):
+
                 """An augmentation that can be invoked as a function."""
 
                 def __init__(self):
@@ -92,8 +93,7 @@ class DiscolightInterface:
                     return self.augmentation.augment(img, bboxes)
 
                 def __call__(self, image, annotations=None):
-                    """
-                    Perform the given augmentation.
+                    """Perform the given augmentation.
 
                     This method is invoked when you invoke an instance of
                     this class as a function. Unlike the augment method,

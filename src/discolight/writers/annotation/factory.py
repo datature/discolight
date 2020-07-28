@@ -7,11 +7,11 @@ from .types import AnnotationWriter
 
 @singleton
 class AnnotationWriterLoader:
+
     """A loader for all annotation writer objects."""
 
     def __init__(self):
-        """
-        Construct the annotation writer loader.
+        """Construct the annotation writer loader.
 
         Annotation writers are loaded from the modules in this directory.
         """
@@ -22,8 +22,7 @@ class AnnotationWriterLoader:
 
 
 def get_annotation_writer_set():
-    """
-    Return the set of installed annotation writers.
+    """Return the set of installed annotation writers.
 
     The set is returned as a dictionary where names of the annotation writers
     are the keys, and the annotation writer class objects are the values.
@@ -32,8 +31,7 @@ def get_annotation_writer_set():
 
 
 def make_annotation_writer_factory():
-    """
-    Generate a factory function for constructing annotation writers.
+    """Generate a factory function for constructing annotation writers.
 
     Invoke the returned factory function by passing the name of the
     annotation writer class you want to construct, followed by the

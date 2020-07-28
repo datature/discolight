@@ -27,8 +27,7 @@ augmentation:
 
 
 def load_query(filep):
-    """
-    Load a YAML query from the open file fp.
+    """Load a YAML query from the open file fp.
 
     An exception will be raised if the query is invalid.
     """

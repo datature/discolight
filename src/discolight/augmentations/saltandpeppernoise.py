@@ -9,11 +9,11 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class SaltAndPepperNoise(ColorAugmentation):
+
     """Add salt and pepper or RGB noise to the given image."""
 
     def __init__(self, replace_probs, pepper, salt, noise_type):
-        """
-        Consntruct a SaltAndPepperNoise augmenation.
+        """Construct a SaltAndPepperNoise augmenation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke
