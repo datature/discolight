@@ -13,6 +13,7 @@ def test_my_augmentation_sepia():
     
     annotations = []
     
+    # Values calculated by hand using formula from <https://www.techrepublic.com/blog/how-do-i/how-do-i-convert-images-to-grayscale-and-sepia-tone-using-c/>
     expected_red = np.array([[250, 159], [191, 130]])
     expected_green = np.array([[223, 141], [170, 115]])
     expected_blue = np.array([[173, 110], [132, 90]])
@@ -26,12 +27,11 @@ def test_my_augmentation_sepia():
     augmentation = Sepia()
     
     aug_img, aug_bboxes = augmentation.augment(img.copy(), bboxes.copy())
-    print(aug_img, flush=True)
-    print(expected_aug_img, flush=True)
+    
     assert np.allclose(
         expected_aug_img, aug_img
     ), "Performing augmentation does not yield expected image"
-    assert np.allclose(
+    assert np.array_equal(
         bboxes, aug_bboxes
     ), "Performing augmentation does not yield original augmentation"
     

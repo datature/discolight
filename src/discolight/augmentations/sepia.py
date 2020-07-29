@@ -7,6 +7,7 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Sepia(ColorAugmentation):
+
     """Returns a given image passed through the sepia filter."""
 
     @staticmethod
@@ -22,6 +23,7 @@ class Sepia(ColorAugmentation):
             np.array(img[:, :, 1]),
             np.array(img[:, :, 2]),
         )
+        # Formula taken from <https://www.techrepublic.com/blog/how-do-i/how-do-i-convert-images-to-grayscale-and-sepia-tone-using-c/>
         red = (input_red * 0.393) + (input_green * 0.769) + (input_blue *
                                                              0.189)
         green = (input_red * 0.349) + (input_green * 0.686) + (input_blue *
@@ -33,6 +35,6 @@ class Sepia(ColorAugmentation):
         sepia_img[:, :, 1] = green
         sepia_img[:, :, 2] = blue
 
-        sepia_img = np.where(sepia_img > 255, 255, sepia_img).astype(np.uint8)
+        sepia_img = np.clip(sepia_img, 0, 255).astype(np.uint8)
 
         return sepia_img
