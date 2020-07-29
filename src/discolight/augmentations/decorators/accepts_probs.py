@@ -5,8 +5,7 @@ from ..augmentation.types import Augmentation
 
 # yapf: disable
 def accepts_probs(augmentation):
-    """
-    Add support for randomized application to an augmentation.
+    """Add support for randomized application to an augmentation.
 
     Use this function as a decorator for augmentation classes. A probs
     parameter will be added to your augmentation that determines the

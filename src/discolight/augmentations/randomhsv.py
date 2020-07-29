@@ -8,11 +8,11 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class RandomHSV(ColorAugmentation):
+
     """Randomly shift the color space of the given image."""
 
     def __init__(self, hue, saturation, brightness):
-        """
-        Construct a RandomHSV augmentation.
+        """Construct a RandomHSV augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

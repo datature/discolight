@@ -8,11 +8,11 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Translate(Augmentation):
+
     """Translate the given image."""
 
     def __init__(self, translate_x, translate_y):
-        """
-        Construct a Translate augmentation.
+        """Construct a Translate augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

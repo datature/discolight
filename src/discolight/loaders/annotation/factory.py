@@ -7,11 +7,11 @@ from .types import AnnotationLoader
 
 @singleton
 class AnnotationLoaderLoader:
+
     """A loader for all annotation loader objects."""
 
     def __init__(self):
-        """
-        Construct the annotation loader loader.
+        """Construct the annotation loader loader.
 
         Annotation loaders are loaed from the modules in this directory.
         """
@@ -22,8 +22,7 @@ class AnnotationLoaderLoader:
 
 
 def get_annotation_loader_set():
-    """
-    Return the set of installed annotation loaders.
+    """Return the set of installed annotation loaders.
 
     The set is returned as a dictionary where names of the annotation loaders
     are the keys, and the annotation loader class objects are the values.
@@ -32,8 +31,7 @@ def get_annotation_loader_set():
 
 
 def make_annotation_loader_factory():
-    """
-    Generate a factory function for constructing annotation loaders.
+    """Generate a factory function for constructing annotation loaders.
 
     Invoke the returned factory function by passing the name of the annotation
     loader class you want to construct, followed by the parameters for the

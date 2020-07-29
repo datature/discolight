@@ -3,8 +3,8 @@ from .types import CSVAnnotationWriter
 
 
 class FourCornersCSV(CSVAnnotationWriter):
-    """
-    Writes annotations to a CSV file in the following format.
+
+    """Writes annotations to a CSV file in the following format.
 
     image_name, x_min, y_min, x_max, y_max, label
     """

@@ -5,8 +5,7 @@ import numpy as np
 
 
 def augmentation_list(*args, **kwargs):
-    """
-    A type cast for a list of augmentations.
+    """Cast a value to a list of annotations.
 
     This type cast can be used by augmentations that take in a list of
     augmentations in their constructors. This type cast will be bound
@@ -16,6 +15,7 @@ def augmentation_list(*args, **kwargs):
 
 
 class Augmentation(ABC):
+
     """An image augmentation."""
 
     _include_in_factory = True
@@ -28,8 +28,7 @@ class Augmentation(ABC):
 
     @abstractmethod
     def augment(self, img, bboxes):
-        """
-        Perform the augmentation on an image and its annotations.
+        """Perform the augmentation on an image and its annotations.
 
         The bounding boxes are passed as a n x 5 numpy array, where n is the
         number of bounding boxes. The columns are as follows:
@@ -53,8 +52,8 @@ class Augmentation(ABC):
 
 
 class ColorAugmentation(Augmentation):
-    """
-    An image augmentation that only modifies the image colors.
+
+    """An image augmentation that only modifies the image colors.
 
     ColorAugmentations do not modify image annotations.
 

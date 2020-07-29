@@ -7,8 +7,8 @@ from discolight.annotations import ImageWithAnnotations
 
 
 class AnnotationLoader(ABC):
-    """
-    A class that loads annotation objects associated with images.
+
+    """A class that loads annotation objects associated with images.
 
     Annotation loaders can be used in a with context.
     """
@@ -33,8 +33,7 @@ class AnnotationLoader(ABC):
 
     @abstractmethod
     def load_annotated_images(self, image_loader):
-        """
-        Load annotations and images.
+        """Load annotations and images.
 
         The source of annotations should specify the image name that each
         annotation belongs to. The annotation loader should invoke the
@@ -52,8 +51,8 @@ CSVRow = namedtuple('CSVRow', 'image_name bbox')
 
 
 class CSVAnnotationLoader(AnnotationLoader):
-    """
-    An abstract CSV annotation loader.
+
+    """An abstract CSV annotation loader.
 
     Concrete implementations of this class determine how the annotations
     and image names are loaded from the CSV file by implementing the
@@ -90,8 +89,7 @@ class CSVAnnotationLoader(AnnotationLoader):
 
     @abstractmethod
     def get_csv_row(self, row):
-        """
-        Return a CSVRow named tuple object from the given CSV row.
+        """Return a CSVRow named tuple object from the given CSV row.
 
         The raw CSV row is passed as a dictionary object where the keys
         correspond to field names of the file. The CSVRow object must

@@ -7,11 +7,11 @@ from .augmentation.types import Augmentation, augmentation_list
 
 @singleton
 class AugmentationLoader:
+
     """A loader for all augmentation objects."""
 
     def __init__(self):
-        """
-        Construct the augmentation loader.
+        """Construct the augmentation loader.
 
         Augmentations are loaded from the modules in this directory.
         """
@@ -24,8 +24,7 @@ class AugmentationLoader:
 
 
 def get_augmentations_set():
-    """
-    Return the set of installed augmentations.
+    """Return the set of installed augmentations.
 
     The set is returned as a dictionary where names of the augmentations
     are the keys, and the augmentation class objects are the values.
@@ -34,8 +33,7 @@ def get_augmentations_set():
 
 
 def make_augmentations_factory():
-    """
-    Generate a factory function for constructing augmentations.
+    """Generate a factory function for constructing augmentations.
 
     Invoke the returned factory function by passing the name of the
     augmenation class you want to construct, followed by the parameters

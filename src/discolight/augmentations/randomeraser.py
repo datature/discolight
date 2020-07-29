@@ -7,15 +7,14 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class RandomEraser(ColorAugmentation):
-    """
-    Randomly erase a rectangular area in the given image.
+
+    """Randomly erase a rectangular area in the given image.
 
     The erased area is replaced with random noise.
     """
 
     def __init__(self, x_min, y_min, x_max, y_max):
-        """
-        Construct a RandomEraser augmentation.
+        """Construct a RandomEraser augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

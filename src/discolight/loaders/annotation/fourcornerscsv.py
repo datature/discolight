@@ -4,8 +4,8 @@ from .types import CSVRow, CSVAnnotationLoader
 
 
 class FourCornersCSV(CSVAnnotationLoader):
-    """
-    Loads annotations from a CSV file in the following format.
+
+    """Loads annotations from a CSV file in the following format.
 
     image_name, x_min, y_min, x_max, y_max, label
     """
