@@ -4,7 +4,7 @@
 
 ## FourCornersCSV
 
-Loads annotations from a CSV file in the following format:
+Loads annotations from a CSV file in the following format\.
 
 image\_name, x\_min, y\_min, x\_max, y\_max, label
 
@@ -27,7 +27,7 @@ whether the bounding box coordinates are stored in a normalized format
 
 ## WidthHeightCSV
 
-Loads annotations from a CSV file in the following format:
+Loads annotations from a CSV file in the following format\.
 
 image\_name, x\_min, y\_min, width, height, label
 
@@ -54,7 +54,7 @@ whether the bounding box coordinates are stored in a normalized format
 
 ## FourCornersCSV
 
-Writes annotations to a CSV file in the following format:
+Writes annotations to a CSV file in the following format\.
 
 image\_name, x\_min, y\_min, x\_max, y\_max, label
 
@@ -77,7 +77,7 @@ whether the bounding box coordinates should be normalized before saving
 
 ## WidthHeightCSV
 
-Writes annotations to a CSV file in the following format:
+Writes annotations to a CSV file in the following format\.
 
 image\_name, x\_min, y\_min, width, height, label
 
@@ -104,9 +104,10 @@ whether the bounding box coordinates should be normalized before saving
 
 ## Directory
 
-Loads images from a directory in the filesystem\. The image name from the
-AnnotationLoader will be used to fetch a file with the same name in the
-given directory\.
+Load images from a directory in the filesystem\.
+
+The image name from the AnnotationLoader will be used to fetch a file with
+the same name in the given directory\.
 
 ### Parameters
 
@@ -126,8 +127,9 @@ The directory from which to load images
 
 ## Directory
 
-Writes images to a directory in the filesystem\. Images will be saved to a
-file with the given name in the given directory\.
+Writes images to a directory in the filesystem\.
+
+Images will be saved to a file with the given name in the given directory\.
 
 ### Parameters
 
@@ -152,7 +154,7 @@ the directory to save images to
 
 ## GaussianNoise
 
-Adds gaussian noise to the given image
+Add gaussian noise to the given image\.
 
 ### Example
 <table>
@@ -196,7 +198,7 @@ The probability that this augmentation will be applied
 
 ## GrayScale
 
-Returns a grayscale version of the given image
+Return a grayscale version of the given image\.
 
 ### Example
 <table>
@@ -230,7 +232,7 @@ The probability that this augmentation will be applied
 
 ## HorizontalFlip
 
-Horizontally flips the given image
+Horizontally flips the given image\.
 
 ### Example
 <table>
@@ -264,8 +266,9 @@ The probability that this augmentation will be applied
 
 ## RandomEraser
 
-Randomly erases a rectangular area in the given image, replacing it with
-random noise
+Randomly erase a rectangular area in the given image\.
+
+The erased area is replaced with random noise\.
 
 ### Example
 <table>
@@ -319,7 +322,7 @@ The probability that this augmentation will be applied
 
 ## RandomHSV
 
-Randomly shifts the color space of the given image
+Randomly shift the color space of the given image\.
 
 ### Example
 <table>
@@ -368,7 +371,7 @@ The probability that this augmentation will be applied
 
 ## RandomRotate
 
-Randomly rotates the given image
+Randomly rotate the given image\.
 
 ### Example
 <table>
@@ -416,7 +419,7 @@ The probability that this augmentation will be applied
 
 ## Rotate
 
-Rotates the given image
+Rotate the given image\.
 
 ### Example
 <table>
@@ -455,7 +458,7 @@ The probability that this augmentation will be applied
 
 ## SaltAndPepperNoise
 
-Adds salt and pepper or RGB noise to the given image
+Add salt and pepper or RGB noise to the given image\.
 
 ### Example
 <table>
@@ -515,7 +518,7 @@ The color of the salt
 
 ## Scale
 
-Scales the given image
+Scale the given image\.
 
 ### Example
 <table>
@@ -561,9 +564,43 @@ The probability that this augmentation will be applied
 
 
 
+## Sepia
+
+Returns a given image passed through the sepia filter\.
+
+### Example
+<table>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/Sepia-input.jpg"/>
+<br/>
+Input Image
+</td>
+<td style="vertical-align: bottom">
+<img src="images/Sepia.jpg" />
+<br/>
+Augmented Image
+</td>
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float)* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+* must be between 0 and 1
+
+
+
+
+
+
 ## Sequence
 
-
+Perform a sequence of augmentations on the given image\.
 
 ### Example
 <table>
@@ -602,7 +639,7 @@ The probability that this augmentation will be applied
 
 ## Shear
 
-Horizontally shears the given image
+Horizontally shear the given image\.
 
 ### Example
 <table>
@@ -641,7 +678,7 @@ The probability that this augmentation will be applied
 
 ## Translate
 
-Translates the given image
+Translate the given image\.
 
 ### Example
 <table>
@@ -689,7 +726,7 @@ The probability that this augmentation will be applied
 
 ## VerticalFlip
 
-Vertically flips the given image
+Vertically flip the given image\.
 
 ### Example
 <table>
