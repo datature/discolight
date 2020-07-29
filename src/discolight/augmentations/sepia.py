@@ -23,7 +23,8 @@ class Sepia(ColorAugmentation):
             np.array(img[:, :, 1]),
             np.array(img[:, :, 2]),
         )
-        # Formula taken from <https://www.techrepublic.com/blog/how-do-i/how-do-i-convert-images-to-grayscale-and-sepia-tone-using-c/>
+        # Formula taken from <https://www.techrepublic.com/blog/how-do-i/
+        # how-do-i-convert-images-to-grayscale-and-sepia-tone-using-c/>
         red = (input_red * 0.393) + (input_green * 0.769) + (input_blue *
                                                              0.189)
         green = (input_red * 0.349) + (input_green * 0.686) + (input_blue *
