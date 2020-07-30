@@ -18,22 +18,29 @@ class BoundedNumber:
 
     """A type cast for a float or int within a certain range."""
 
-    def __init__(self, number_type, minimum, maximum):
-        """Construct a BoundedFloat type cast."""
+    def __init__(self, number_type, minimum=None, maximum=None):
+        """Construct a BoundedNumber type cast."""
         self.number_type = number_type
         self.minimum = minimum
         self.maximum = maximum
 
-        self.__name__ = "{} in range [{}, {}]".format(number_type.__name__,
-                                                      minimum, maximum)
+        minimum_str = "-Inf" if minimum is None else str(minimum)
+        maximum_str = "Inf" if maximum is None else str(maximum)
+
+        self.range_str = "[{}, {}]".format(minimum_str, maximum_str)
+
+        self.__name__ = "{} in range {}".format(number_type.__name__,
+                                                self.range_str)
 
     def __call__(self, val):
         """Cast a value to a float within range."""
         val = self.number_type(val)
 
-        if val < self.minimum or val > self.maximum:
-            raise ValueError("{} not in range [{}, {}]".format(
-                val, self.minimum, self.maximum))
+        if self.minimum is not None and val < self.minimum:
+            raise ValueError("{} not in range {}".format(val, self.range_str))
+
+        if self.maximum is not None and val > self.maximum:
+            raise ValueError("{} not in range {}".format(val, self.range_str))
 
         return val
 

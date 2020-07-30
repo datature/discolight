@@ -503,18 +503,14 @@ The probability that this augmentation will be applied
 
 
 
-**scale\_x** *(float)* = 0\.2<br/>
+**scale\_x** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
 
 
 
-* cannot be less than \-1
+
+**scale\_y** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
 
 
-**scale\_y** *(float)* = 0\.2<br/>
-
-
-
-* cannot be less than \-1
 
 
 

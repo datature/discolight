@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 from discolight.params.params import Params
 from .bbox_utilities import bbox_utilities
-from .augmentation.types import Augmentation
+from .augmentation.types import Augmentation, BoundedNumber
 from .decorators.accepts_probs import accepts_probs
 
 
@@ -30,12 +30,9 @@ class Scale(Augmentation):
     @staticmethod
     def params():
         """Return a Params object describing constructor parameters."""
-        return Params().add("scale_x", "", float,
-                            0.2).add("scale_y", "", float, 0.2).ensure(
-                                lambda params: params["scale_x"] > -1,
-                                "scale_x cannot be less than -1").ensure(
-                                    lambda params: params["scale_y"] > -1,
-                                    "scale_y cannot be less than -1")
+        return Params().add("scale_x", "", BoundedNumber(float, -1.0),
+                            0.2).add("scale_y", "", BoundedNumber(float, -1.0),
+                                     0.2)
 
     def augment(self, img, bboxes):
         """Augment an image."""
