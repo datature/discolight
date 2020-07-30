@@ -517,6 +517,38 @@ The probability that this augmentation will be applied
 
 
 
+## Sepia
+
+Returns a given image passed through the sepia filter\.
+
+### Example
+<table>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/Sepia-input.jpg"/>
+<br/>
+Input Image
+</td>
+<td style="vertical-align: bottom">
+<img src="images/Sepia.jpg" />
+<br/>
+Augmented Image
+</td>
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+
+
 ## Sequence
 
 Perform a sequence of augmentations on the given image\.
