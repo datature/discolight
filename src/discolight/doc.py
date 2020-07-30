@@ -201,7 +201,6 @@ image_writer_fy = image_writer_factory.make_image_writer_factory()
 
 def hr_type_name(typ):
     """Get a human-readable representation of a type."""
-
     try:
         if issubclass(typ, Enum):
             return " | ".join([v.value for v in typ])
