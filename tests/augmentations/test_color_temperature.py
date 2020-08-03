@@ -27,7 +27,7 @@ def test_my_augmentation_warmer(sample_image):
     ).all(), "Performing augmentation does not yield expected blue channel"
     assert np.array_equal(
         bboxes, aug_bboxes
-    ), "Performing augmentation does not yield original augmentation"
+    ), "Performing augmentation does not yield original bounding boxes"
 
 def test_my_augmentation_colder():
     img =  np.array(([
@@ -56,4 +56,4 @@ def test_my_augmentation_colder():
     ).all(), "Performing augmentation does not yield expected blue channel"
     assert np.array_equal(
         bboxes, aug_bboxes
-    ), "Performing augmentation does not yield original augmentation"
+    ), "Performing augmentation does not yield original bounding boxes"

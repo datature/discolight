@@ -7,9 +7,11 @@ from .decorators.accepts_probs import accepts_probs
 
 
 def create_kelvin_table():
-    """ Creates table with RGB multiplier values
-    for color temperatures from 1,000K to 40,000K
-    in the intervals of 1,000K.
+    """Create table with normalized RGB multiplier values.
+
+    The function outputs a table maps color temperatures
+    from 1,000K to 40,000K (in intervals of 1,000K) to
+    normalized RGB value multipliers.
         Args:
 
     Returns:
@@ -18,8 +20,8 @@ def create_kelvin_table():
             for respective temperature value in Kelvins
 
     Original source: <http://www.vendian.org/mncharity/
-    dir3/blackbody/UnstableURLs/bbr_color.html>"""
-
+    dir3/blackbody/UnstableURLs/bbr_color.html>
+    """
     table = np.float32([
         [255, 56, 0],  # K=1000
         [255, 71, 0],  # K=1100
@@ -420,17 +422,19 @@ def create_kelvin_table():
 @accepts_probs
 class ColorTemperature(ColorAugmentation):
 
-    """ Changes the color temperature of the input image to a value
-    between 1,000 and 40,000 Kelvins (ie. working as a warming
-    or cooling filter).
+    """Changes the color temperature of the input image.
+
+    The class changes the color temperature to a value
+    between 1,000 and 40,000 Kelvins (ie. working as a
+    warming or cooling filter).
 
     This class has largely been adapted from @aleju/imgaug library's
     augmenters.ChangeColorTemperature() function. @aleju/imgaug
-    library can be found at <https://github.com/aleju/imgaug/>"""
+    library can be found at <https://github.com/aleju/imgaug/>
+    """
 
     def __init__(self, kelvin):
-        """ Initialize parameters and create table mapping kelvins to
-            RGB multipliers."""
+        """Initialize parameters and RGB multiplier table."""
         super().__init__()
 
         self.kelvin = kelvin
@@ -445,7 +449,7 @@ class ColorTemperature(ColorAugmentation):
             40000, "warmness must be between 1,000 and 40,000 (inclusive).")
 
     def _convert_kelvin_to_rgb_multiplier(self, kelvin):
-        """ Convers kelvin values to RGB multipliers."""
+        """Convert kelvin values to RGB multipliers."""
         kelvin = round(kelvin, -2)
         tbl_index = (kelvin - 1000) // 100
         multiplier = self.kelvin_table[tbl_index, :]
