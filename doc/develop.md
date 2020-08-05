@@ -18,7 +18,7 @@ scripts:
 
 	(venv) $ ./discolight.sh generate ... (for discolight ...)
 	
-	(venv) $ ./discolight-doc (for discolight-doc)
+	(venv) $ ./discolight-doc.sh (for discolight-doc)
 
 ## Running Tests and Code Quality Checks
 
@@ -60,6 +60,9 @@ extend the `Augmentation` class:
 	@accepts_probs
 	class MyAugmentation(Augmentation):
 		"""Augmentation description"""
+
+Your class constructor can take in zero or more parameters which are used to
+configure how your augmentation operates:
 		
 		def __init__(self, param1, param2, ...):
 			super().__init__()
@@ -67,13 +70,84 @@ extend the `Augmentation` class:
 			self.param1 = param1
 			self.param2 = param2
 			...
+
+The parameters accepted by your augmentation must be described in a static
+`params` method that returns a `Params` object. Start by constructing an
+empty `Params` object, and then call the `add` method to describe all of
+your augmentation parameters. The `add` method takes the following keyword
+arguments:
+
+> `name`
+>
+> The name of the parameter
+
+> `description`
+>
+> A description of the parameter
+
+> `data_type`
+>
+> The type of the parameter (more on this below).
+
+> `default`
+>
+> A default value for the parameter
+
+> `required=False`
+>
+> Whether the parameter must be specified. All augmentation parameters should
+> _not_ be required - you should instead choose a sane default value that
+> gives reasonable results.
+
+Below is an example `params` method:
 		
 		@staticmethod
 		def params():
 			return Params.add("param1", "param1 description", int, 1).add
-				"param2", "param2 description", float, 2.0).ensure(
-					lambda params: params["param2"] < 3.0,
-					"param2 must be less than 3.0")
+				"param2", "param2 description", float, 2.0)
+
+The data type can be a Python built-in type like `float`, `int`, or `str`, or
+one of the following that you can import from `.augmentation.types`:
+
+> `BoundedNumber(number_type, minimum=None, maximum=None)`
+>
+> Ensures that the input value has `number_type` (i.e., `int` or
+> `float` - type coercion will be used on input values if necessary),
+> and is in the range [minimum, maximum]. If `minimum` is `None` then
+> there is no lower bound, and if `maximum` is `None` then there is no
+> upper bound.
+
+> `NumericalRange(minimum=None, maximum=None)`
+>
+> Ensures that the input value is a numerical range expressed as a 2-tuple
+> (lists of length 2 are accepted as input and converted to 2-tuples). The
+> range specified must be inside the interval [minimum, maximum].
+> If `minimum` is `None` then there is no lower bound, and if `maximum` is
+> `None` then there is no upper bound.
+
+You can also use an `Enum` object as the data type. To do this, construct an
+`Enum` class where all of the enumeration values are strings:
+
+	from enum import Enum
+	
+	class MyEnum(Enum):
+		MYOPTION1 = "MYOPTION1"
+		MYOPTION2 = "MYOPTION2"
+		...
+
+Then specify `MyEnum` as the data type parameter in `add`. When your
+augmentation is constructed, the enumerated parameter will take a string,
+and the augmentation factory function will check that it is one of your
+enumeration options.
+
+Note that wrapping your augmentation with the
+`accepts_probs` decorator adds an additional `probs` parameter so that
+your augmentation can be randomly applied with the probability
+specified in `probs`. The parameters for your augmentation are passed
+to the constructor.
+
+Finally, you must implement the `augment` method to actually perform the
+augmentation:
 	    
 		def augment(self, img, bboxes):
 			
@@ -81,23 +155,7 @@ extend the `Augmentation` class:
 			
 			return img, bboxes
 
-**Important**: If your augmentation relies on 3rd party libraries
-beyond those already installed with Discolight (e.g., numpy and
-OpenCV), don't forget to add your additional dependency to `setup.py`
-under `install_requires`.
-
-Each augmentation can take parameters which are specified in the
-`params` static method. This method should return a `Params` object
-that specifies the parameter names, descriptions, and types, as well
-as validation conditions constructed using the `add` and `ensure`
-methods. In addition, wrapping your augmentation with the
-`accepts_probs` decorator adds an additional `probs` parameter so that
-your augmentation can be randomly applied with the probability
-specified in `probs`. The parameters for your augmentation are passed
-to the constructor.
-
-The actual work of the augmentation is done in the `augment`
-method. The `img` is an OpenCV image in `HxWxC` format, and `bboxes`
+The `img` is an OpenCV image in `HxWxC` format, and `bboxes`
 is a `n x 5` numpy array describing the annotations for the given
 image, where `n` is the number of annotations. The format of the
 columns is as follows:
@@ -117,9 +175,15 @@ seed them with a value from `random.random()` so that your
 augmentation function can be deterministic if `random.seed()` is
 called (e.g., when snapshot tests are run).
 
+**Important**: If your augmentation relies on 3rd party libraries
+beyond those already installed with Discolight (e.g., numpy and
+OpenCV), don't forget to add your additional dependency to `setup.py`
+under `install_requires`.
+
 If your augmenation only modifies the image color information and
 leaves the original annotations intact, then you should extend the
-`ColorAugmentation` class instead:
+`ColorAugmentation` class instead, which requires you to implement
+an `augment_img` method returning only the augmented image.
 
 	import numpy as np
 	import cv2
@@ -141,9 +205,7 @@ leaves the original annotations intact, then you should extend the
 		@staticmethod
 		def params():
 			return Params.add("param1", "param1 description", int, 1).add
-				"param2", "param2 description", float, 2.0).ensure(
-					lambda params: params["param2"] < 3.0,
-					"param2 must be less than 3.0")
+				"param2", "param2 description", float, 2.0)
 	    
 		def augment_img(self, img, bboxes):
 			
@@ -157,7 +219,7 @@ leaves the original annotations intact, then you should extend the
 Once you have added or updated your new augmentation, you need to
 rebuild the snapshot library used for testing:
 
-	(venv) $ ./test --update-snapshots
+	(venv) $ ./test.sh --update-snapshots
 
 If the default parameters are not ideal for snapshot testing, you can
 change them.  Create a new file called `fixtures/MyAugmentation.yml`,
@@ -167,6 +229,7 @@ and enter the settings as follows:
 		param1: 1
 		param2: 2.5
 		...
+
 Once you have updated the snapshot set,  run the unit tests again to verify 
 that your updated snapshots are working.
 
@@ -191,7 +254,8 @@ annotations to run your augmentation.
 		
 		bboxes = annotations_to_numpy_array(annotations)
 		
-		augmentation = MyAugmentation()
+	    # Parameters must be named here
+		augmentation = MyAugmentation(param1=1.0)
 		
 		aug_img, aug_bboxes = augmentation.augment(img.copy(), bboxes.copy())
 		
