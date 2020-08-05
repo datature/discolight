@@ -5,6 +5,7 @@ import os
 import re
 import shutil
 import argparse
+from enum import Enum
 from tqdm import tqdm
 from jinja2 import Environment, BaseLoader
 from .augmentations import factory as augmentations_factory
@@ -198,6 +199,21 @@ image_loader_fy = image_loader_factory.make_image_loader_factory()
 image_writer_fy = image_writer_factory.make_image_writer_factory()
 
 
+def hr_type_name(typ):
+    """Get a human-readable representation of a type."""
+    try:
+        if issubclass(typ, Enum):
+            return " | ".join([v.value for v in typ])
+    except TypeError:
+        pass
+
+    if hasattr(typ, "__name__"):
+
+        return typ.__name__
+
+    return str(typ)
+
+
 def make_doc_object(obj):
     """Generate a description of an object for use in a template."""
     doc_object = {}
@@ -215,7 +231,7 @@ def make_doc_object(obj):
         param_doc_object = {
             "name": param["name"],
             "description": param["description"],
-            "type": param["data_type"].__name__,
+            "type": hr_type_name(param["data_type"]),
             "default": str(param["default"]),
             "required": param["required"],
             "ensures": []

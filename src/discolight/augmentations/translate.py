@@ -2,7 +2,7 @@
 import numpy as np
 from discolight.params.params import Params
 from .bbox_utilities import bbox_utilities
-from .augmentation.types import Augmentation
+from .augmentation.types import Augmentation, BoundedNumber
 from .decorators.accepts_probs import accepts_probs
 
 
@@ -29,14 +29,9 @@ class Translate(Augmentation):
     @staticmethod
     def params():
         """Return a Params object describing constructor parameters."""
-        return Params().add("translate_x", "", float,
-                            0.2).add("translate_y", "", float, 0.2).ensure(
-                                lambda params: params["translate_x"] > 0 and
-                                params["translate_x"] < 1,
-                                "translate_x must be between 0 and 1").ensure(
-                                    lambda params: params["translate_y"] > 0
-                                    and params["translate_y"] < 1,
-                                    "translate_y must be between 0 and 1")
+        return Params().add("translate_x", "", BoundedNumber(float, 0.0, 1.0),
+                            0.2).add("translate_y", "",
+                                     BoundedNumber(float, 0.0, 1.0), 0.2)
 
     def augment(self, img, bboxes):
         """Augment an image."""
