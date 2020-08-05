@@ -10,11 +10,11 @@ from .decorators.accepts_probs import accepts_probs
 # TODO: Vertical Shear
 @accepts_probs
 class Shear(Augmentation):
+
     """Horizontally shear the given image."""
 
     def __init__(self, shear_factor):
-        """
-        Construct a Shear augmenation.
+        """Construct a Shear augmenation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

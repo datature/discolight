@@ -7,8 +7,7 @@ from discolight.augmentations.bbox_utilities.bbox_utilities import draw_rect
 
 
 def load_image_from_bytes(image_bytes):
-    """
-    Construct an OpenCV image from a byte array for augmenting.
+    """Construct an OpenCV image from a byte array for augmenting.
 
     The image will be loaded in HxWxC format in RGB colorspace
     """
@@ -20,8 +19,7 @@ def load_image_from_bytes(image_bytes):
 
 
 def load_image(image_path):
-    """
-    Load an image from a file and prepares it for augmentation.
+    """Load an image from a file and prepares it for augmentation.
 
     The image will be loaded in HxWxC format in RGB colorspace.
     """
@@ -30,11 +28,9 @@ def load_image(image_path):
 
 
 def save_image(path, image, annotations=None):
-    """
-    Save an image loaded with load_image or load_image_from_bytes.
+    """Save an image loaded with load_image or load_image_from_bytes.
 
     Keyword Arguments:
-
     path - The filename to save the image to. This must include an extension
            to indicate the format (e.g., .jpg, .png)
     image - The OpenCV image to save. This should have been originally

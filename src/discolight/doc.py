@@ -5,6 +5,7 @@ import os
 import re
 import shutil
 import argparse
+from enum import Enum
 from tqdm import tqdm
 from jinja2 import Environment, BaseLoader
 from .augmentations import factory as augmentations_factory
@@ -174,7 +175,7 @@ Augmented Image
 
 
 def markdown_escape_filter(text):
-    """A jinja2 filter that will escape special characters in Markdown."""
+    """Escape special characters in Markdown."""
     return text.replace("\\", "\\\\").replace("`", "\\`").replace(
         "*", "\\*").replace("_", "\\_").replace("{", "\\{").replace(
             "}", "\\}").replace("[", "\\[").replace("]", "\\]").replace(
@@ -198,6 +199,21 @@ image_loader_fy = image_loader_factory.make_image_loader_factory()
 image_writer_fy = image_writer_factory.make_image_writer_factory()
 
 
+def hr_type_name(typ):
+    """Get a human-readable representation of a type."""
+    try:
+        if issubclass(typ, Enum):
+            return " | ".join([v.value for v in typ])
+    except TypeError:
+        pass
+
+    if hasattr(typ, "__name__"):
+
+        return typ.__name__
+
+    return str(typ)
+
+
 def make_doc_object(obj):
     """Generate a description of an object for use in a template."""
     doc_object = {}
@@ -215,7 +231,7 @@ def make_doc_object(obj):
         param_doc_object = {
             "name": param["name"],
             "description": param["description"],
-            "type": param["data_type"].__name__,
+            "type": hr_type_name(param["data_type"]),
             "default": str(param["default"]),
             "required": param["required"],
             "ensures": []
@@ -261,8 +277,7 @@ def make_doc_object(obj):
 
 def make_augmentation_doc_object(augmentation, sample_image_path, output_dir,
                                  image_root):
-    """
-    Generate an object for documenting an augmentation in a template.
+    """Generate an object for documenting an augmentation in a template.
 
     This function invokes make_doc_object, and augments the returned
     document object by augmenting a sample image from sample_image_path.
@@ -301,8 +316,7 @@ def make_augmentation_doc_object(augmentation, sample_image_path, output_dir,
 
 
 def document(sample_image_path, output_dir, image_root):
-    """
-    Produce documentation for loaders, writers, and annotations.
+    """Produce documentation for loaders, writers, and annotations.
 
     Finished documentation is written to stdout. The image in
     sample_image_path will be used to showcase installed
@@ -370,7 +384,7 @@ def document(sample_image_path, output_dir, image_root):
 
 
 def main():
-    """A command-line interface to the document function."""
+    """Start the command-line interface to the document function."""
     parser = argparse.ArgumentParser(
         description='Generate Discolight documentation')
 

@@ -4,6 +4,7 @@ import numpy as np
 
 
 class BoundingBox:
+
     """A bounding box for an image annotation."""
 
     def __init__(self, x_min, y_min, x_max, y_max, class_idx):
@@ -32,8 +33,7 @@ class BoundingBox:
                            self.class_idx)
 
     def as_list(self):
-        """
-        Return the bounding box coordinates and class ID as a list.
+        """Return the bounding box coordinates and class ID as a list.
 
         This makes it easier to generate the bounding box data passed to the
         augmentations in numpy array format.
@@ -45,8 +45,7 @@ ImageWithAnnotations = namedtuple('ImageWithAnnotations', 'image bboxes')
 
 
 def annotations_to_numpy_array(bboxes):
-    """
-    Convert a list of BoundingBox objects to a numpy array.
+    """Convert a list of BoundingBox objects to a numpy array.
 
     Image augmenations expect annotations to be passed in unnormalized
     format in a numpy array.
@@ -57,8 +56,7 @@ def annotations_to_numpy_array(bboxes):
 
 
 def annotations_from_numpy_array(bboxes):
-    """
-    Convert an annotation numpy array into a list of BoundingBox objects.
+    """Convert an annotation numpy array into a list of BoundingBox objects.
 
     The bounding boxes returned will be in unnormalized format.
     """

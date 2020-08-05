@@ -9,11 +9,11 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Rotate(Augmentation):
+
     """Rotate the given image."""
 
     def __init__(self, angle):
-        """
-        Construct a Rotate augmentation.
+        """Construct a Rotate augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

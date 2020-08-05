@@ -6,11 +6,11 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class Sequence(Augmentation):
+
     """Perform a sequence of augmentations on the given image."""
 
     def __init__(self, augmentations):
-        """
-        Construct a Sequence augmentation.
+        """Construct a Sequence augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

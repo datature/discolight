@@ -3,8 +3,8 @@ from abc import ABC, abstractmethod
 
 
 class ImageLoader(ABC):
-    """
-    A class that loads images.
+
+    """A class that loads images.
 
     Image loaders can be used in a with context.
     """
@@ -29,8 +29,7 @@ class ImageLoader(ABC):
 
     @abstractmethod
     def load_image(self, image_name):
-        """
-        Load an image with the given name.
+        """Load an image with the given name.
 
         The image should be returned as an openCV image in HxWxC format, in
         RGB color space.

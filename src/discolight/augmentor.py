@@ -13,16 +13,15 @@ from .annotations import (annotations_from_numpy_array,
 
 
 class Augmentor:
-    """
-    A class that performs augmentation operations from a query.
+
+    """A class that performs augmentation operations from a query.
 
     Queries should be parsed and validated with the query module before
     being passed to this class.
     """
 
     def __init__(self, query):
-        """
-        Initialize the augmentor with the given query.
+        """Initialize the augmentor with the given query.
 
         NOTE: This class assumes that the given query is valid for the
         operation(s) you wish to perform.
@@ -38,8 +37,7 @@ class Augmentor:
         self.query = query
 
     def generate(self):
-        """
-        Generate image augmentations.
+        """Generate image augmentations.
 
         Generation is configured by the query passed at class construction.
         """

@@ -7,6 +7,7 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class GrayScale(ColorAugmentation):
+
     """Return a grayscale version of the given image."""
 
     @staticmethod
