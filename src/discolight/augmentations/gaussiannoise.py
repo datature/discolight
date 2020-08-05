@@ -10,11 +10,11 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class GaussianNoise(ColorAugmentation):
+
     """Add gaussian noise to the given image."""
 
     def __init__(self, mean, variance):
-        """
-        Construct a GaussianNoise augmenation.
+        """Construct a GaussianNoise augmenation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke

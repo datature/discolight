@@ -7,6 +7,7 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class VerticalFlip(Augmentation):
+
     """Vertically flip the given image."""
 
     @staticmethod

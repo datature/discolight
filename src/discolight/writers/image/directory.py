@@ -7,8 +7,8 @@ from .types import ImageWriter
 
 
 class Directory(ImageWriter):
-    """
-    Writes images to a directory in the filesystem.
+
+    """Writes images to a directory in the filesystem.
 
     Images will be saved to a file with the given name in the given directory.
     """
@@ -19,8 +19,7 @@ class Directory(ImageWriter):
         self.clean_directory = clean_directory
 
     def __enter__(self):
-        """
-        Initialize the image writer.
+        """Initialize the image writer.
 
         The output directory is created or cleaned if necessary.
         """

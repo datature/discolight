@@ -10,4 +10,4 @@ flake8>=3.8.3
 tox>=3.17.0
 pytest>=5.4.3
 coverage>=5.2
-pep257>=0.7.0
+pydocstyle>=5.0.2

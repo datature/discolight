@@ -7,8 +7,8 @@ from pathlib import Path
 
 
 class ObjectSetLoader:
-    """
-    A class that can be used to load a set of like objects at runtime.
+
+    """A class that can be used to load a set of like objects at runtime.
 
     Objects loaded by this dynamic loader must satisfy the following
     properties:
@@ -21,11 +21,9 @@ class ObjectSetLoader:
     """
 
     def __init__(self, module_dir, package, obj_type):
-        """
-        Initialize the object set loader.
+        """Initialize the object set loader.
 
         Keyword arguments:
-
         module_dir - The path to the directory whose modules should be loaded
         package - The package the modules should be loaded into. Usually this
                   is __file__.
@@ -42,8 +40,7 @@ class ObjectSetLoader:
         self.type_casts_bound_to_factory_list = []
 
     def get_object_set(self, use_cache=True):
-        """
-        Return the set of loaded objects.
+        """Return the set of loaded objects.
 
         By default the object set is cached so if this method is called
         multiple times searching and loading does not have to be performed
@@ -82,8 +79,7 @@ class ObjectSetLoader:
         return objects
 
     def bind_params_type_cast(self, cast, real_cast):
-        """
-        Bind a type cast used in object Params to a different method.
+        """Bind a type cast in object Params to a different method.
 
         When the factory function is invoked to instantiate an object,
         the function real_case will be used to cast parameters using the
@@ -92,8 +88,7 @@ class ObjectSetLoader:
         self.bound_type_casts.append((cast, real_cast))
 
     def bind_params_type_cast_to_factory(self, cast):
-        """
-        Bind a type cast used in object Params to the object factory function.
+        """Bind a type cast in object Params to the object factory function.
 
         When the factory function is invoked to instantiate an object, the
         factory function will be used to cast parameters using the given
@@ -112,8 +107,7 @@ class ObjectSetLoader:
         self.type_casts_bound_to_factory.append(cast)
 
     def bind_params_type_cast_to_factory_list(self, cast):
-        """
-        Bind a type cast used in object Params to a list of the object type.
+        """Bind a type cast in object Params to a list of the object type.
 
         When the factory function is invoked to instantiate the object,
         the factory function will be used to cast parameters using the
@@ -126,8 +120,7 @@ class ObjectSetLoader:
         self.type_casts_bound_to_factory_list.append(cast)
 
     def make_object_factory(self):
-        """
-        Construct a factory function for all loaded objects.
+        """Construct a factory function for all loaded objects.
 
         Invoke the returned factory function by passing the name of the
         object you want to construct, followed by the parameters for

@@ -7,11 +7,11 @@ from .types import ImageWriter
 
 @singleton
 class ImageWriterLoader:
+
     """A loader for all image writer objects."""
 
     def __init__(self):
-        """
-        Construct the image writer loader.
+        """Construct the image writer loader.
 
         Image writers are loaded from the modules in this directory.
         """
@@ -22,8 +22,7 @@ class ImageWriterLoader:
 
 
 def get_image_writer_set():
-    """
-    Return the set of installed image writers.
+    """Return the set of installed image writers.
 
     The set is returned as a dictionary where names of the image writers are
     the keys, and the image writer class objects are the values.
@@ -32,8 +31,7 @@ def get_image_writer_set():
 
 
 def make_image_writer_factory():
-    """
-    Generate a factory function for constructing image writers.
+    """Generate a factory function for constructing image writers.
 
     Invoke the returned factory function by passing the name of the image
     writer class you want to construct, followed by the parameters for

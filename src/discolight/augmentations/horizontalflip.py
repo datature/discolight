@@ -7,6 +7,7 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class HorizontalFlip(Augmentation):
+
     """Horizontally flips the given image."""
 
     @staticmethod

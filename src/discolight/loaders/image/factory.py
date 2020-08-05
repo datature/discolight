@@ -7,11 +7,11 @@ from .types import ImageLoader
 
 @singleton
 class ImageLoaderLoader:
+
     """A loader for all image loader objects."""
 
     def __init__(self):
-        """
-        Construct the image loader loader.
+        """Construct the image loader loader.
 
         Image loaders are loaded from the modules in this directory.
         """
@@ -22,8 +22,7 @@ class ImageLoaderLoader:
 
 
 def get_image_loader_set():
-    """
-    Return the set of installed image loaders.
+    """Return the set of installed image loaders.
 
     The set is returned as a dictionary where names of the image loaders are
     the keys, and the image loader class objects are the values.
@@ -32,8 +31,7 @@ def get_image_loader_set():
 
 
 def make_image_loader_factory():
-    """
-    Generate a factory function for constructing image loaders.
+    """Generate a factory function for constructing image loaders.
 
     Invoke the returned factory function by passing the name of the image
     loader class you want to construct, followed by the parameters for the

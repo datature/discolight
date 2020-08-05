@@ -6,8 +6,8 @@ from .types import ImageLoader
 
 
 class Directory(ImageLoader):
-    """
-    Load images from a directory in the filesystem.
+
+    """Load images from a directory in the filesystem.
 
     The image name from the AnnotationLoader will be used to fetch a file with
     the same name in the given directory.
