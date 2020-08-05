@@ -150,18 +150,6 @@ augmentation, augmented images are OpenCV images in RGB format.
 
 ## Supported Augmentations
 
-<style>
-tr {
-	display: flex;
-	align-items: stretch;
-}
-
-td:last-child {
-	flex: 1;
-	display: inline-block;
-}
-</style>
-
 <table style="width: 100%">
 
 <tr>
