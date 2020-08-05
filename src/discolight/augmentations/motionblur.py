@@ -8,7 +8,7 @@ from .decorators.accepts_probs import accepts_probs
 @accepts_probs
 class motionblur(Augmentation):
 
-    """Add motionblur to a given image"""
+    """Add motionblur to a given image."""
 
     def __init__(self, kernel_size, direction):
         super().__init__()
@@ -27,7 +27,7 @@ class motionblur(Augmentation):
                          'DOWN')
 
     def augment(self, img, bboxes):
-        """Augment an image"""
+        """Augment an image."""
 
         kernel = np.zeros((self.kernel_size, self.kernel_size))
 
