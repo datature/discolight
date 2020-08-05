@@ -2,7 +2,7 @@
 import numpy as np
 
 from discolight.params.params import Params
-from .augmentation.types import ColorAugmentation
+from .augmentation.types import ColorAugmentation, BoundedNumber
 from .decorators.accepts_probs import accepts_probs
 
 
@@ -444,9 +444,10 @@ class ColorTemperature(ColorAugmentation):
     @staticmethod
     def params():
         """Return a Params object describing constructor parameters."""
-        return Params().add("kelvin", "", int, 3000).ensure(
-            lambda params: params["kelvin"] >= 1000 and params["kelvin"] <=
-            40000, "warmness must be between 1,000 and 40,000 (inclusive).")
+        return Params().add(
+            "kelvin",
+            "temperature value in to which temperature should be changed",
+            BoundedNumber(int, 1000, 40000), 3000)
 
     def _convert_kelvin_to_rgb_multiplier(self, kelvin):
         """Convert kelvin values to RGB multipliers."""
