@@ -1,4 +1,3 @@
-
 # Annotation Loaders
 
 
@@ -157,18 +156,32 @@ the directory to save images to
 Add gaussian noise to the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/GaussianNoise-input.jpg"/>
+<img src="images/GaussianNoise-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/GaussianNoise.jpg" />
+<img src="images/GaussianNoise.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/GaussianNoise-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/GaussianNoise-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -199,18 +212,32 @@ The probability that this augmentation will be applied
 Return a grayscale version of the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/GrayScale-input.jpg"/>
+<img src="images/GrayScale-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/GrayScale.jpg" />
+<img src="images/GrayScale.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/GrayScale-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/GrayScale-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -231,18 +258,32 @@ The probability that this augmentation will be applied
 Horizontally flips the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/HorizontalFlip-input.jpg"/>
+<img src="images/HorizontalFlip-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/HorizontalFlip.jpg" />
+<img src="images/HorizontalFlip.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/HorizontalFlip-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/HorizontalFlip-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -265,18 +306,32 @@ Randomly erase a rectangular area in the given image\.
 The erased area is replaced with random noise\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomEraser-input.jpg"/>
+<img src="images/RandomEraser-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/RandomEraser.jpg" />
+<img src="images/RandomEraser.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomEraser-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomEraser-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -307,18 +362,32 @@ normalized y range for coordinates that may be erased
 Randomly shift the color space of the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomHSV-input.jpg"/>
+<img src="images/RandomHSV-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/RandomHSV.jpg" />
+<img src="images/RandomHSV.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomHSV-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomHSV-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -354,18 +423,32 @@ The probability that this augmentation will be applied
 Randomly rotate the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomRotate-input.jpg"/>
+<img src="images/RandomRotate-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/RandomRotate.jpg" />
+<img src="images/RandomRotate.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomRotate-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomRotate-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -391,18 +474,32 @@ The probability that this augmentation will be applied
 Rotate the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Rotate-input.jpg"/>
+<img src="images/Rotate-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Rotate.jpg" />
+<img src="images/Rotate.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Rotate-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Rotate-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -428,18 +525,32 @@ The probability that this augmentation will be applied
 Add salt and pepper or RGB noise to the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/SaltAndPepperNoise-input.jpg"/>
+<img src="images/SaltAndPepperNoise-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/SaltAndPepperNoise.jpg" />
+<img src="images/SaltAndPepperNoise.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/SaltAndPepperNoise-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/SaltAndPepperNoise-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -480,18 +591,32 @@ The color of the salt
 Scale the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Scale-input.jpg"/>
+<img src="images/Scale-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Scale.jpg" />
+<img src="images/Scale.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Scale-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Scale-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -522,18 +647,32 @@ The probability that this augmentation will be applied
 Returns a given image passed through the sepia filter\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Sepia-input.jpg"/>
+<img src="images/Sepia-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Sepia.jpg" />
+<img src="images/Sepia.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Sepia-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Sepia-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -554,18 +693,32 @@ The probability that this augmentation will be applied
 Perform a sequence of augmentations on the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Sequence-input.jpg"/>
+<img src="images/Sequence-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Sequence.jpg" />
+<img src="images/Sequence.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Sequence-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Sequence-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -591,18 +744,32 @@ The probability that this augmentation will be applied
 Horizontally shear the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Shear-input.jpg"/>
+<img src="images/Shear-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Shear.jpg" />
+<img src="images/Shear.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Shear-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Shear-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -628,18 +795,32 @@ The probability that this augmentation will be applied
 Translate the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Translate-input.jpg"/>
+<img src="images/Translate-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Translate.jpg" />
+<img src="images/Translate.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Translate-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Translate-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -670,18 +851,32 @@ The probability that this augmentation will be applied
 Vertically flip the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/VerticalFlip-input.jpg"/>
+<img src="images/VerticalFlip-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Input Image
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/VerticalFlip.jpg" />
+<img src="images/VerticalFlip.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/VerticalFlip-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/VerticalFlip-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
 </tr>
 </table>
 
@@ -690,7 +885,6 @@ Augmented Image
 
 **probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
-
 
 
 

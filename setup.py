@@ -15,6 +15,7 @@ setuptools.setup(
     url="https://github.com/datature/discolight",
     packages=setuptools.find_packages('src'),
     package_dir={'': 'src'},
+    package_data={'discolight.doc_templates': ['*.md']},
     python_requires='>=3.6, <3.9',
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -27,9 +28,6 @@ setuptools.setup(
         'scikit-image>=0.17.2', 'Pillow>=7.2.0', 'Jinja2>=2.11.2',
         'tqdm>=4.47.0'
     ],
-    entry_points={
-        'console_scripts': [
-            'discolight=discolight.run:main',
-            'discolight-doc=discolight.doc:main'
-        ]
-    })
+    entry_points={'console_scripts': [
+        'discolight=discolight.run:main',
+    ]})
