@@ -4,7 +4,7 @@
 
 ## FourCornersCSV
 
-Loads annotations from a CSV file in the following format:
+Loads annotations from a CSV file in the following format\.
 
 image\_name, x\_min, y\_min, x\_max, y\_max, label
 
@@ -27,7 +27,7 @@ whether the bounding box coordinates are stored in a normalized format
 
 ## WidthHeightCSV
 
-Loads annotations from a CSV file in the following format:
+Loads annotations from a CSV file in the following format\.
 
 image\_name, x\_min, y\_min, width, height, label
 
@@ -54,7 +54,7 @@ whether the bounding box coordinates are stored in a normalized format
 
 ## FourCornersCSV
 
-Writes annotations to a CSV file in the following format:
+Writes annotations to a CSV file in the following format\.
 
 image\_name, x\_min, y\_min, x\_max, y\_max, label
 
@@ -77,7 +77,7 @@ whether the bounding box coordinates should be normalized before saving
 
 ## WidthHeightCSV
 
-Writes annotations to a CSV file in the following format:
+Writes annotations to a CSV file in the following format\.
 
 image\_name, x\_min, y\_min, width, height, label
 
@@ -104,9 +104,10 @@ whether the bounding box coordinates should be normalized before saving
 
 ## Directory
 
-Loads images from a directory in the filesystem\. The image name from the
-AnnotationLoader will be used to fetch a file with the same name in the
-given directory\.
+Load images from a directory in the filesystem\.
+
+The image name from the AnnotationLoader will be used to fetch a file with
+the same name in the given directory\.
 
 ### Parameters
 
@@ -126,8 +127,9 @@ The directory from which to load images
 
 ## Directory
 
-Writes images to a directory in the filesystem\. Images will be saved to a
-file with the given name in the given directory\.
+Writes images to a directory in the filesystem\.
+
+Images will be saved to a file with the given name in the given directory\.
 
 ### Parameters
 
@@ -152,7 +154,7 @@ the directory to save images to
 
 ## GaussianNoise
 
-Adds gaussian noise to the given image
+Add gaussian noise to the given image\.
 
 ### Example
 <table>
@@ -178,11 +180,9 @@ Augmented Image
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 **variance** *(float)* = 0\.01<br/>
@@ -196,7 +196,7 @@ The probability that this augmentation will be applied
 
 ## GrayScale
 
-Returns a grayscale version of the given image
+Return a grayscale version of the given image\.
 
 ### Example
 <table>
@@ -217,11 +217,9 @@ Augmented Image
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -230,7 +228,7 @@ The probability that this augmentation will be applied
 
 ## HorizontalFlip
 
-Horizontally flips the given image
+Horizontally flips the given image\.
 
 ### Example
 <table>
@@ -251,11 +249,9 @@ Augmented Image
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -264,8 +260,9 @@ The probability that this augmentation will be applied
 
 ## RandomEraser
 
-Randomly erases a rectangular area in the given image, replacing it with
-random noise
+Randomly erase a rectangular area in the given image\.
+
+The erased area is replaced with random noise\.
 
 ### Example
 <table>
@@ -286,30 +283,18 @@ Augmented Image
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**x\_max** *(float)* = \-1<br/>
-
-
-
-
-**x\_min** *(float)* = 0<br/>
+**x\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
+normalized x range for coordinates that may be erased
 
 
 
-
-**y\_max** *(float)* = \-1<br/>
-
-
-
-
-**y\_min** *(float)* = 0<br/>
-
+**y\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
+normalized y range for coordinates that may be erased
 
 
 
@@ -319,7 +304,7 @@ The probability that this augmentation will be applied
 
 ## RandomHSV
 
-Randomly shifts the color space of the given image
+Randomly shift the color space of the given image\.
 
 ### Example
 <table>
@@ -340,24 +325,22 @@ Augmented Image
 ### Parameters
 
 
-**brightness** *(tuple)* = \(0, 0\)<br/>
+**brightness** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
 
 
-**hue** *(tuple)* = \(0, 0\)<br/>
+**hue** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**saturation** *(tuple)* = \(0, 0\)<br/>
+**saturation** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
 
@@ -368,7 +351,7 @@ The probability that this augmentation will be applied
 
 ## RandomRotate
 
-Randomly rotates the given image
+Randomly rotate the given image\.
 
 ### Example
 <table>
@@ -389,25 +372,14 @@ Augmented Image
 ### Parameters
 
 
-**max\_angle** *(float)* = 10<br/>
+**angle\_range** *(range in \[\-360\.0, 360\.0\])* = \(\-10\.0, 10\.0\)<br/>
+The range from which the random angle will be chosen
 
 
 
-* min\_angle must be less than max\_angle
-
-
-**min\_angle** *(float)* = \-10<br/>
-
-
-
-* must be less than max\_angle
-
-
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -416,7 +388,7 @@ The probability that this augmentation will be applied
 
 ## Rotate
 
-Rotates the given image
+Rotate the given image\.
 
 ### Example
 <table>
@@ -442,11 +414,9 @@ Augmented Image
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -455,7 +425,7 @@ The probability that this augmentation will be applied
 
 ## SaltAndPepperNoise
 
-Adds salt and pepper or RGB noise to the given image
+Add salt and pepper or RGB noise to the given image\.
 
 ### Example
 <table>
@@ -476,25 +446,19 @@ Augmented Image
 ### Parameters
 
 
-**noise\_type** *(str)* = RGB<br/>
-The type of noise \(RGB or SnP\)
+**noise\_type** *(RGB \| SnP)* = RGB<br/>
+The type of noise
 
 
-* must be RGB or SnP
 
-
-**pepper** *(int)* = 0<br/>
+**pepper** *(int in range \[0, 255\])* = 0<br/>
 The color of the pepper
 
 
-* must be between 0 and 255
 
-
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 **replace\_probs** *(float)* = 0\.1<br/>
@@ -502,11 +466,9 @@ The probability that this augmentation will be applied
 
 
 
-**salt** *(int)* = 255<br/>
+**salt** *(int in range \[0, 255\])* = 255<br/>
 The color of the salt
 
-
-* must be between 0 and 255
 
 
 
@@ -515,7 +477,7 @@ The color of the salt
 
 ## Scale
 
-Scales the given image
+Scale the given image\.
 
 ### Example
 <table>
@@ -536,25 +498,51 @@ Augmented Image
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**scale\_x** *(float)* = 0\.2<br/>
-
-
-
-* cannot be less than \-1
-
-
-**scale\_y** *(float)* = 0\.2<br/>
+**scale\_x** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
 
 
 
-* cannot be less than \-1
+
+**scale\_y** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
+
+
+
+
+
+
+
+
+## Sepia
+
+Returns a given image passed through the sepia filter\.
+
+### Example
+<table>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/Sepia-input.jpg"/>
+<br/>
+Input Image
+</td>
+<td style="vertical-align: bottom">
+<img src="images/Sepia.jpg" />
+<br/>
+Augmented Image
+</td>
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
 
 
 
@@ -563,7 +551,7 @@ The probability that this augmentation will be applied
 
 ## Sequence
 
-
+Perform a sequence of augmentations on the given image\.
 
 ### Example
 <table>
@@ -589,11 +577,9 @@ Augmented Image
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -602,7 +588,7 @@ The probability that this augmentation will be applied
 
 ## Shear
 
-Horizontally shears the given image
+Horizontally shear the given image\.
 
 ### Example
 <table>
@@ -623,11 +609,9 @@ Augmented Image
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 **shear\_factor** *(float)* = 0\.2<br/>
@@ -641,7 +625,7 @@ The probability that this augmentation will be applied
 
 ## Translate
 
-Translates the given image
+Translate the given image\.
 
 ### Example
 <table>
@@ -662,25 +646,19 @@ Augmented Image
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**translate\_x** *(float)* = 0\.2<br/>
-
-
-
-* must be between 0 and 1
-
-
-**translate\_y** *(float)* = 0\.2<br/>
+**translate\_x** *(float in range \[0\.0, 1\.0\])* = 0\.2<br/>
 
 
 
-* must be between 0 and 1
+
+**translate\_y** *(float in range \[0\.0, 1\.0\])* = 0\.2<br/>
+
+
 
 
 
@@ -689,7 +667,7 @@ The probability that this augmentation will be applied
 
 ## VerticalFlip
 
-Vertically flips the given image
+Vertically flip the given image\.
 
 ### Example
 <table>
@@ -710,11 +688,9 @@ Augmented Image
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 

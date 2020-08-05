@@ -1,6 +1,6 @@
 """Decorators for augmentations."""
 import random
-from ..augmentation.types import Augmentation
+from ..augmentation.types import Augmentation, BoundedNumber
 
 
 # yapf: disable
@@ -27,9 +27,7 @@ def accepts_probs(augmentation):
             return augmentation.params().add(
                 "probs",
                 "The probability that this augmentation will be applied",
-                float, 1.0).ensure(
-                    lambda params: params["probs"] >= 0 and params["probs"] <=
-                    1, "probs must be between 0 and 1")
+                BoundedNumber(float, 0.0, 1.0), 1.0)
 
         def augment(self, img, bboxes):
 
