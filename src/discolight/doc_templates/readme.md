@@ -34,9 +34,9 @@ the contents of the repository folder:
 <tr>
 	<td>&nbsp;</td>
 	<td><b>Sample Image</b></td>
-	<td><b>Augmented Image</b></td>
+	<td><b>Augmented<br/>Image</b></td>
 	<td><b>Sample Image (Bounding Boxes)</b></td>
-	<td><b>Augmented Image (Bounding Boxes)</b></td>
+	<td><b>Augmented<br/>Image (Bounding Boxes)</b></td>
 </tr>
 {% for augmentation in augmentations %}
 <tr>
