@@ -14,6 +14,11 @@ def markdown_escape_filter(text):
                                             "!", "\\!").replace("|", "\\|")
 
 
+def firstline_filter(text):
+    """Get the first line of a string."""
+    return text.split("\n")[0]
+
+
 def make_discolight_md(doc_objects, doc_template):
     """Render the doc/discolight.md documentation file.
 
@@ -36,7 +41,7 @@ def make_readme_md(doc_objects, readme_template):
         readme_md_file.write(readme_md)
 
 
-sample_image_path = "./sample_images/wheat1.jpg"
+sample_image_path = "./sample_images/rocks.jpg"
 sample_annotations_path = "./sample_images/doc-annotations.csv"
 output_dir = "./doc/images/"
 
@@ -46,6 +51,7 @@ def main():
     template_env = Environment(
         loader=PackageLoader('discolight', 'doc_templates'))
     template_env.filters['markdown'] = markdown_escape_filter
+    template_env.filters['firstline'] = firstline_filter
 
     doc_template = template_env.get_template('discolight.md')
     readme_template = template_env.get_template('readme.md')

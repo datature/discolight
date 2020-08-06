@@ -27,6 +27,46 @@ Alternatively, if you have cloned this repository, you can run pip on
 the contents of the repository folder:
 
 	$ pip install .
+	
+## Supported Augmentations
+
+<table style="width: 100%">
+{% for augmentation in augmentations %}
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#{{ augmentation.name }}">{{augmentation.name}}</a></b>
+<br/>
+{{ augmentation.description | firstline }}
+</td>
+
+<td style="vertical-align: bottom">
+<img src="{{image_root}}{{ augmentation.sample_image }}" style="display: block; width: 100%"/>
+<br/>
+Sample Image
+</td>
+
+<td style="vertical-align: bottom">
+<img src="{{image_root}}{{ augmentation.augmented_image }}" style="display: block; width: 100%"/>
+<br/>
+Augmented Image
+</td>
+
+<td style="vertical-align: bottom">
+<img src="{{image_root}}{{ augmentation.sample_image_bboxes }}" style="display: block; width: 100%"/>
+<br/>
+Sample Image (Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="{{image_root}}{{ augmentation.augmented_image_bboxes }}" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (Bounding Boxes)
+</td>
+
+</tr>
+{% endfor %}
+</table>
 
 ## Generating Augmented Images on the Command Line
 
@@ -147,46 +187,6 @@ save_image("aug-no-bboxes.jpg", aug_img)
 ```
 If you prefer to perform additional operations on the image after
 augmentation, augmented images are OpenCV images in RGB format.
-
-## Supported Augmentations
-
-<table style="width: 100%">
-{% for augmentation in augmentations %}
-<tr>
-
-<td style="width: 20%">
-<b><a href="doc/discolight.md#{{ augmentation.name }}">{{augmentation.name}}</a></b>
-<br/>
-{{ augmentation.description }}
-</td>
-
-<td style="vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.sample_image }}" style="display: block; width: 100%"/>
-<br/>
-Sample Image
-</td>
-
-<td style="vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.augmented_image }}" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
-</td>
-
-<td style="vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.sample_image_bboxes }}" style="display: block; width: 100%"/>
-<br/>
-Sample Image (Bounding Boxes)
-</td>
-
-<td style="vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.augmented_image_bboxes }}" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (Bounding Boxes)
-</td>
-
-</tr>
-{% endfor %}
-</table>
 
 ## Development
 
