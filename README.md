@@ -48,19 +48,19 @@ Changes the color temperature of the input image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/ColorTemperature-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/ColorTemperature-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/ColorTemperature.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/ColorTemperature.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/ColorTemperature-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/ColorTemperature-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/ColorTemperature-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/ColorTemperature-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -74,19 +74,19 @@ Add gaussian noise to the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/GaussianNoise-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/GaussianNoise-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/GaussianNoise.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/GaussianNoise.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/GaussianNoise-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/GaussianNoise-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/GaussianNoise-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/GaussianNoise-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -100,19 +100,19 @@ Return a grayscale version of the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/GrayScale-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/GrayScale-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/GrayScale.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/GrayScale.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/GrayScale-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/GrayScale-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/GrayScale-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/GrayScale-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -126,19 +126,19 @@ Horizontally flips the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/HorizontalFlip-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/HorizontalFlip-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/HorizontalFlip.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/HorizontalFlip.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/HorizontalFlip-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/HorizontalFlip-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/HorizontalFlip-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/HorizontalFlip-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -152,19 +152,19 @@ Randomly erase a rectangular area in the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomEraser-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomEraser-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomEraser.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomEraser.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomEraser-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomEraser-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomEraser-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomEraser-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -178,19 +178,19 @@ Randomly shift the color space of the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomHSV-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomHSV-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomHSV.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomHSV.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomHSV-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomHSV-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomHSV-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomHSV-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -204,19 +204,19 @@ Randomly rotate the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomRotate-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomRotate-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomRotate.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomRotate.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomRotate-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomRotate-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/RandomRotate-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/RandomRotate-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -230,19 +230,19 @@ Rotate the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Rotate-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Rotate-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Rotate.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Rotate.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Rotate-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Rotate-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Rotate-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Rotate-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -256,19 +256,19 @@ Add salt and pepper or RGB noise to the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/SaltAndPepperNoise-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/SaltAndPepperNoise-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/SaltAndPepperNoise.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/SaltAndPepperNoise.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/SaltAndPepperNoise-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/SaltAndPepperNoise-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/SaltAndPepperNoise-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/SaltAndPepperNoise-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -282,19 +282,19 @@ Scale the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Scale-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Scale-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Scale.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Scale.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Scale-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Scale-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Scale-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Scale-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -308,19 +308,19 @@ Returns a given image passed through the sepia filter.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Sepia-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Sepia-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Sepia.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Sepia.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Sepia-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Sepia-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Sepia-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Sepia-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -334,19 +334,19 @@ Perform a sequence of augmentations on the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Sequence-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Sequence-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Sequence.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Sequence.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Sequence-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Sequence-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Sequence-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Sequence-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -360,19 +360,19 @@ Horizontally shear the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Shear-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Shear-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Shear.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Shear.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Shear-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Shear-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Shear-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Shear-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -386,19 +386,19 @@ Translate the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Translate-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Translate-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Translate.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Translate.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Translate-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Translate-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/Translate-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/Translate-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
@@ -412,19 +412,19 @@ Vertically flip the given image.
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/VerticalFlip-input.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/VerticalFlip-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/VerticalFlip.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/VerticalFlip.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/VerticalFlip-input-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/VerticalFlip-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/VerticalFlip-bboxes.jpg" width="100px" style="display: block; width: 100%"/>
+<img src="doc/images/VerticalFlip-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>

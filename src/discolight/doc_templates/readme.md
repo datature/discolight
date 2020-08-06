@@ -48,19 +48,19 @@ the contents of the repository folder:
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.sample_image }}" width="100px" style="display: block; width: 100%"/>
+<img src="{{image_root}}{{ augmentation.sample_image }}" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.augmented_image }}" width="100px" style="display: block; width: 100%"/>
+<img src="{{image_root}}{{ augmentation.augmented_image }}" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.sample_image_bboxes }}" width="100px" style="display: block; width: 100%"/>
+<img src="{{image_root}}{{ augmentation.sample_image_bboxes }}" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.augmented_image_bboxes }}" width="100px" style="display: block; width: 100%"/>
+<img src="{{image_root}}{{ augmentation.augmented_image_bboxes }}" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>
