@@ -1,6 +1,5 @@
 import random
 import math
-import numpy as np
 from discolight.params.params import Params
 from .augmentation.types import ColorAugmentation
 from .decorators.accepts_probs import accepts_probs
