@@ -35,8 +35,8 @@ the contents of the repository folder:
 	<td>&nbsp;</td>
 	<td><b>Sample Image</b></td>
 	<td><b>Augmented<br/>Image</b></td>
-	<td><b>Sample Image (Bounding Boxes)</b></td>
-	<td><b>Augmented<br/>Image (Bounding Boxes)</b></td>
+	<td><b>Sample Image (Bounding<br/>Boxes)</b></td>
+	<td><b>Augmented<br/>Image (Bounding<br/>Boxes)</b></td>
 </tr>
 
 <tr>
