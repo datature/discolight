@@ -39,7 +39,9 @@ class ImageCompression(ColorAugmentation):
         # Ensure strength value do not go out of range
         self.strength = min(max(self.strength, 0), 100)
 
-        _, encoded_img = cv2.imencode(".jpg", img, [int(self.flag), int(self.strength)])
+        _, encoded_img = cv2.imencode(
+            ".jpg", img, [int(self.flag), int(self.strength)]
+        )
         compressed_img = cv2.imdecode(encoded_img, cv2.IMREAD_UNCHANGED)
 
         return compressed_img
