@@ -25,11 +25,13 @@ class CoarseDropout(ColorAugmentation):
     def augment_img(self, img, bboxes):
 
         width, height = img.shape[1], img.shape[0]
-        self.deleted_area = self.deleted_area if \
-            self.deleted_area <= 1 and self.deleted_area >= 0 else random.uniform(
+        self.deleted_area = self.deleted_area \
+            if self.deleted_area <= 1 and self.deleted_area >= 0 \
+            else random.uniform(
                 0, 1)
-        self.num_rectangles = self.num_rectangles if \
-            self.num_rectangles >= 10 and self.num_rectangles <= 100 else random.uniform(
+        self.num_rectangles = self.num_rectangles \
+            if self.num_rectangles >= 10 and self.num_rectangles <= 100 \
+            else random.uniform(
                 10, 100)
 
         eraser_area = width * height * self.deleted_area
