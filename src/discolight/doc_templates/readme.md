@@ -31,6 +31,13 @@ the contents of the repository folder:
 ## Supported Augmentations
 
 <table style="width: 100%">
+<tr>
+	<td>&nbsp;</td>
+	<td><b>Sample Image</b></td>
+	<td><b>Augmented Image</b></td>
+	<td><b>Sample Image (Bounding Boxes)</b></td>
+	<td><b>Augmented Image (Bounding Boxes)</b></td>
+</tr>
 {% for augmentation in augmentations %}
 <tr>
 
@@ -42,26 +49,18 @@ the contents of the repository folder:
 
 <td style="width: 20%; vertical-align: bottom">
 <img src="{{image_root}}{{ augmentation.sample_image }}" style="display: block; width: 100%"/>
-<br/>
-Sample Image
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
 <img src="{{image_root}}{{ augmentation.augmented_image }}" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
 <img src="{{image_root}}{{ augmentation.sample_image_bboxes }}" style="display: block; width: 100%"/>
-<br/>
-Sample Image (Bounding Boxes)
 </td>
 
 <td style="width: 20%; vertical-align: bottom">
 <img src="{{image_root}}{{ augmentation.augmented_image_bboxes }}" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (Bounding Boxes)
 </td>
 
 </tr>
