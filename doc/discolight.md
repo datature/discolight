@@ -186,8 +186,6 @@ library can be found at <https://github\.com/aleju/imgaug/>
 
 <td style="vertical-align: bottom">
 <img src="images/ColorTemperature-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -237,8 +235,6 @@ Add gaussian noise to the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/GaussianNoise-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -293,8 +289,6 @@ Return a grayscale version of the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/GrayScale-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -339,8 +333,6 @@ Horizontally flips the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/HorizontalFlip-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -387,8 +379,6 @@ The erased area is replaced with random noise\.
 
 <td style="vertical-align: bottom">
 <img src="images/RandomEraser-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -443,8 +433,6 @@ Randomly shift the color space of the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/RandomHSV-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -504,8 +492,6 @@ Randomly rotate the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/RandomRotate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -555,8 +541,6 @@ Rotate the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/Rotate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -606,8 +590,6 @@ Add salt and pepper or RGB noise to the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/SaltAndPepperNoise-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -672,8 +654,6 @@ Scale the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/Scale-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -728,8 +708,6 @@ Returns a given image passed through the sepia filter\.
 
 <td style="vertical-align: bottom">
 <img src="images/Sepia-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -774,8 +752,6 @@ Perform a sequence of augmentations on the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/Sequence-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -825,8 +801,6 @@ Horizontally shear the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/Shear-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -876,8 +850,6 @@ Translate the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/Translate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
@@ -932,8 +904,6 @@ Vertically flip the given image\.
 
 <td style="vertical-align: bottom">
 <img src="images/VerticalFlip-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>

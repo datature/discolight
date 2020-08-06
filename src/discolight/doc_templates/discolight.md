@@ -141,8 +141,6 @@
 
 <td style="vertical-align: bottom">
 <img src="{{image_root}}{{ augmentation.augmented_image_bboxes }}" width="235px" height="176px" style="display: block; width: 100%"/>
-<br/>
-Augmented Image (with Bounding Boxes)
 </td>
 
 </tr>
