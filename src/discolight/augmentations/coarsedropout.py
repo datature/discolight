@@ -1,3 +1,4 @@
+"""A CoarseDropout augmentation."""
 import random
 import math
 from discolight.params.params import Params
@@ -7,23 +8,30 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class CoarseDropout(ColorAugmentation):
+
     """
-    Randomly erases a rectangular area in the given image.
+    Randomly erases a percentage of the given image using squares.
     """
 
     def __init__(self, deleted_area, num_rectangles):
+        """Constructs a CoarseDropout augmenation.
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
         self.deleted_area = deleted_area
         self.num_rectangles = num_rectangles
 
     @staticmethod
     def params():
+        """Return a Params object describing constructor parameters."""
         return Params().add("deleted_area", "", float,
                             0.1).add("num_rectangles", "", int,
                                      25)
 
     def augment_img(self, img, bboxes):
-
+        """Augment an image."""
         width, height = img.shape[1], img.shape[0]
         self.deleted_area = self.deleted_area \
             if self.deleted_area <= 1 and self.deleted_area >= 0 \

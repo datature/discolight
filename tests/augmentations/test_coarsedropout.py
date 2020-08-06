@@ -26,7 +26,10 @@ def test_coarsedropout(sample_image):
     margin = 0.02
     print(aug_p)
 
-    assert aug_p <= (0.1 + margin) and aug_p >= (0.1 - margin)
+    assert aug_p <= (
+        0.1 + margin) and aug_p >= (
+            0.1 - margin
+    ), "Performing augmentation does not yield expected erased area"
     assert np.array_equal(
         bboxes, aug_bboxes
     ), "Performing augmentation does not yield original augmentation"
