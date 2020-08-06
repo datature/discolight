@@ -155,6 +155,48 @@ augmentation, augmented images are OpenCV images in RGB format.
 <tr>
 
 <td style="width: 20%">
+<b><a href="doc/discolight.md#ColorTemperature">ColorTemperature</a></b>
+<br/>
+Changes the color temperature of the input image.
+
+The class changes the color temperature to a value
+between 1,000 and 40,000 Kelvins (ie. working as a
+warming or cooling filter).
+
+This class has largely been adapted from @aleju/imgaug library's
+augmenters.ChangeColorTemperature() function. @aleju/imgaug
+library can be found at <https://github.com/aleju/imgaug/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="doc/images/ColorTemperature-input.jpg" style="display: block; width: 100%"/>
+<br/>
+Sample Image
+</td>
+
+<td style="vertical-align: bottom">
+<img src="doc/images/ColorTemperature.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image
+</td>
+
+<td style="vertical-align: bottom">
+<img src="doc/images/ColorTemperature-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Sample Image (Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="doc/images/ColorTemperature-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (Bounding Boxes)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
 <b><a href="doc/discolight.md#GaussianNoise">GaussianNoise</a></b>
 <br/>
 Add gaussian noise to the given image.

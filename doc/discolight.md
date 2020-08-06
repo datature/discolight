@@ -151,6 +151,65 @@ the directory to save images to
 # Augmentations
 
 
+## ColorTemperature
+
+Changes the color temperature of the input image\.
+
+The class changes the color temperature to a value
+between 1,000 and 40,000 Kelvins \(ie\. working as a
+warming or cooling filter\)\.
+
+This class has largely been adapted from @aleju/imgaug library's
+augmenters\.ChangeColorTemperature\(\) function\. @aleju/imgaug
+library can be found at <https://github\.com/aleju/imgaug/>
+
+### Example
+<table style="width: 100%">
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/ColorTemperature-input.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ColorTemperature.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ColorTemperature-input-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Input Image (with Bounding Boxes)
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ColorTemperature-bboxes.jpg" style="display: block; width: 100%"/>
+<br/>
+Augmented Image (with Bounding Boxes)
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**kelvin** *(int in range \[1000, 40000\])* = 3000<br/>
+temperature value in to which temperature should be changed
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+
+
 ## GaussianNoise
 
 Add gaussian noise to the given image\.
@@ -193,11 +252,9 @@ Augmented Image (with Bounding Boxes)
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 **variance** *(float)* = 0\.01<br/>
@@ -246,11 +303,9 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -294,11 +349,9 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -344,30 +397,18 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**x\_max** *(float)* = \-1<br/>
-
-
-
-
-**x\_min** *(float)* = 0<br/>
+**x\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
+normalized x range for coordinates that may be erased
 
 
 
-
-**y\_max** *(float)* = \-1<br/>
-
-
-
-
-**y\_min** *(float)* = 0<br/>
-
+**y\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
+normalized y range for coordinates that may be erased
 
 
 
@@ -412,24 +453,22 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**brightness** *(tuple)* = \(0, 0\)<br/>
+**brightness** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
 
 
-**hue** *(tuple)* = \(0, 0\)<br/>
+**hue** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**saturation** *(tuple)* = \(0, 0\)<br/>
+**saturation** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
 
@@ -475,25 +514,14 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**max\_angle** *(float)* = 10<br/>
+**angle\_range** *(range in \[\-360\.0, 360\.0\])* = \(\-10\.0, 10\.0\)<br/>
+The range from which the random angle will be chosen
 
 
 
-* min\_angle must be less than max\_angle
-
-
-**min\_angle** *(float)* = \-10<br/>
-
-
-
-* must be less than max\_angle
-
-
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -542,11 +570,9 @@ Augmented Image (with Bounding Boxes)
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -590,25 +616,19 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**noise\_type** *(str)* = RGB<br/>
-The type of noise \(RGB or SnP\)
+**noise\_type** *(RGB \| SnP)* = RGB<br/>
+The type of noise
 
 
-* must be RGB or SnP
 
-
-**pepper** *(int)* = 0<br/>
+**pepper** *(int in range \[0, 255\])* = 0<br/>
 The color of the pepper
 
 
-* must be between 0 and 255
 
-
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 **replace\_probs** *(float)* = 0\.1<br/>
@@ -616,11 +636,9 @@ The probability that this augmentation will be applied
 
 
 
-**salt** *(int)* = 255<br/>
+**salt** *(int in range \[0, 255\])* = 255<br/>
 The color of the salt
 
-
-* must be between 0 and 255
 
 
 
@@ -664,25 +682,19 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**scale\_x** *(float)* = 0\.2<br/>
-
-
-
-* cannot be less than \-1
-
-
-**scale\_y** *(float)* = 0\.2<br/>
+**scale\_x** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
 
 
 
-* cannot be less than \-1
+
+**scale\_y** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
+
+
 
 
 
@@ -726,11 +738,9 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -779,11 +789,9 @@ Augmented Image (with Bounding Boxes)
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
@@ -827,11 +835,9 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 **shear\_factor** *(float)* = 0\.2<br/>
@@ -880,25 +886,19 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**translate\_x** *(float)* = 0\.2<br/>
-
-
-
-* must be between 0 and 1
-
-
-**translate\_y** *(float)* = 0\.2<br/>
+**translate\_x** *(float in range \[0\.0, 1\.0\])* = 0\.2<br/>
 
 
 
-* must be between 0 and 1
+
+**translate\_y** *(float in range \[0\.0, 1\.0\])* = 0\.2<br/>
+
+
 
 
 
@@ -942,11 +942,9 @@ Augmented Image (with Bounding Boxes)
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 
