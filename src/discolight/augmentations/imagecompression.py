@@ -23,9 +23,7 @@ class ImageCompression(ColorAugmentation):
         this constructor directly if you know what you are doing.
         """
         super().__init__()
-
         self.strength = strength
-        self.flag = cv2.IMWRITE_JPEG_QUALITY
 
     @staticmethod
     def params():
@@ -40,7 +38,7 @@ class ImageCompression(ColorAugmentation):
         self.strength = min(max(self.strength, 0), 100)
 
         _, encoded_img = cv2.imencode(
-            ".jpg", img, [int(self.flag), int(self.strength)]
+            ".jpg", img, [int(cv2.IMWRITE_JPEG_QUALITY), int(self.strength)]
         )
         compressed_img = cv2.imdecode(encoded_img, cv2.IMREAD_UNCHANGED)
 
