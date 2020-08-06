@@ -175,7 +175,7 @@ def make_augmentation_doc_object(augmentation, sample_image_path,
     save_image(
         os.path.join(output_dir,
                      "{}-input-bboxes.jpg".format(augmentation.__name__)),
-        image, annotations, (0, 255, 0), 3)
+        image, annotations, (0, 255, 0), 5)
 
     bboxes = annotations_to_numpy_array(annotations)
 
@@ -190,7 +190,7 @@ def make_augmentation_doc_object(augmentation, sample_image_path,
     save_image(
         os.path.join(output_dir,
                      "{}-bboxes.jpg".format(augmentation.__name__)),
-        augmented_image, augmented_annotations, (0, 255, 0), 3)
+        augmented_image, augmented_annotations, (0, 255, 0), 5)
 
     doc_object["sample_image"] = "{}-input.jpg".format(augmentation.__name__)
     doc_object["sample_image_bboxes"] = "{}-input-bboxes.jpg".format(

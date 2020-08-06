@@ -804,7 +804,6 @@ augmentations:
 - name: SaltAndPepperNoise
   options:
     noise_type: SnP
-
 ```
 
 

@@ -14,7 +14,6 @@ performance of deep convolutional neural networks
   - Supports python 3.6-3.8
   - Supports transformations on images, and bounding boxes.
   - The library works with images in `HxWxC` format.
-  - This library is maintained by **Datature.io**
 
 ## Setup
 
