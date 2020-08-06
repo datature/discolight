@@ -7,16 +7,15 @@ from .decorators.accepts_probs import accepts_probs
 
 @accepts_probs
 class ImageCompression(ColorAugmentation):
-    """
-    Image compress the given image.
+
+    """Image compress the given image.
 
     Works for both jpeg/jpg and png format.
     This function is a lossy JPEG compression operation.
     """
 
     def __init__(self, strength):
-        """
-        Construct a Image compression augmentation.
+        """Construct a Image compression augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke
