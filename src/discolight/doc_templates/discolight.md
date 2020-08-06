@@ -121,26 +121,26 @@
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.sample_image }}" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="{{image_root}}{{ augmentation.sample_image }}" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.augmented_image }}" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="{{image_root}}{{ augmentation.augmented_image }}" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.sample_image_bboxes }}" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="{{image_root}}{{ augmentation.sample_image_bboxes }}" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="{{image_root}}{{ augmentation.augmented_image_bboxes }}" style="display: block; width: 100%"/>
+<img src="{{image_root}}{{ augmentation.augmented_image_bboxes }}" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>

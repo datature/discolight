@@ -166,26 +166,26 @@ library can be found at <https://github\.com/aleju/imgaug/>
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/ColorTemperature-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/ColorTemperature-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/ColorTemperature.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/ColorTemperature.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/ColorTemperature-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/ColorTemperature-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/ColorTemperature-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/ColorTemperature-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -217,26 +217,26 @@ Add gaussian noise to the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/GaussianNoise-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/GaussianNoise-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/GaussianNoise.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/GaussianNoise.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/GaussianNoise-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/GaussianNoise-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/GaussianNoise-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/GaussianNoise-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -273,26 +273,26 @@ Return a grayscale version of the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/GrayScale-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/GrayScale-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/GrayScale.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/GrayScale.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/GrayScale-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/GrayScale-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/GrayScale-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/GrayScale-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -319,26 +319,26 @@ Horizontally flips the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/HorizontalFlip-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/HorizontalFlip-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/HorizontalFlip.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/HorizontalFlip.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/HorizontalFlip-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/HorizontalFlip-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/HorizontalFlip-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/HorizontalFlip-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -367,26 +367,26 @@ The erased area is replaced with random noise\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomEraser-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/RandomEraser-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomEraser.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/RandomEraser.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomEraser-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/RandomEraser-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomEraser-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/RandomEraser-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -423,26 +423,26 @@ Randomly shift the color space of the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomHSV-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/RandomHSV-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomHSV.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/RandomHSV.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomHSV-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/RandomHSV-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomHSV-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/RandomHSV-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -484,26 +484,26 @@ Randomly rotate the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomRotate-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/RandomRotate-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomRotate.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/RandomRotate.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomRotate-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/RandomRotate-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/RandomRotate-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/RandomRotate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -535,26 +535,26 @@ Rotate the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/Rotate-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/Rotate-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Rotate.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/Rotate.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Rotate-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/Rotate-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Rotate-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/Rotate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -586,26 +586,26 @@ Add salt and pepper or RGB noise to the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/SaltAndPepperNoise-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/SaltAndPepperNoise-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/SaltAndPepperNoise.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/SaltAndPepperNoise.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/SaltAndPepperNoise-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/SaltAndPepperNoise-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/SaltAndPepperNoise-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/SaltAndPepperNoise-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -652,26 +652,26 @@ Scale the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/Scale-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/Scale-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Scale.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/Scale.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Scale-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/Scale-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Scale-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/Scale-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -708,26 +708,26 @@ Returns a given image passed through the sepia filter\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/Sepia-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/Sepia-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Sepia.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/Sepia.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Sepia-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/Sepia-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Sepia-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/Sepia-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -754,26 +754,26 @@ Perform a sequence of augmentations on the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/Sequence-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/Sequence-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Sequence.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/Sequence.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Sequence-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/Sequence-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Sequence-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/Sequence-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -805,26 +805,26 @@ Horizontally shear the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/Shear-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/Shear-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Shear.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/Shear.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Shear-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/Shear-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Shear-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/Shear-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -856,26 +856,26 @@ Translate the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/Translate-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/Translate-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Translate.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/Translate.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Translate-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/Translate-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/Translate-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/Translate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
@@ -912,26 +912,26 @@ Vertically flip the given image\.
 ### Example
 <table style="width: 100%">
 <tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
 <td style="vertical-align: bottom">
-<img src="images/VerticalFlip-input.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image
+<img src="images/VerticalFlip-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/VerticalFlip.jpg" style="display: block; width: 100%"/>
-<br/>
-Augmented Image
+<img src="images/VerticalFlip.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/VerticalFlip-input-bboxes.jpg" style="display: block; width: 100%"/>
-<br/>
-Input Image (with Bounding Boxes)
+<img src="images/VerticalFlip-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
 
 <td style="vertical-align: bottom">
-<img src="images/VerticalFlip-bboxes.jpg" style="display: block; width: 100%"/>
+<img src="images/VerticalFlip-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (with Bounding Boxes)
 </td>
