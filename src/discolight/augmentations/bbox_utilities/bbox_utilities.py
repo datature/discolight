@@ -13,7 +13,7 @@ def draw_rect(img, bboxes, color=None, stroke=None):
         pt1 = int(pt1[0]), int(pt1[1])
         pt2 = int(pt2[0]), int(pt2[1])
         stroke = int(max(img.shape[:2]) / 200) if stroke is None else stroke
-        img = cv2.rectangle(img.copy(), pt1, pt2, color, stroke)
+        img = cv2.rectangle(img.copy(), pt1, pt2, color, 20)
     return img
 
 
