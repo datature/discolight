@@ -794,7 +794,7 @@ The probability that this augmentation will be applied
 
 
 
-Sample Image augmented with options:
+Sample image augmented with options:
 ```
 augmentations:
 - name: GrayScale

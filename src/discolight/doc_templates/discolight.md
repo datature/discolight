@@ -158,7 +158,7 @@
 {% endfor %}
 
 {% if augmentation.sample_options %}
-Sample Image augmented with options:
+Sample image augmented with options:
 ```
 {{augmentation.sample_options}}```
 {% endif %}
