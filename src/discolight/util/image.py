@@ -27,7 +27,7 @@ def load_image(image_path):
         return load_image_from_bytes(image_file.read())
 
 
-def save_image(path, image, annotations=None, color=(255, 0, 0), stroke=3.0):
+def save_image(path, image, annotations=None, color=(255, 0, 0), stroke=8.0):
     """Save an image loaded with load_image or load_image_from_bytes.
 
     Keyword Arguments:
