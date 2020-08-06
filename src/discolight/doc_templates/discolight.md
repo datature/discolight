@@ -157,10 +157,10 @@
 {% endfor %}
 {% endfor %}
 
-{% if augmentation.options %}
+{% if augmentation.sample_options %}
 Sample Image augmented with options:
 ```
-{{augmentation.options}}
+{{augmentation.sample_options}}
 ```
 {% endif %}
 

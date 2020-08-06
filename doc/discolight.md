@@ -794,6 +794,19 @@ The probability that this augmentation will be applied
 
 
 
+Sample Image augmented with options:
+```
+augmentations:
+- name: GrayScale
+- name: Rotate
+  options:
+    angle: 35
+- name: SaltAndPepperNoise
+  options:
+    noise_type: SnP
+
+```
+
 
 
 
