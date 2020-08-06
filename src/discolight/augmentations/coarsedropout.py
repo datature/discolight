@@ -9,12 +9,11 @@ from .decorators.accepts_probs import accepts_probs
 @accepts_probs
 class CoarseDropout(ColorAugmentation):
 
-    """
-    Randomly erases a percentage of the given image using squares.
-    """
+    """Randomly erases a percentage of the given image using squares."""
 
     def __init__(self, deleted_area, num_rectangles):
-        """Constructs a CoarseDropout augmenation.
+        """Construct a CoarseDropout augmenation.
+
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke
         this constructor directly if you know what you are doing.
