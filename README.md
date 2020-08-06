@@ -40,25 +40,25 @@ the contents of the repository folder:
 Changes the color temperature of the input image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/ColorTemperature-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/ColorTemperature.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/ColorTemperature-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/ColorTemperature-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -74,25 +74,25 @@ Augmented Image (Bounding Boxes)
 Add gaussian noise to the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/GaussianNoise-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/GaussianNoise.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/GaussianNoise-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/GaussianNoise-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -108,25 +108,25 @@ Augmented Image (Bounding Boxes)
 Return a grayscale version of the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/GrayScale-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/GrayScale.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/GrayScale-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/GrayScale-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -142,25 +142,25 @@ Augmented Image (Bounding Boxes)
 Horizontally flips the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/HorizontalFlip-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/HorizontalFlip.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/HorizontalFlip-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/HorizontalFlip-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -176,25 +176,25 @@ Augmented Image (Bounding Boxes)
 Randomly erase a rectangular area in the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomEraser-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomEraser.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomEraser-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomEraser-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -210,25 +210,25 @@ Augmented Image (Bounding Boxes)
 Randomly shift the color space of the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomHSV-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomHSV.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomHSV-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomHSV-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -244,25 +244,25 @@ Augmented Image (Bounding Boxes)
 Randomly rotate the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomRotate-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomRotate.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomRotate-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomRotate-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -278,25 +278,25 @@ Augmented Image (Bounding Boxes)
 Rotate the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Rotate-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Rotate.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Rotate-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Rotate-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -312,25 +312,25 @@ Augmented Image (Bounding Boxes)
 Add salt and pepper or RGB noise to the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/SaltAndPepperNoise-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/SaltAndPepperNoise.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/SaltAndPepperNoise-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/SaltAndPepperNoise-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -346,25 +346,25 @@ Augmented Image (Bounding Boxes)
 Scale the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Scale-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Scale.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Scale-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Scale-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -380,25 +380,25 @@ Augmented Image (Bounding Boxes)
 Returns a given image passed through the sepia filter.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Sepia-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Sepia.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Sepia-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Sepia-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -414,25 +414,25 @@ Augmented Image (Bounding Boxes)
 Perform a sequence of augmentations on the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Sequence-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Sequence.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Sequence-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Sequence-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -448,25 +448,25 @@ Augmented Image (Bounding Boxes)
 Horizontally shear the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Shear-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Shear.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Shear-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Shear-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -482,25 +482,25 @@ Augmented Image (Bounding Boxes)
 Translate the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Translate-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Translate.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Translate-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/Translate-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
@@ -516,25 +516,25 @@ Augmented Image (Bounding Boxes)
 Vertically flip the given image.
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/VerticalFlip-input.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/VerticalFlip.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/VerticalFlip-input-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Sample Image (Bounding Boxes)
 </td>
 
-<td style="vertical-align: bottom">
+<td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/VerticalFlip-bboxes.jpg" style="display: block; width: 100%"/>
 <br/>
 Augmented Image (Bounding Boxes)
