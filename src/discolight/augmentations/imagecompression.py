@@ -1,4 +1,4 @@
-"""A JPEG compression augmentation."""
+"""A Image compression augmentation."""
 import cv2
 from discolight.params.params import Params
 from .augmentation.types import ColorAugmentation
@@ -6,12 +6,17 @@ from .decorators.accepts_probs import accepts_probs
 
 
 @accepts_probs
-class JpegCompression(ColorAugmentation):
-    """JPEG compress the given image."""
+class ImageCompression(ColorAugmentation):
+    """
+    Image compress the given image.
+
+    Works for both jpeg/jpg and png format.
+    This function is a lossy JPEG compression operation.
+    """
 
     def __init__(self, strength):
         """
-        Construct a JPEG compression augmentation.
+        Construct a Image compression augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke
@@ -26,18 +31,15 @@ class JpegCompression(ColorAugmentation):
     def params():
         """Return a Params object describing constructor parameters."""
         return Params().add(
-            "strength", "Compression strength between 0 to 100", int, 95
+            "strength", "Compression strength between 0 to 100", int, 10
         )
 
     def augment_img(self, img, _bboxes):
         """Augment an image."""
         # Ensure strength value do not go out of range
-        if self.strength < 0:
-            self.strength = 0
-        elif self.strength > 100:
-            self.strength = 100
+        self.strength = min(max(self.strength, 0), 100)
 
-        _, encoded_img = cv2.imencode(".jpg", img, (self.flag, self.strength))
+        _, encoded_img = cv2.imencode(".jpg", img, [int(self.flag), int(self.strength)])
         compressed_img = cv2.imdecode(encoded_img, cv2.IMREAD_UNCHANGED)
 
         return compressed_img
