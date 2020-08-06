@@ -6,6 +6,8 @@ import random
 import re
 import shutil
 from enum import Enum
+import yamale
+import yaml
 from tqdm import tqdm
 from .annotations import (BoundingBox, annotations_from_numpy_array,
                           annotations_to_numpy_array)
@@ -15,6 +17,7 @@ from .loaders.annotation import factory as annotation_loader_factory
 from .loaders.image import factory as image_loader_factory
 from .writers.annotation import factory as annotation_writer_factory
 from .writers.image import factory as image_writer_factory
+from .doc_templates import augmentations as augmentation_options
 
 augmentation_fy = augmentations_factory.make_augmentations_factory()
 
@@ -136,8 +139,25 @@ def make_augmentation_doc_object(augmentation, sample_image_path,
     """
     doc_object = make_doc_object(augmentation)
 
+    options_dir = os.path.dirname(augmentation_options.__file__)
+
+    options = {}
+    try:
+        with open(
+                os.path.join(options_dir, "{}.yml".format(
+                    augmentation.__name__))) as options_file:
+            content = options_file.read()
+
+            options = yamale.make_data(content=content)[0][0]
+    except IOError:
+        pass
+
+    if options != {}:
+        doc_object["sample_options"] = yaml.dump(options,
+                                                 default_flow_style=False)
+
     random.seed(1)
-    augmentation_instance = augmentation_fy(augmentation.__name__)
+    augmentation_instance = augmentation_fy(augmentation.__name__, **options)
 
     image = load_image(sample_image_path)
     annotations = load_annotations_for_sample_image(sample_annotations_path)
@@ -155,7 +175,7 @@ def make_augmentation_doc_object(augmentation, sample_image_path,
     save_image(
         os.path.join(output_dir,
                      "{}-input-bboxes.jpg".format(augmentation.__name__)),
-        image, annotations)
+        image, annotations, (0, 255, 0), 3)
 
     bboxes = annotations_to_numpy_array(annotations)
 
@@ -170,7 +190,7 @@ def make_augmentation_doc_object(augmentation, sample_image_path,
     save_image(
         os.path.join(output_dir,
                      "{}-bboxes.jpg".format(augmentation.__name__)),
-        augmented_image, augmented_annotations)
+        augmented_image, augmented_annotations, (0, 255, 0), 3)
 
     doc_object["sample_image"] = "{}-input.jpg".format(augmentation.__name__)
     doc_object["sample_image_bboxes"] = "{}-input-bboxes.jpg".format(

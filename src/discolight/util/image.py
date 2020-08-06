@@ -27,7 +27,7 @@ def load_image(image_path):
         return load_image_from_bytes(image_file.read())
 
 
-def save_image(path, image, annotations=None):
+def save_image(path, image, annotations=None, color=(255, 0, 0), stroke=3.0):
     """Save an image loaded with load_image or load_image_from_bytes.
 
     Keyword Arguments:
@@ -45,7 +45,7 @@ def save_image(path, image, annotations=None):
     if annotations is not None:
 
         bboxes = annotations_to_numpy_array(annotations)
-        img_copy = draw_rect(img_copy, bboxes, (255, 0, 0))
+        img_copy = draw_rect(img_copy, bboxes, color, stroke)
 
     img_copy = cv2.cvtColor(img_copy, cv2.COLOR_RGB2BGR)
 

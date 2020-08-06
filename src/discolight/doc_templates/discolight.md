@@ -157,6 +157,13 @@
 {% endfor %}
 {% endfor %}
 
+{% if augmentation.options %}
+Sample Image augmented with options:
+```
+{{augmentation.options}}
+```
+{% endif %}
+
 {% if augmentation.ensures %}
 #### Other Conditions
 

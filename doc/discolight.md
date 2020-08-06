@@ -208,6 +208,8 @@ The probability that this augmentation will be applied
 
 
 
+
+
 ## GaussianNoise
 
 Add gaussian noise to the given image\.
@@ -262,6 +264,8 @@ The probability that this augmentation will be applied
 
 
 
+
+
 ## GrayScale
 
 Return a grayscale version of the given image\.
@@ -306,6 +310,8 @@ The probability that this augmentation will be applied
 
 
 
+
+
 ## HorizontalFlip
 
 Horizontally flips the given image\.
@@ -343,6 +349,8 @@ Horizontally flips the given image\.
 
 **probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
 
 
 
@@ -399,6 +407,8 @@ normalized x range for coordinates that may be erased
 
 **y\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
 normalized y range for coordinates that may be erased
+
+
 
 
 
@@ -465,6 +475,8 @@ The probability that this augmentation will be applied
 
 
 
+
+
 ## RandomRotate
 
 Randomly rotate the given image\.
@@ -514,6 +526,8 @@ The probability that this augmentation will be applied
 
 
 
+
+
 ## Rotate
 
 Rotate the given image\.
@@ -556,6 +570,8 @@ Rotate the given image\.
 
 **probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
 
 
 
@@ -627,6 +643,8 @@ The color of the salt
 
 
 
+
+
 ## Scale
 
 Scale the given image\.
@@ -681,6 +699,8 @@ The probability that this augmentation will be applied
 
 
 
+
+
 ## Sepia
 
 Returns a given image passed through the sepia filter\.
@@ -718,6 +738,8 @@ Returns a given image passed through the sepia filter\.
 
 **probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
 
 
 
@@ -774,6 +796,8 @@ The probability that this augmentation will be applied
 
 
 
+
+
 ## Shear
 
 Horizontally shear the given image\.
@@ -815,6 +839,8 @@ The probability that this augmentation will be applied
 
 
 **shear\_factor** *(float)* = 0\.2<br/>
+
+
 
 
 
@@ -877,6 +903,8 @@ The probability that this augmentation will be applied
 
 
 
+
+
 ## VerticalFlip
 
 Vertically flip the given image\.
@@ -914,6 +942,8 @@ Vertically flip the given image\.
 
 **probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
 
 
 
