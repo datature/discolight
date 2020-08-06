@@ -1,5 +1,6 @@
 import random
 import math
+import numpy as np
 from discolight.params.params import Params
 from .augmentation.types import ColorAugmentation
 from .decorators.accepts_probs import accepts_probs
@@ -43,6 +44,19 @@ class CoarseDropout(ColorAugmentation):
         for rect in range(1, self.num):
             x = int(random.uniform(0, width - eraser_width))
             y = int(random.uniform(0, height - eraser_height))
+
+            # Ensures that rectangle is not overlapping with other rectangles
+            # overlapping = False
+            # while (not overlapping):
+            #     for row_idx in range(y, y + eraser_height):
+            #         for col_idx in range(x, x + eraser_width):
+            #             if np.array_equal(img[row_idx, col_idx], [0, 0, 0]):
+            #                 overlapping = True
+            #                 break
+            #     if (overlapping):
+            #         x = int(random.uniform(0, width - eraser_width))
+            #         y = int(random.uniform(0, height - eraser_height))
+
             for row_idx in range(y, y + eraser_height):
                 for col_idx in range(x, x + eraser_width):
                     img[row_idx, col_idx] = [0, 0, 0]
