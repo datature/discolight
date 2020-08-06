@@ -5,12 +5,9 @@ import random
 import pytest
 import yamale
 import numpy as np
-from discolight.annotations import (annotations_to_numpy_array,
-                                    annotations_from_numpy_array)
+from discolight.annotations import annotations_to_numpy_array
 from discolight.augmentations.augmentation.types import ColorAugmentation
 from discolight.writers.image.directory import Directory as DirectoryWriter
-from discolight.writers.annotation.fourcornerscsv import (FourCornersCSV as
-                                                          FourCornersCSVWriter)
 from discolight.disco import disco
 from discolight.util.image import save_image
 import discolight.augmentations.factory as factory
