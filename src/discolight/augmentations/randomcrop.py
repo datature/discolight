@@ -61,8 +61,7 @@ class RandomCrop(Augmentation):
         x = random.randint(0, crop_width)
         y = random.randint(0, crop_height)
         reduced_bboxes = np.array(
-            self.get_bboxes_in_cropped_area(x, y, crop_width, crop_height,
-                                            bboxes))
+            get_bboxes_in_cropped_area(x, y, crop_width, crop_height, bboxes))
 
         # if no bbox, get_aug return false; and recall .get_aug
         if len(reduced_bboxes) == 0 and len(bboxes) > 0:
