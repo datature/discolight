@@ -36,7 +36,6 @@ class ImageCompression(ColorAugmentation):
 
     def augment_img(self, img, _bboxes):
         """Augment an image."""
-
         _, encoded_img = cv2.imencode(
             ".jpg", img, [int(cv2.IMWRITE_JPEG_QUALITY), int(self.strength)]
         )
