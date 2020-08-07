@@ -8,7 +8,7 @@ from .decorators.accepts_probs import accepts_probs
 @accepts_probs
 class ImageCompression(ColorAugmentation):
 
-    """Image compress the given image.
+    """Apply a compression effect to the given image.
 
     Works for both jpeg/jpg and png format.
     This function is a lossy JPEG compression operation.
