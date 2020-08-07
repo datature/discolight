@@ -52,6 +52,11 @@ augmentations:
     options:
       probs: 0.9
   - name: Shear
+    options:
+      shear_factor: -0.5
+  - name: SaltAndPepperNoise
+    options:
+      noise_type: SnP
   - name: Translate
   - name: VerticalFlip
 save-original: true # Whether to save the original images to the output folder

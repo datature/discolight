@@ -14,7 +14,6 @@ performance of deep convolutional neural networks
   - Supports python 3.6-3.8
   - Supports transformations on images, and bounding boxes.
   - The library works with images in `HxWxC` format.
-  - This library is maintained by **Datature.io**
 
 ## Setup
 
@@ -27,6 +26,409 @@ Alternatively, if you have cloned this repository, you can run pip on
 the contents of the repository folder:
 
 	$ pip install .
+	
+## Supported Augmentations
+
+<table style="width: 100%">
+<tr>
+	<td>&nbsp;</td>
+	<td><b>Sample<br/>Image</b></td>
+	<td><b>Augmented<br/>Image</b></td>
+	<td><b>Sample<br/>Image (Bounding<br/>Boxes)</b></td>
+	<td><b>Augmented<br/>Image (Bounding<br/>Boxes)</b></td>
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#ColorTemperature">ColorTemperature</a></b>
+<br/>
+Changes the color temperature of the input image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ColorTemperature-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ColorTemperature.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ColorTemperature-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ColorTemperature-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#GaussianNoise">GaussianNoise</a></b>
+<br/>
+Add gaussian noise to the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/GaussianNoise-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/GaussianNoise.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/GaussianNoise-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/GaussianNoise-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#GrayScale">GrayScale</a></b>
+<br/>
+Return a grayscale version of the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/GrayScale-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/GrayScale.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/GrayScale-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/GrayScale-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#HorizontalFlip">HorizontalFlip</a></b>
+<br/>
+Horizontally flips the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/HorizontalFlip-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/HorizontalFlip.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/HorizontalFlip-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/HorizontalFlip-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#RandomEraser">RandomEraser</a></b>
+<br/>
+Randomly erase a rectangular area in the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomEraser-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomEraser.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomEraser-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomEraser-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#RandomHSV">RandomHSV</a></b>
+<br/>
+Randomly shift the color space of the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomHSV-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomHSV.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomHSV-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomHSV-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#RandomRotate">RandomRotate</a></b>
+<br/>
+Randomly rotate the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomRotate-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomRotate.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomRotate-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomRotate-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#Rotate">Rotate</a></b>
+<br/>
+Rotate the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Rotate-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Rotate.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Rotate-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Rotate-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#SaltAndPepperNoise">SaltAndPepperNoise</a></b>
+<br/>
+Add salt and pepper or RGB noise to the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/SaltAndPepperNoise-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/SaltAndPepperNoise.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/SaltAndPepperNoise-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/SaltAndPepperNoise-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#Scale">Scale</a></b>
+<br/>
+Scale the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Scale-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Scale.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Scale-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Scale-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#Sepia">Sepia</a></b>
+<br/>
+Returns a given image passed through the sepia filter.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Sepia-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Sepia.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Sepia-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Sepia-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#Sequence">Sequence</a></b>
+<br/>
+Perform a sequence of augmentations on the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Sequence-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Sequence.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Sequence-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Sequence-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#Shear">Shear</a></b>
+<br/>
+Horizontally shear the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Shear-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Shear.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Shear-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Shear-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#Translate">Translate</a></b>
+<br/>
+Translate the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Translate-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Translate.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Translate-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Translate-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#VerticalFlip">VerticalFlip</a></b>
+<br/>
+Vertically flip the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/VerticalFlip-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/VerticalFlip.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/VerticalFlip-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/VerticalFlip-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+</table>
 
 ## Generating Augmented Images on the Command Line
 
@@ -148,18 +550,7 @@ save_image("aug-no-bboxes.jpg", aug_img)
 If you prefer to perform additional operations on the image after
 augmentation, augmented images are OpenCV images in RGB format.
 
-## Supported Augmentations
-
-You can view documentation for the currently installed set of
-augmentations (as well as loaders and writers) in
-[doc/discolight.md](doc/discolight.md). This documentation is dynamically
-generated from the currently installed set of augmentations. To
-generate it, run:
-
-	(venv) $ discolight-doc > doc/discolight.md
-
 ## Development
 
 To learn more about how to develop Discolight (e.g., adding additional
 augmentatations), see the guide in [doc/develop.md](doc/develop.md).
-

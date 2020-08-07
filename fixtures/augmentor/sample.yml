@@ -43,7 +43,8 @@ augmentations:
     options:
       probs: 0.9
   - name: Shear
-    options: {}
+    options:
+      shear_factor: -0.5
   - name: Translate
     options: {}
   - name: VerticalFlip
@@ -51,7 +52,8 @@ augmentations:
   - name: RandomRotate
     options: {}
   - name: SaltAndPepperNoise
-    options: {}
+    options:
+      noise_type: SnP
   - name: RandomHSV
     options: {}
   - name: RandomEraser
