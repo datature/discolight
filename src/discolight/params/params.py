@@ -104,7 +104,12 @@ class Params:
                 return Error(
                     "The parameter {} must be specified".format(param_name))
 
-            complete_params[param_name] = param["default"]
+            typecast = param["data_type"]
+
+            if typecast.__name__ in self.bound_type_casts:
+                typecast = self.bound_type_casts[typecast.__name__]
+
+            complete_params[param_name] = typecast(param["default"])
 
         for ensure in self.ensures:
             if not ensure["check"](complete_params):

@@ -1,4 +1,3 @@
-
 # Annotation Loaders
 
 
@@ -152,23 +151,94 @@ the directory to save images to
 # Augmentations
 
 
+## ColorTemperature
+
+Changes the color temperature of the input image\.
+
+The class changes the color temperature to a value
+between 1,000 and 40,000 Kelvins \(ie\. working as a
+warming or cooling filter\)\.
+
+This class has largely been adapted from @aleju/imgaug library's
+augmenters\.ChangeColorTemperature\(\) function\. @aleju/imgaug
+library can be found at <https://github\.com/aleju/imgaug/>
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/ColorTemperature-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ColorTemperature.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ColorTemperature-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ColorTemperature-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**kelvin** *(int in range \[1000, 40000\])* = 3000<br/>
+temperature value in to which temperature should be changed
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
+
 ## GaussianNoise
 
 Add gaussian noise to the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/GaussianNoise-input.jpg"/>
-<br/>
-Input Image
+<img src="images/GaussianNoise-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/GaussianNoise.jpg" />
-<br/>
-Augmented Image
+<img src="images/GaussianNoise.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/GaussianNoise-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/GaussianNoise-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
@@ -180,14 +250,14 @@ Augmented Image
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
-
 
 **variance** *(float)* = 0\.01<br/>
+
+
 
 
 
@@ -201,29 +271,41 @@ The probability that this augmentation will be applied
 Return a grayscale version of the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/GrayScale-input.jpg"/>
-<br/>
-Input Image
+<img src="images/GrayScale-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/GrayScale.jpg" />
-<br/>
-Augmented Image
+<img src="images/GrayScale.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/GrayScale-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/GrayScale-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
+
 
 
 
@@ -235,29 +317,41 @@ The probability that this augmentation will be applied
 Horizontally flips the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/HorizontalFlip-input.jpg"/>
-<br/>
-Input Image
+<img src="images/HorizontalFlip-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/HorizontalFlip.jpg" />
-<br/>
-Augmented Image
+<img src="images/HorizontalFlip.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/HorizontalFlip-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/HorizontalFlip-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
+
 
 
 
@@ -271,47 +365,49 @@ Randomly erase a rectangular area in the given image\.
 The erased area is replaced with random noise\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomEraser-input.jpg"/>
-<br/>
-Input Image
+<img src="images/RandomEraser-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/RandomEraser.jpg" />
-<br/>
-Augmented Image
+<img src="images/RandomEraser.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomEraser-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomEraser-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**x\_max** *(float)* = \-1<br/>
-
-
-
-
-**x\_min** *(float)* = 0<br/>
+**x\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
+normalized x range for coordinates that may be erased
 
 
 
+**y\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
+normalized y range for coordinates that may be erased
 
-**y\_max** *(float)* = \-1<br/>
-
-
-
-
-**y\_min** *(float)* = 0<br/>
 
 
 
@@ -325,42 +421,54 @@ The probability that this augmentation will be applied
 Randomly shift the color space of the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomHSV-input.jpg"/>
-<br/>
-Input Image
+<img src="images/RandomHSV-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/RandomHSV.jpg" />
-<br/>
-Augmented Image
+<img src="images/RandomHSV.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomHSV-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomHSV-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**brightness** *(tuple)* = \(0, 0\)<br/>
+**brightness** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
 
 
-**hue** *(tuple)* = \(0, 0\)<br/>
+**hue** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
+
+**saturation** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
 
-**saturation** *(tuple)* = \(0, 0\)<br/>
 
 
 
@@ -374,43 +482,46 @@ The probability that this augmentation will be applied
 Randomly rotate the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/RandomRotate-input.jpg"/>
-<br/>
-Input Image
+<img src="images/RandomRotate-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/RandomRotate.jpg" />
-<br/>
-Augmented Image
+<img src="images/RandomRotate.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomRotate-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomRotate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**max\_angle** *(float)* = 10<br/>
+**angle\_range** *(range in \[\-360\.0, 360\.0\])* = \(\-10\.0, 10\.0\)<br/>
+The range from which the random angle will be chosen
 
 
 
-* min\_angle must be less than max\_angle
-
-
-**min\_angle** *(float)* = \-10<br/>
-
-
-
-* must be less than max\_angle
-
-
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
+
 
 
 
@@ -422,18 +533,30 @@ The probability that this augmentation will be applied
 Rotate the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Rotate-input.jpg"/>
-<br/>
-Input Image
+<img src="images/Rotate-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Rotate.jpg" />
-<br/>
-Augmented Image
+<img src="images/Rotate.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Rotate-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Rotate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
@@ -445,11 +568,11 @@ Augmented Image
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
+
 
 
 
@@ -461,43 +584,49 @@ The probability that this augmentation will be applied
 Add salt and pepper or RGB noise to the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/SaltAndPepperNoise-input.jpg"/>
-<br/>
-Input Image
+<img src="images/SaltAndPepperNoise-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/SaltAndPepperNoise.jpg" />
-<br/>
-Augmented Image
+<img src="images/SaltAndPepperNoise.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/SaltAndPepperNoise-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/SaltAndPepperNoise-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**noise\_type** *(str)* = RGB<br/>
-The type of noise \(RGB or SnP\)
+**noise\_type** *(RGB \| SnP)* = RGB<br/>
+The type of noise
 
 
-* must be RGB or SnP
 
-
-**pepper** *(int)* = 0<br/>
+**pepper** *(int in range \[0, 255\])* = 0<br/>
 The color of the pepper
 
 
-* must be between 0 and 255
 
-
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-
-* must be between 0 and 1
 
 
 **replace\_probs** *(float)* = 0\.1<br/>
@@ -505,11 +634,11 @@ The probability that this augmentation will be applied
 
 
 
-**salt** *(int)* = 255<br/>
+**salt** *(int in range \[0, 255\])* = 255<br/>
 The color of the salt
 
 
-* must be between 0 and 255
+
 
 
 
@@ -521,43 +650,51 @@ The color of the salt
 Scale the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Scale-input.jpg"/>
-<br/>
-Input Image
+<img src="images/Scale-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Scale.jpg" />
-<br/>
-Augmented Image
+<img src="images/Scale.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Scale-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Scale-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**scale\_x** *(float)* = 0\.2<br/>
-
-
-
-* cannot be less than \-1
-
-
-**scale\_y** *(float)* = 0\.2<br/>
+**scale\_x** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
 
 
 
-* cannot be less than \-1
+
+**scale\_y** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
+
+
+
+
 
 
 
@@ -569,29 +706,41 @@ The probability that this augmentation will be applied
 Returns a given image passed through the sepia filter\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Sepia-input.jpg"/>
-<br/>
-Input Image
+<img src="images/Sepia-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Sepia.jpg" />
-<br/>
-Augmented Image
+<img src="images/Sepia.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Sepia-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Sepia-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
+
 
 
 
@@ -603,18 +752,30 @@ The probability that this augmentation will be applied
 Perform a sequence of augmentations on the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Sequence-input.jpg"/>
-<br/>
-Input Image
+<img src="images/Sequence-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Sequence.jpg" />
-<br/>
-Augmented Image
+<img src="images/Sequence.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Sequence-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Sequence-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
@@ -626,12 +787,24 @@ Augmented Image
 
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
+
+
+Sample image augmented with options:
+```
+augmentations:
+- name: GrayScale
+- name: Rotate
+  options:
+    angle: 35
+- name: SaltAndPepperNoise
+  options:
+    noise_type: SnP
+```
 
 
 
@@ -642,32 +815,44 @@ The probability that this augmentation will be applied
 Horizontally shear the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Shear-input.jpg"/>
-<br/>
-Input Image
+<img src="images/Shear-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Shear.jpg" />
-<br/>
-Augmented Image
+<img src="images/Shear.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Shear-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Shear-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
-
 
 **shear\_factor** *(float)* = 0\.2<br/>
+
+
 
 
 
@@ -681,43 +866,51 @@ The probability that this augmentation will be applied
 Translate the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/Translate-input.jpg"/>
-<br/>
-Input Image
+<img src="images/Translate-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/Translate.jpg" />
-<br/>
-Augmented Image
+<img src="images/Translate.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/Translate-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Translate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
-
-**translate\_x** *(float)* = 0\.2<br/>
-
-
-
-* must be between 0 and 1
-
-
-**translate\_y** *(float)* = 0\.2<br/>
+**translate\_x** *(float in range \[0\.0, 1\.0\])* = 0\.2<br/>
 
 
 
-* must be between 0 and 1
+
+**translate\_y** *(float in range \[0\.0, 1\.0\])* = 0\.2<br/>
+
+
+
+
 
 
 
@@ -729,29 +922,40 @@ The probability that this augmentation will be applied
 Vertically flip the given image\.
 
 ### Example
-<table>
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
 <tr>
 <td style="vertical-align: bottom">
-<img src="images/VerticalFlip-input.jpg"/>
-<br/>
-Input Image
+<img src="images/VerticalFlip-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
 <td style="vertical-align: bottom">
-<img src="images/VerticalFlip.jpg" />
-<br/>
-Augmented Image
+<img src="images/VerticalFlip.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
 </td>
+
+<td style="vertical-align: bottom">
+<img src="images/VerticalFlip-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/VerticalFlip-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
 </tr>
 </table>
 
 ### Parameters
 
 
-**probs** *(float)* = 1\.0<br/>
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
 
-* must be between 0 and 1
 
 
 

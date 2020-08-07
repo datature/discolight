@@ -1,194 +1,23 @@
 """A documentation generator for loaders, writers, and augmentations."""
-# flake8: noqa
+import csv
 import inspect
 import os
+import random
 import re
 import shutil
-import argparse
 from enum import Enum
+import yamale
+import yaml
 from tqdm import tqdm
-from jinja2 import Environment, BaseLoader
+from .annotations import (BoundingBox, annotations_from_numpy_array,
+                          annotations_to_numpy_array)
+from .util.image import load_image, save_image
 from .augmentations import factory as augmentations_factory
 from .loaders.annotation import factory as annotation_loader_factory
 from .loaders.image import factory as image_loader_factory
 from .writers.annotation import factory as annotation_writer_factory
 from .writers.image import factory as image_writer_factory
-
-doc_template_str = """
-# Annotation Loaders
-
-{% for annot_ldr in annotation_loaders %}
-## {{ annot_ldr.name|markdown }}
-
-{{ annot_ldr.description|markdown }}
-
-### Parameters
-
-{% for parameter in annot_ldr.parameters %}
-**{{parameter.name|markdown}}** *({{parameter.type|markdown}})*{% if parameter.required %}, required{% else %} = {{parameter.default|markdown}}{%endif%}<br/>
-{{parameter.description|markdown}}
-
-{% for ensure in parameter.ensures %}
-* {{ensure|markdown}}
-{% endfor %}
-{% endfor %}
-
-{% if annot_ldr.ensures %}
-#### Other Conditions
-
-
-{% for ensure in annot_ldr.ensures %}
-* {{ ensure|markdown }}
-{% endfor %}
-{% endif %}
-
-{% endfor %}
-
-# Annotation Writers
-
-{% for annot_wtr in annotation_writers %}
-## {{ annot_wtr.name|markdown }}
-
-{{ annot_wtr.description|markdown }}
-
-### Parameters
-
-{% for parameter in annot_wtr.parameters %}
-**{{parameter.name|markdown}}** *({{parameter.type|markdown}})*{% if parameter.required %}, required{% else %} = {{parameter.default|markdown}}{%endif%}<br/>
-{{parameter.description|markdown}}
-
-{% for ensure in parameter.ensures %}
-* {{ensure|markdown}}
-{% endfor %}
-{% endfor %}
-
-{% if annot_wtr.ensures %}
-#### Other Conditions
-
-{% for ensure in annot_wtr.ensures %}
-* {{ ensure|markdown }}
-{% endfor %}
-{% endif %}
-
-{% endfor %}
-
-# Image Loaders
-
-{% for image_ldr in image_loaders %}
-## {{ image_ldr.name|markdown }}
-
-{{ image_ldr.description|markdown }}
-
-### Parameters
-
-{% for parameter in image_ldr.parameters %}
-**{{parameter.name|markdown}}** *({{parameter.type|markdown}})*{% if parameter.required %}, required{% else %} = {{parameter.default|markdown}}{%endif%}<br/>
-{{parameter.description|markdown}}
-
-{% for ensure in parameter.ensures %}
-* {{ensure|markdown}}
-{% endfor %}
-{% endfor %}
-
-{% if image_ldr.ensures %}
-#### Other Conditions
-
-{% for ensure in image_ldr.ensures %}
-* {{ ensure|markdown }}
-{% endfor %}
-{% endif %}
-
-{% endfor %}
-
-# Image Writers
-
-{% for image_wtr in image_writers %}
-## {{ image_wtr.name|markdown }}
-
-{{ image_wtr.description|markdown }}
-
-### Parameters
-
-{% for parameter in image_wtr.parameters %}
-**{{parameter.name|markdown}}** *({{parameter.type|markdown}})*{% if parameter.required %}, required{% else %} = {{parameter.default|markdown}}{%endif%}<br/>
-{{parameter.description|markdown}}
-
-{% for ensure in parameter.ensures %}
-* {{ensure|markdown}}
-{% endfor %}
-{% endfor %}
-
-{% if image_wtr.ensures %}
-#### Other Conditions
-
-{% for ensure in image_wtr.ensures %}
-* {{ ensure|markdown }}
-{% endfor %}
-{% endif %}
-
-{% endfor %}
-
-# Augmentations
-
-{% for augmentation in augmentations %}
-## {{ augmentation.name|markdown }}
-
-{{ augmentation.description|markdown }}
-
-### Example
-<table>
-<tr>
-<td style="vertical-align: bottom">
-<img src="{{ augmentation.sample_image }}"/>
-<br/>
-Input Image
-</td>
-<td style="vertical-align: bottom">
-<img src="{{ augmentation.augmented_image }}" />
-<br/>
-Augmented Image
-</td>
-</tr>
-</table>
-
-### Parameters
-
-{% for parameter in augmentation.parameters %}
-**{{parameter.name|markdown}}** *({{parameter.type|markdown}})*{% if parameter.required %}, required{% else %} = {{parameter.default|markdown}}{%endif%}<br/>
-{{parameter.description|markdown}}
-
-{% for ensure in parameter.ensures %}
-* {{ensure|markdown}}
-{% endfor %}
-{% endfor %}
-
-{% if augmentation.ensures %}
-#### Other Conditions
-
-{% for ensure in augmentation.ensures %}
-* {{ ensure|markdown }}
-{% endfor %}
-{% endif %}
-
-{% endfor %}
-"""
-
-
-def markdown_escape_filter(text):
-    """Escape special characters in Markdown."""
-    return text.replace("\\", "\\\\").replace("`", "\\`").replace(
-        "*", "\\*").replace("_", "\\_").replace("{", "\\{").replace(
-            "}", "\\}").replace("[", "\\[").replace("]", "\\]").replace(
-                "(", "\\(").replace(")", "\\)").replace("#", "\\#").replace(
-                    "+", "\\+").replace("-",
-                                        "\\-").replace(".", "\\.").replace(
-                                            "!", "\\!").replace("|", "\\|")
-
-
-template_env = Environment(loader=BaseLoader())
-template_env.filters['markdown'] = markdown_escape_filter
-
-doc_template = template_env.from_string(doc_template_str)
+from .doc_templates import augmentations as augmentation_options
 
 augmentation_fy = augmentations_factory.make_augmentations_factory()
 
@@ -275,8 +104,32 @@ def make_doc_object(obj):
     return doc_object
 
 
-def make_augmentation_doc_object(augmentation, sample_image_path, output_dir,
-                                 image_root):
+def load_annotations_for_sample_image(annotations_path):
+    """Load annotations for the sample image from a CSV file.
+
+    The CSV file should have the following format:
+
+    x_min, y_min, x_max, y_max, label
+    ...
+    """
+    annotations = []
+
+    with open(annotations_path, newline='') as csv_file:
+
+        reader = csv.DictReader(csv_file, skipinitialspace=True)
+
+        for row in reader:
+
+            annotations.append(
+                BoundingBox(float(row['x_min']), float(row['y_min']),
+                            float(row['x_max']), float(row['y_max']),
+                            int(row['label'])))
+
+    return annotations
+
+
+def make_augmentation_doc_object(augmentation, sample_image_path,
+                                 sample_annotations_path, output_dir):
     """Generate an object for documenting an augmentation in a template.
 
     This function invokes make_doc_object, and augments the returned
@@ -286,43 +139,80 @@ def make_augmentation_doc_object(augmentation, sample_image_path, output_dir,
     """
     doc_object = make_doc_object(augmentation)
 
-    augmentation_instance = augmentation_fy(augmentation.__name__)
+    options_dir = os.path.dirname(augmentation_options.__file__)
 
-    with image_loader_fy(
-            'Directory',
-            directory=os.path.dirname(sample_image_path)) as image_loader:
-        image = image_loader.load_image(os.path.basename(sample_image_path))
+    options = {}
+    try:
+        with open(
+                os.path.join(options_dir, "{}.yml".format(
+                    augmentation.__name__))) as options_file:
+            content = options_file.read()
+
+            options = yamale.make_data(content=content)[0][0]
+    except IOError:
+        pass
+
+    if options != {}:
+        doc_object["sample_options"] = yaml.dump(options,
+                                                 default_flow_style=False)
+
+    random.seed(1)
+    augmentation_instance = augmentation_fy(augmentation.__name__, **options)
+
+    image = load_image(sample_image_path)
+    annotations = load_annotations_for_sample_image(sample_annotations_path)
+
+    annotations = list(
+        map(lambda bbox: bbox.unnormalize(image.shape[1], image.shape[0]),
+            annotations))
 
     sample_image_path = os.path.join(
         output_dir, "{}-input.jpg".format(augmentation.__name__))
 
-    with image_writer_fy('Directory',
-                         directory=output_dir,
-                         clean_directory=False) as image_writer:
-        image_writer.write_image("{}-input.jpg".format(augmentation.__name__),
-                                 image)
+    save_image(
+        os.path.join(output_dir, "{}-input.jpg".format(augmentation.__name__)),
+        image)
+    save_image(
+        os.path.join(output_dir,
+                     "{}-input-bboxes.jpg".format(augmentation.__name__)),
+        image, annotations, (0, 255, 0), 15)
 
-        augmented_image = augmentation_instance.get_img(image)
+    bboxes = annotations_to_numpy_array(annotations)
 
-        image_writer.write_image("{}.jpg".format(augmentation.__name__),
-                                 augmented_image)
+    augmented_image, augmented_bboxes = augmentation_instance.augment(
+        image, bboxes)
 
-    doc_object["sample_image"] = os.path.join(
-        image_root, "{}-input.jpg".format(augmentation.__name__))
-    doc_object["augmented_image"] = os.path.join(
-        image_root, "{}.jpg".format(augmentation.__name__))
+    augmented_annotations = annotations_from_numpy_array(augmented_bboxes)
+
+    save_image(
+        os.path.join(output_dir, "{}.jpg".format(augmentation.__name__)),
+        augmented_image)
+    save_image(
+        os.path.join(output_dir,
+                     "{}-bboxes.jpg".format(augmentation.__name__)),
+        augmented_image, augmented_annotations, (0, 255, 0), 15)
+
+    doc_object["sample_image"] = "{}-input.jpg".format(augmentation.__name__)
+    doc_object["sample_image_bboxes"] = "{}-input-bboxes.jpg".format(
+        augmentation.__name__)
+    doc_object["augmented_image"] = "{}.jpg".format(augmentation.__name__)
+    doc_object["augmented_image_bboxes"] = "{}-bboxes.jpg".format(
+        augmentation.__name__)
 
     return doc_object
 
 
-def document(sample_image_path, output_dir, image_root):
-    """Produce documentation for loaders, writers, and annotations.
+def make_all_doc_objects(sample_image_path, sample_annotations_path,
+                         output_dir):
+    """Produce documentation objects for loaders, writers, and annotations.
 
-    Finished documentation is written to stdout. The image in
-    sample_image_path will be used to showcase installed
-    augmentations. Augmented images will be stored in output_dir,
-    and referenced within the finished documentation as being
-    in image_root.
+    The doc objects are returned in dictionary that can be passed to a
+    template.
+
+    The image in sample_image_path will be used to showcase installed
+    augmentations. Augmented images will be stored in output_dir, and
+    referenced within the finished documentation as being in
+    image_root.
     """
     annotation_ldrs_set = annotation_loader_factory.get_annotation_loader_set()
     annotation_wtrs_set = annotation_writer_factory.get_annotation_writer_set()
@@ -366,7 +256,7 @@ def document(sample_image_path, output_dir, image_root):
                              unit="aug"):
         augmentations_list.append(
             make_augmentation_doc_object(augmentation, sample_image_path,
-                                         output_dir, image_root))
+                                         sample_annotations_path, output_dir))
 
     annotation_loaders_list.sort(key=lambda do: do["name"])
     annotation_writers_list.sort(key=lambda do: do["name"])
@@ -375,36 +265,10 @@ def document(sample_image_path, output_dir, image_root):
 
     augmentations_list.sort(key=lambda ado: ado["name"])
 
-    print(
-        doc_template.render(augmentations=augmentations_list,
-                            annotation_loaders=annotation_loaders_list,
-                            annotation_writers=annotation_writers_list,
-                            image_loaders=image_loaders_list,
-                            image_writers=image_writers_list))
-
-
-def main():
-    """Start the command-line interface to the document function."""
-    parser = argparse.ArgumentParser(
-        description='Generate Discolight documentation')
-
-    parser.add_argument('--sample-image',
-                        dest='sample_image_path',
-                        default=['./sample_images/wheat1.jpg'],
-                        nargs=1)
-    parser.add_argument('--output-dir',
-                        dest='output_dir',
-                        default=['./doc/images'],
-                        nargs=1)
-    parser.add_argument('--image-root',
-                        dest='image_root',
-                        default=['images/'],
-                        nargs=1)
-
-    args = parser.parse_args()
-
-    document(args.sample_image_path[0], args.output_dir[0], args.image_root[0])
-
-
-if __name__ == "__main__":
-    main()
+    return {
+        "augmentations": augmentations_list,
+        "annotation_loaders": annotation_loaders_list,
+        "annotation_writers": annotation_writers_list,
+        "image_loaders": image_loaders_list,
+        "image_writers": image_writers_list
+    }

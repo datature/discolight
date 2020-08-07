@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 
 
-def draw_rect(img, bboxes, color=None):
+def draw_rect(img, bboxes, color=None, stroke=None):
     """Draw annotation bounding boxes on the image as red rectangles."""
     img = img.copy()
     bboxes = bboxes[:, :4]
@@ -12,8 +12,8 @@ def draw_rect(img, bboxes, color=None):
         pt1, pt2 = (bbox[0], bbox[1]), (bbox[2], bbox[3])
         pt1 = int(pt1[0]), int(pt1[1])
         pt2 = int(pt2[0]), int(pt2[1])
-        img = cv2.rectangle(img.copy(), pt1, pt2, color,
-                            int(max(img.shape[:2]) / 200))
+        stroke = int(max(img.shape[:2]) / 200) if stroke is None else stroke
+        img = cv2.rectangle(img.copy(), pt1, pt2, color, stroke)
     return img
 
 
