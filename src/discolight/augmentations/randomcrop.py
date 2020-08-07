@@ -1,10 +1,25 @@
 """An augmentation that randomly crops an image."""
-import cv2
 import random
+import cv2
 import numpy as np
 from discolight.params.params import Params
 from .augmentation.types import Augmentation, BoundedNumber
 from .decorators.accepts_probs import accepts_probs
+
+
+def get_bboxes_in_cropped_area(x, y, w, h, bboxlist):
+    """Filter out bounding boxes within the given cropped area."""
+    bboxes = []
+
+    for item in bboxlist:
+        # if xmin is greater or equal to x, if bbox is inside the crop
+        if ((item[0] >= x) and (item[1] >= y) and (item[2] <= (x + w))
+                and (item[3] <= (y + h))):
+            bboxes.append(item)
+        else:
+            continue
+
+    return bboxes
 
 
 @accepts_probs
@@ -31,19 +46,6 @@ class RandomCrop(Augmentation):
                                 "max_height",
                                 "Maximum height of cropped area (normalized)",
                                 BoundedNumber(float, 0, 1), 0.7)
-
-    def get_bboxes_in_cropped_area(self, x, y, w, h, bboxlist):
-        """Filter out bounding boxes within the given cropped area."""
-        bboxes = []
-
-        for item in bboxlist:
-            # if xmin is greater or equal to x, if bbox is inside the crop
-            if ((item[0] >= x) and (item[1] >= y) and (item[2] <= (x + w))
-                    and (item[3] <= (y + h))):
-                bboxes.append(item)
-            else:
-                continue
-        return bboxes
 
     def augment(self, img, bboxes, iteration=100):
         """Augment an image."""
