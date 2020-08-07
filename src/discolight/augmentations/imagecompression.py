@@ -15,7 +15,7 @@ class ImageCompression(ColorAugmentation):
     """
 
     def __init__(self, strength):
-        """Construct a Image compression augmentation.
+        """Construct a ImageCompression augmentation.
 
         You should probably use the augmentation factory or Discolight
         library interface to construct augmentations. Only invoke
