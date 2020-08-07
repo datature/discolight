@@ -358,6 +358,68 @@ The probability that this augmentation will be applied
 
 
 
+## RandomCrop
+
+Randomly crops the given image\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/RandomCrop-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomCrop.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomCrop-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomCrop-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**max\_height** *(float in range \[0, 1\])* = 0\.7<br/>
+Maximum height of cropped area \(normalized\)
+
+
+
+**max\_width** *(float in range \[0, 1\])* = 0\.7<br/>
+Maximum width of cropped area \(normalized\)
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+Sample image augmented with options:
+```
+max_height: 0.9
+max_width: 0.9
+```
+
+
+
+
+
 ## RandomEraser
 
 Randomly erase a rectangular area in the given image\.

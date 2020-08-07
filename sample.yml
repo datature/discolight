@@ -20,6 +20,7 @@ output:
       annotations_file: ./output_folder/aug_annotations.csv
       normalized: true
 augmentations:
+  - name: RandomCrop
   - name: Sequence
     options:
       augmentations:
