@@ -10,7 +10,6 @@ class ImageCompression(ColorAugmentation):
 
     """Apply a compression effect to the given image.
 
-    Works for both jpeg/jpg and png format.
     This function is a lossy JPEG compression operation.
     """
 
@@ -28,10 +27,7 @@ class ImageCompression(ColorAugmentation):
     def params():
         """Return a Params object describing constructor parameters."""
         return Params().add(
-            "strength",
-            "Compression strength",
-            BoundedNumber(int, 0, 100),
-            1,
+            "strength", "Compression strength", BoundedNumber(int, 0, 100), 1,
         )
 
     def augment_img(self, img, _bboxes):
