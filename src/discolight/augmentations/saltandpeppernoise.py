@@ -51,11 +51,11 @@ class SaltAndPepperNoise(ColorAugmentation):
         """Augment an image."""
         np.random.seed(floor(random.random() * 1000000))
 
-        if self.noise_type == "SnP":
+        if self.noise_type == NoiseType.SnP:
             random_matrix = np.random.rand(img.shape[0], img.shape[1])
             img[random_matrix >= (1 - self.replace_probs)] = self.salt
             img[random_matrix <= self.replace_probs] = self.pepper
-        elif self.noise_type == "RGB":
+        elif self.noise_type == NoiseType.RGB:
             random_matrix = np.random.rand(img.shape[0], img.shape[1],
                                            img.shape[2])
             img[random_matrix >= (1 - self.replace_probs)] = self.salt

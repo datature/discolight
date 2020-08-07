@@ -5,12 +5,9 @@ import random
 import pytest
 import yamale
 import numpy as np
-from discolight.annotations import (annotations_to_numpy_array,
-                                    annotations_from_numpy_array)
+from discolight.annotations import annotations_to_numpy_array
 from discolight.augmentations.augmentation.types import ColorAugmentation
 from discolight.writers.image.directory import Directory as DirectoryWriter
-from discolight.writers.annotation.fourcornerscsv import (FourCornersCSV as
-                                                          FourCornersCSVWriter)
 from discolight.disco import disco
 from discolight.util.image import save_image
 import discolight.augmentations.factory as factory
@@ -60,18 +57,13 @@ def test_augmentation(augmentation, snapshot, tmp_path, sample_image):
         ), "{} is a ColorAugmentation, but it modified bboxes".format(
             augmentation.__name__)
 
-    aug_annotations = annotations_from_numpy_array(aug_bboxes)
+    with DirectoryWriter(directory=tmp_path,
+                         clean_directory=False) as image_writer:
 
-    with DirectoryWriter(
-            directory=tmp_path,
-            clean_directory=False) as image_writer, FourCornersCSVWriter(
-                annotations_file=os.path.join(
-                    tmp_path, "{}-bboxes".format(augmentation.__name__)),
-                normalized=True) as annotation_writer:
-
-        annotation_writer.write_annotations_for_image(
-            "{}-image.jpg".format(augmentation.__name__), aug_img,
-            aug_annotations)
+        np.save(
+            os.path.join(tmp_path,
+                         "{}-bboxes.npy".format(augmentation.__name__)),
+            aug_bboxes)
 
         image_writer.write_image("{}-image.jpg".format(augmentation.__name__),
                                  aug_img)
@@ -82,8 +74,9 @@ def test_augmentation(augmentation, snapshot, tmp_path, sample_image):
             os.mkdir("./snapshots/augmentations")
 
         shutil.copy(
-            os.path.join(tmp_path, "{}-bboxes".format(augmentation.__name__)),
-            "./snapshots/augmentations/{}-bboxes".format(
+            os.path.join(tmp_path,
+                         "{}-bboxes.npy".format(augmentation.__name__)),
+            "./snapshots/augmentations/{}-bboxes.npy".format(
                 augmentation.__name__))
         shutil.copy(
             os.path.join(tmp_path,
@@ -92,10 +85,15 @@ def test_augmentation(augmentation, snapshot, tmp_path, sample_image):
                 augmentation.__name__))
         return
 
-    assert filecmp.cmp(
-        os.path.join(tmp_path, "{}-bboxes".format(augmentation.__name__)),
-        "./snapshots/augmentations/{}-bboxes".format(augmentation.__name__)
-    ), "Bounding boxes for {} do not match".format(augmentation.__name__)
+    snapshot_bboxes = np.load(
+        os.path.join("./snapshots/augmentations/{}-bboxes.npy".format(
+            augmentation.__name__)))
+
+    assert np.array_equal(
+        aug_bboxes,
+        snapshot_bboxes), "Bounding boxes for {} do not match".format(
+            augmentation.__name__)
+
     assert filecmp.cmp(
         os.path.join(tmp_path, "{}-image.jpg".format(augmentation.__name__)),
         "./snapshots/augmentations/{}-image.jpg".format(
@@ -122,16 +120,14 @@ def test_disco_constructed_augmentation_same_as_factory_constructed(
 
     save_image(os.path.join(tmp_path, "aug_image.jpg"), aug_img)
 
-    with FourCornersCSVWriter(os.path.join(tmp_path, "aug_annotations.csv"),
-                              True) as annotations_writer:
+    aug_bboxes = annotations_to_numpy_array(aug_annotations)
 
-        annotations_writer.write_annotations_for_image(
-            "{}-image.jpg".format(name), aug_img, aug_annotations)
+    snapshot_bboxes = np.load(
+        os.path.join("./snapshots/augmentations/{}-bboxes.npy".format(name)))
 
-    assert filecmp.cmp(
-        os.path.join(tmp_path, "aug_annotations.csv"),
-        "./snapshots/augmentations/{}-bboxes".format(
-            name)), "Bounding boxes for {} do not match".format(name)
+    assert np.array_equal(
+        aug_bboxes,
+        snapshot_bboxes), "Bounding boxes for {} do not match".format(name)
     assert filecmp.cmp(os.path.join(tmp_path, "aug_image.jpg"),
                        "./snapshots/augmentations/{}-image.jpg".format(
                            name)), "Images for {} do not match".format(name)
