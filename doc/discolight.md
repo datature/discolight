@@ -410,6 +410,11 @@ The probability that this augmentation will be applied
 
 
 
+Sample image augmented with options:
+```
+kernel_size: 100
+```
+
 
 
 
