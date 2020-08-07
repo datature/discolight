@@ -31,7 +31,7 @@ class ImageCompression(ColorAugmentation):
             "strength",
             "Compression strength between 0 to 100",
             BoundedNumber(int, 0, 100),
-            10,
+            1,
         )
 
     def augment_img(self, img, _bboxes):

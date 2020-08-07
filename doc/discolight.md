@@ -401,7 +401,7 @@ The probability that this augmentation will be applied
 
 
 
-**strength** *(int in range \[0, 100\])* = 10<br/>
+**strength** *(int in range \[0, 100\])* = 1<br/>
 Compression strength between 0 to 100
 
 
