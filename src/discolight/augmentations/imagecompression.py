@@ -29,7 +29,7 @@ class ImageCompression(ColorAugmentation):
         """Return a Params object describing constructor parameters."""
         return Params().add(
             "strength",
-            "Compression strength between 0 to 100",
+            "Compression strength",
             BoundedNumber(int, 0, 100),
             1,
         )
