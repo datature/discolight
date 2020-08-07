@@ -358,6 +358,62 @@ The probability that this augmentation will be applied
 
 
 
+## MotionBlur
+
+Add motionblur to a given image\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/MotionBlur-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/MotionBlur.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/MotionBlur-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/MotionBlur-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**direction** *(DOWN \| UP \| RIGHT \| LEFT \| TOPRIGHT \| TOPLEFT \| BOTTOMLEFT \| BOTTOMRIGHT)* = DOWN<br/>
+direction in which the blur is pointer towards
+
+
+
+**kernel\_size** *(int in range \[0, Inf\])* = 10<br/>
+Specify the kernel size, greater the size, the more the motion
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
+
 ## RandomEraser
 
 Randomly erase a rectangular area in the given image\.
