@@ -358,6 +358,60 @@ The probability that this augmentation will be applied
 
 
 
+## ImageCompression
+
+Image compress the given image\.
+
+Works for both jpeg/jpg and png format\.
+This function is a lossy JPEG compression operation\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+**strength** *(int in range \[0, 100\])* = 10<br/>
+Compression strength between 0 to 100
+
+
+
+
+
+
+
+
+
 ## RandomEraser
 
 Randomly erase a rectangular area in the given image\.

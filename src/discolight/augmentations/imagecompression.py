@@ -1,7 +1,7 @@
 """A Image compression augmentation."""
 import cv2
 from discolight.params.params import Params
-from .augmentation.types import ColorAugmentation
+from .augmentation.types import ColorAugmentation, BoundedNumber
 from .decorators.accepts_probs import accepts_probs
 
 
@@ -28,13 +28,14 @@ class ImageCompression(ColorAugmentation):
     def params():
         """Return a Params object describing constructor parameters."""
         return Params().add(
-            "strength", "Compression strength between 0 to 100", int, 10
+            "strength",
+            "Compression strength between 0 to 100",
+            BoundedNumber(int, 0, 100),
+            10,
         )
 
     def augment_img(self, img, _bboxes):
         """Augment an image."""
-        # Ensure strength value do not go out of range
-        self.strength = min(max(self.strength, 0), 100)
 
         _, encoded_img = cv2.imencode(
             ".jpg", img, [int(cv2.IMWRITE_JPEG_QUALITY), int(self.strength)]
