@@ -1,3 +1,4 @@
+"""Apply Motion Blur."""
 from enum import Enum
 import numpy as np
 import cv2
@@ -7,6 +8,9 @@ from .decorators.accepts_probs import accepts_probs
 
 
 class Direction(Enum):
+
+    """Corresponding enum objects for 8 directions."""
+
     DOWN = "DOWN"
     UP = "UP"
     RIGHT = "RIGHT"
@@ -23,6 +27,12 @@ class MotionBlur(Augmentation):
     """Add motionblur to a given image."""
 
     def __init__(self, kernel_size, direction):
+        """Construct a MotionBlur augmenation.
+
+        You should probably use the augmentation factory or Discolight
+        library interface to construct augmentations. Only invoke
+        this constructor directly if you know what you are doing.
+        """
         super().__init__()
 
         self.kernel_size = kernel_size
@@ -41,7 +51,6 @@ class MotionBlur(Augmentation):
 
     def augment(self, img, bboxes):
         """Augment an image."""
-
         kernel = np.zeros((self.kernel_size, self.kernel_size))
 
         if self.direction == Direction.DOWN:
