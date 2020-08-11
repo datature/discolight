@@ -1,64 +1,105 @@
 # Annotation Loaders
 
+
 ## FourCornersCSV
 
 Loads annotations from a CSV file in the following format\.
 
-image_name, x_min, y_min, x_max, y_max, label
+image\_name, x\_min, y\_min, x\_max, y\_max, label
 
 ### Parameters
 
-**annotations_file** _(str)_, required<br/>
+
+**annotations\_file** *(str)*, required<br/>
 The path to the CSV file containing the annotations
 
-**normalized** _(bool)_ = True<br/>
+
+
+**normalized** *(bool)* = True<br/>
 whether the bounding box coordinates are stored in a normalized format
+
+
+
+
+
+
 
 ## WidthHeightCSV
 
 Loads annotations from a CSV file in the following format\.
 
-image_name, x_min, y_min, width, height, label
+image\_name, x\_min, y\_min, width, height, label
 
 ### Parameters
 
-**annotations_file** _(str)_, required<br/>
+
+**annotations\_file** *(str)*, required<br/>
 The path to the CSV file containing the annotations
 
-**normalized** _(bool)_ = True<br/>
+
+
+**normalized** *(bool)* = True<br/>
 whether the bounding box coordinates are stored in a normalized format
+
+
+
+
+
+
+
 
 # Annotation Writers
 
+
 ## FourCornersCSV
 
 Writes annotations to a CSV file in the following format\.
 
-image_name, x_min, y_min, x_max, y_max, label
+image\_name, x\_min, y\_min, x\_max, y\_max, label
 
 ### Parameters
 
-**annotations_file** _(str)_, required<br/>
+
+**annotations\_file** *(str)*, required<br/>
 The path to the CSV file to write the annotations to
 
-**normalized** _(bool)_ = True<br/>
+
+
+**normalized** *(bool)* = True<br/>
 whether the bounding box coordinates should be normalized before saving
+
+
+
+
+
+
 
 ## WidthHeightCSV
 
 Writes annotations to a CSV file in the following format\.
 
-image_name, x_min, y_min, width, height, label
+image\_name, x\_min, y\_min, width, height, label
 
 ### Parameters
 
-**annotations_file** _(str)_, required<br/>
+
+**annotations\_file** *(str)*, required<br/>
 The path to the CSV file to write the annotations to
 
-**normalized** _(bool)_ = True<br/>
+
+
+**normalized** *(bool)* = True<br/>
 whether the bounding box coordinates should be normalized before saving
 
+
+
+
+
+
+
+
 # Image Loaders
+
 
 ## Directory
 
@@ -69,10 +110,19 @@ the same name in the given directory\.
 
 ### Parameters
 
-**directory** _(str)_, required<br/>
+
+**directory** *(str)*, required<br/>
 The directory from which to load images
 
+
+
+
+
+
+
+
 # Image Writers
+
 
 ## Directory
 
@@ -82,13 +132,24 @@ Images will be saved to a file with the given name in the given directory\.
 
 ### Parameters
 
-**clean_directory** _(bool)_ = True<br/>
+
+**clean\_directory** *(bool)* = True<br/>
 whether to forcibly ensure the output directory is empty
 
-**directory** _(str)_, required<br/>
+
+
+**directory** *(str)*, required<br/>
 the directory to save images to
 
+
+
+
+
+
+
+
 # Augmentations
+
 
 ## ColorTemperature
 
@@ -103,7 +164,6 @@ augmenters\.ChangeColorTemperature\(\) function\. @aleju/imgaug
 library can be found at <https://github\.com/aleju/imgaug/>
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -133,18 +193,28 @@ library can be found at <https://github\.com/aleju/imgaug/>
 
 ### Parameters
 
-**kelvin** _(int in range \[1000, 40000\])_ = 3000<br/>
+
+**kelvin** *(int in range \[1000, 40000\])* = 3000<br/>
 temperature value in to which temperature should be changed
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
 
 ## GaussianNoise
 
 Add gaussian noise to the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -174,19 +244,33 @@ Add gaussian noise to the given image\.
 
 ### Parameters
 
-**mean** _(float)_ = 0<br/>
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+**mean** *(float)* = 0<br/>
+
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-**variance** _(float)_ = 0\.01<br/>
+
+
+**variance** *(float)* = 0\.01<br/>
+
+
+
+
+
+
+
+
+
 
 ## GrayScale
 
 Return a grayscale version of the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -216,15 +300,23 @@ Return a grayscale version of the given image\.
 
 ### Parameters
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
 
 ## HorizontalFlip
 
 Horizontally flips the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -254,15 +346,76 @@ Horizontally flips the given image\.
 
 ### Parameters
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
+
+## ImageCompression
+
+Apply a compression effect to the given image\.
+
+This function is a lossy JPEG compression operation\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+**strength** *(int in range \[0, 100\])* = 1<br/>
+Compression strength
+
+
+
+
+
+
+
+
 
 ## RandomCrop
 
 Randomly crops the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -292,21 +445,33 @@ Randomly crops the given image\.
 
 ### Parameters
 
-**max_height** _(float in range \[0, 1\])_ = 0\.7<br/>
+
+**max\_height** *(float in range \[0, 1\])* = 0\.7<br/>
 Maximum height of cropped area \(normalized\)
 
-**max_width** _(float in range \[0, 1\])_ = 0\.7<br/>
+
+
+**max\_width** *(float in range \[0, 1\])* = 0\.7<br/>
 Maximum width of cropped area \(normalized\)
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-Sample image augmented with options:
 
+
+
+
+Sample image augmented with options:
 ```
 max_height: 0.9
 max_width: 0.9
 ```
+
+
+
+
 
 ## RandomEraser
 
@@ -315,7 +480,6 @@ Randomly erase a rectangular area in the given image\.
 The erased area is replaced with random noise\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -345,21 +509,33 @@ The erased area is replaced with random noise\.
 
 ### Parameters
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-**x_range** _(range in \[0\.0, 1\.0\])_ = \(0\.0, 1\.0\)<br/>
+
+
+**x\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
 normalized x range for coordinates that may be erased
 
-**y_range** _(range in \[0\.0, 1\.0\])_ = \(0\.0, 1\.0\)<br/>
+
+
+**y\_range** *(range in \[0\.0, 1\.0\])* = \(0\.0, 1\.0\)<br/>
 normalized y range for coordinates that may be erased
+
+
+
+
+
+
+
+
 
 ## RandomHSV
 
 Randomly shift the color space of the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -389,21 +565,38 @@ Randomly shift the color space of the given image\.
 
 ### Parameters
 
-**brightness** _(range in \[\-Inf, Inf\])_ = \(0\.0, 0\.0\)<br/>
 
-**hue** _(range in \[\-Inf, Inf\])_ = \(0\.0, 0\.0\)<br/>
+**brightness** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+
+
+**hue** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
+
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-**saturation** _(range in \[\-Inf, Inf\])_ = \(0\.0, 0\.0\)<br/>
+
+
+**saturation** *(range in \[\-Inf, Inf\])* = \(0\.0, 0\.0\)<br/>
+
+
+
+
+
+
+
+
+
 
 ## RandomRotate
 
 Randomly rotate the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -433,18 +626,28 @@ Randomly rotate the given image\.
 
 ### Parameters
 
-**angle_range** _(range in \[\-360\.0, 360\.0\])_ = \(\-10\.0, 10\.0\)<br/>
+
+**angle\_range** *(range in \[\-360\.0, 360\.0\])* = \(\-10\.0, 10\.0\)<br/>
 The range from which the random angle will be chosen
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
 
 ## Rotate
 
 Rotate the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -474,17 +677,28 @@ Rotate the given image\.
 
 ### Parameters
 
-**angle** _(float)_ = 5<br/>
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+**angle** *(float)* = 5<br/>
+
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
 
 ## SaltAndPepperNoise
 
 Add salt and pepper or RGB noise to the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -514,26 +728,43 @@ Add salt and pepper or RGB noise to the given image\.
 
 ### Parameters
 
-**noise_type** _(RGB \| SnP)_ = RGB<br/>
+
+**noise\_type** *(RGB \| SnP)* = RGB<br/>
 The type of noise
 
-**pepper** _(int in range \[0, 255\])_ = 0<br/>
+
+
+**pepper** *(int in range \[0, 255\])* = 0<br/>
 The color of the pepper
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-**replace_probs** _(float)_ = 0\.1<br/>
 
-**salt** _(int in range \[0, 255\])_ = 255<br/>
+
+**replace\_probs** *(float)* = 0\.1<br/>
+
+
+
+
+**salt** *(int in range \[0, 255\])* = 255<br/>
 The color of the salt
+
+
+
+
+
+
+
+
 
 ## Scale
 
 Scale the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -563,19 +794,33 @@ Scale the given image\.
 
 ### Parameters
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-**scale_x** _(float in range \[\-1\.0, Inf\])_ = 0\.2<br/>
 
-**scale_y** _(float in range \[\-1\.0, Inf\])_ = 0\.2<br/>
+
+**scale\_x** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
+
+
+
+
+**scale\_y** *(float in range \[\-1\.0, Inf\])* = 0\.2<br/>
+
+
+
+
+
+
+
+
+
 
 ## Sepia
 
 Returns a given image passed through the sepia filter\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -605,15 +850,23 @@ Returns a given image passed through the sepia filter\.
 
 ### Parameters
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
 
 ## Sequence
 
 Perform a sequence of augmentations on the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -643,13 +896,20 @@ Perform a sequence of augmentations on the given image\.
 
 ### Parameters
 
-**augmentations** _(augmentation_list)_ = \[\]<br/>
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+**augmentations** *(augmentation\_list)* = \[\]<br/>
+
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-Sample image augmented with options:
 
+
+
+
+Sample image augmented with options:
 ```
 augmentations:
 - name: GrayScale
@@ -661,12 +921,15 @@ augmentations:
     noise_type: SnP
 ```
 
+
+
+
+
 ## Shear
 
 Horizontally shear the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -696,17 +959,28 @@ Horizontally shear the given image\.
 
 ### Parameters
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-**shear_factor** _(float)_ = 0\.2<br/>
+
+
+**shear\_factor** *(float)* = 0\.2<br/>
+
+
+
+
+
+
+
+
+
 
 ## Translate
 
 Translate the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -736,19 +1010,33 @@ Translate the given image\.
 
 ### Parameters
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
-**translate_x** _(float in range \[0\.0, 1\.0\])_ = 0\.2<br/>
 
-**translate_y** _(float in range \[0\.0, 1\.0\])_ = 0\.2<br/>
+
+**translate\_x** *(float in range \[0\.0, 1\.0\])* = 0\.2<br/>
+
+
+
+
+**translate\_y** *(float in range \[0\.0, 1\.0\])* = 0\.2<br/>
+
+
+
+
+
+
+
+
+
 
 ## VerticalFlip
 
 Vertically flip the given image\.
 
 ### Example
-
 <table style="width: 100%">
 <tr>
 <td><b>Input Image</b></td>
@@ -778,5 +1066,14 @@ Vertically flip the given image\.
 
 ### Parameters
 
-**probs** _(float in range \[0\.0, 1\.0\])_ = 1\.0<br/>
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
