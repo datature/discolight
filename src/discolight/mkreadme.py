@@ -41,6 +41,18 @@ def make_readme_md(doc_objects, readme_template):
         readme_md_file.write(readme_md)
 
 
+def make_longdescription_md(doc_objects, readme_template):
+    """Render the longdescription.md documentation file."""
+    longdescription_md = readme_template.render(
+        image_root="https://raw.githubusercontent.com/"
+        "datature/discolight/master/doc/images/",
+        **doc_objects)
+
+    with open("./longdescription.md", "w") as longdescription_file:
+
+        longdescription_file.write(longdescription_md)
+
+
 sample_image_path = "./sample_images/rocks.jpg"
 sample_annotations_path = "./sample_images/doc-annotations.csv"
 output_dir = "./doc/images/"
@@ -62,6 +74,8 @@ def main():
     make_discolight_md(doc_objects, doc_template)
 
     make_readme_md(doc_objects, readme_template)
+
+    make_longdescription_md(doc_objects, readme_template)
 
 
 if __name__ == "__main__":
