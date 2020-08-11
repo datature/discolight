@@ -41,7 +41,7 @@ the contents of the repository folder:
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#{{ augmentation.name }}">{{augmentation.name}}</a></b>
+<b><a href="{{ discolight_md_url }}#{{ augmentation.name }}">{{augmentation.name}}</a></b>
 <br/>
 {{ augmentation.description | firstline }}
 </td>

@@ -41,7 +41,7 @@ the contents of the repository folder:
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#ColorTemperature">ColorTemperature</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#ColorTemperature">ColorTemperature</a></b>
 <br/>
 Changes the color temperature of the input image.
 </td>
@@ -67,7 +67,7 @@ Changes the color temperature of the input image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#GaussianNoise">GaussianNoise</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#GaussianNoise">GaussianNoise</a></b>
 <br/>
 Add gaussian noise to the given image.
 </td>
@@ -93,7 +93,7 @@ Add gaussian noise to the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#GrayScale">GrayScale</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#GrayScale">GrayScale</a></b>
 <br/>
 Return a grayscale version of the given image.
 </td>
@@ -119,7 +119,7 @@ Return a grayscale version of the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#HorizontalFlip">HorizontalFlip</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#HorizontalFlip">HorizontalFlip</a></b>
 <br/>
 Horizontally flips the given image.
 </td>
@@ -145,7 +145,7 @@ Horizontally flips the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#ImageCompression">ImageCompression</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#ImageCompression">ImageCompression</a></b>
 <br/>
 Apply a compression effect to the given image.
 </td>
@@ -171,7 +171,7 @@ Apply a compression effect to the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#RandomCrop">RandomCrop</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#RandomCrop">RandomCrop</a></b>
 <br/>
 Randomly crops the given image.
 </td>
@@ -197,7 +197,7 @@ Randomly crops the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#RandomEraser">RandomEraser</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#RandomEraser">RandomEraser</a></b>
 <br/>
 Randomly erase a rectangular area in the given image.
 </td>
@@ -223,7 +223,7 @@ Randomly erase a rectangular area in the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#RandomHSV">RandomHSV</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#RandomHSV">RandomHSV</a></b>
 <br/>
 Randomly shift the color space of the given image.
 </td>
@@ -249,7 +249,7 @@ Randomly shift the color space of the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#RandomRotate">RandomRotate</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#RandomRotate">RandomRotate</a></b>
 <br/>
 Randomly rotate the given image.
 </td>
@@ -275,7 +275,7 @@ Randomly rotate the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#Rotate">Rotate</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#Rotate">Rotate</a></b>
 <br/>
 Rotate the given image.
 </td>
@@ -301,7 +301,7 @@ Rotate the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#SaltAndPepperNoise">SaltAndPepperNoise</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#SaltAndPepperNoise">SaltAndPepperNoise</a></b>
 <br/>
 Add salt and pepper or RGB noise to the given image.
 </td>
@@ -327,7 +327,7 @@ Add salt and pepper or RGB noise to the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#Scale">Scale</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#Scale">Scale</a></b>
 <br/>
 Scale the given image.
 </td>
@@ -353,7 +353,7 @@ Scale the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#Sepia">Sepia</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#Sepia">Sepia</a></b>
 <br/>
 Returns a given image passed through the sepia filter.
 </td>
@@ -379,7 +379,7 @@ Returns a given image passed through the sepia filter.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#Sequence">Sequence</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#Sequence">Sequence</a></b>
 <br/>
 Perform a sequence of augmentations on the given image.
 </td>
@@ -405,7 +405,7 @@ Perform a sequence of augmentations on the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#Shear">Shear</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#Shear">Shear</a></b>
 <br/>
 Horizontally shear the given image.
 </td>
@@ -431,7 +431,7 @@ Horizontally shear the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#Translate">Translate</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#Translate">Translate</a></b>
 <br/>
 Translate the given image.
 </td>
@@ -457,7 +457,7 @@ Translate the given image.
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#VerticalFlip">VerticalFlip</a></b>
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#VerticalFlip">VerticalFlip</a></b>
 <br/>
 Vertically flip the given image.
 </td>

@@ -34,7 +34,9 @@ def make_discolight_md(doc_objects, doc_template):
 
 def make_readme_md(doc_objects, readme_template):
     """Render the README.md documentation file."""
-    readme_md = readme_template.render(image_root='doc/images/', **doc_objects)
+    readme_md = readme_template.render(discolight_md_url='doc/discolight.md',
+                                       image_root='doc/images/',
+                                       **doc_objects)
 
     with open("./README.md", "w") as readme_md_file:
 
@@ -44,6 +46,8 @@ def make_readme_md(doc_objects, readme_template):
 def make_longdescription_md(doc_objects, readme_template):
     """Render the longdescription.md documentation file."""
     longdescription_md = readme_template.render(
+        discolight_md_url="https://github.com/datature/discolight"
+        "/blob/master/doc/discolight.md",
         image_root="https://raw.githubusercontent.com/"
         "datature/discolight/master/doc/images/",
         **doc_objects)
