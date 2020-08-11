@@ -41,32 +41,6 @@ the contents of the repository folder:
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#CoarseDropout">CoarseDropout</a></b>
-<br/>
-Randomly erases a percentage of the given image using squares.
-</td>
-
-<td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/CoarseDropout-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
-</td>
-
-<td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/CoarseDropout.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
-</td>
-
-<td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/CoarseDropout-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
-</td>
-
-<td style="width: 20%; vertical-align: bottom">
-<img src="doc/images/CoarseDropout-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
-</td>
-
-</tr>
-
-<tr>
-
-<td style="width: 20%">
 <b><a href="doc/discolight.md#ColorTemperature">ColorTemperature</a></b>
 <br/>
 Changes the color temperature of the input image.
