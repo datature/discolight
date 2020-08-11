@@ -145,6 +145,7 @@ Horizontally flips the given image.
 <tr>
 
 <td style="width: 20%">
+<<<<<<< HEAD
 <b><a href="doc/discolight.md#ImageCompression">ImageCompression</a></b>
 <br/>
 Image compress the given image.
@@ -164,6 +165,27 @@ Image compress the given image.
 
 <td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/ImageCompression-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+=======
+<b><a href="doc/discolight.md#RandomCrop">RandomCrop</a></b>
+<br/>
+Randomly crops the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomCrop-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomCrop.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomCrop-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomCrop-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+>>>>>>> cc48f6a99f609cad6d1c037f3197da677396bf12
 </td>
 
 </tr>
