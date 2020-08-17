@@ -171,6 +171,32 @@ Apply a compression effect to the given image.
 <tr>
 
 <td style="width: 20%">
+<b><a href="doc/discolight.md#MotionBlur">MotionBlur</a></b>
+<br/>
+Add motionblur to a given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/MotionBlur-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/MotionBlur.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/MotionBlur-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/MotionBlur-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
 <b><a href="doc/discolight.md#RandomCrop">RandomCrop</a></b>
 <br/>
 Randomly crops the given image.
