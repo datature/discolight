@@ -55,7 +55,7 @@ class Rotate(Augmentation):
             rotated_img_resized = rotated_img_resized.reshape(height, width, 1)
             # code below transform the bboxes accordingly.
 
-        if len(bboxes) > 0:
+        if bboxes.size > 0:
             corners = bbox_utilities.get_corners(bboxes)
             corners = np.hstack((corners, bboxes[:, 4:]))
             corners[:, :8] = bbox_utilities.rotate_box(corners[:, :8], angle,

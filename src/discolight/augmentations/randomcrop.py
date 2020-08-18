@@ -60,7 +60,7 @@ class RandomCrop(Augmentation):
                                                     crop_height, bboxes)
 
         # if no bbox, get_aug return false; and recall .get_aug
-        if len(reduced_bboxes) == 0 and len(bboxes) > 0:
+        if reduced_bboxes.size == 0 and bboxes.size > 0:
             return self.augment(img, bboxes, iteration - 1)
 
         cropped_img = img[y:y + crop_height, x:x + crop_width]
