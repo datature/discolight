@@ -104,14 +104,14 @@ def get_enclosing_box(corners):
     return final
 
 
-def letterbox_image(img, input_dimension):
+def letterbox_image(img, input_dim, interpolation=cv2.INTER_LINEAR):
     """Resize the image to input_dimension, preserving aspect ratio."""
-    input_dimension = (input_dimension, input_dimension)
+    input_dimension = (input_dim, input_dim)
     img_w, img_h = img.shape[1], img.shape[0]
     width, height = input_dimension
     new_w = int(img_w * min(width / img_w, height / img_h))
     new_h = int(img_h * min(width / img_w, height / img_h))
-    resized_image = cv2.resize(img, (new_w, new_h))
+    resized_image = cv2.resize(img, (new_w, new_h), interpolation)
     canvas = np.full((input_dimension[1], input_dimension[0], 3), 0)
     canvas[(height - new_h) // 2:(height - new_h) // 2 + new_h,
            (width - new_w) // 2:(width - new_w) // 2 +
