@@ -631,4 +631,4 @@ augmentation, augmented images are OpenCV images in RGB format.
 ## Development
 
 To learn more about how to develop Discolight (e.g., adding additional
-augmentatations), see the guide in [doc/discolight.md](doc/develop.md).
+augmentatations), see the guide in [doc/develop.md](doc/develop.md).
