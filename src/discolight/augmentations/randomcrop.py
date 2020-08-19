@@ -1,25 +1,21 @@
 """An augmentation that randomly crops an image."""
 import random
 import cv2
-import numpy as np
 from discolight.params.params import Params
 from .augmentation.types import Augmentation, BoundedNumber
 from .decorators.accepts_probs import accepts_probs
 
 
-def get_bboxes_in_cropped_area(x, y, w, h, bboxlist):
+def get_bboxes_in_cropped_area(x, y, w, h, bboxes):
     """Filter out bounding boxes within the given cropped area."""
-    bboxes = []
+    bboxes_filter = []
 
-    for item in bboxlist:
+    for item in bboxes:
         # if xmin is greater or equal to x, if bbox is inside the crop
-        if ((item[0] >= x) and (item[1] >= y) and (item[2] <= (x + w))
-                and (item[3] <= (y + h))):
-            bboxes.append(item)
-        else:
-            continue
+        bboxes_filter.append((item[0] >= x) and (item[1] >= y)
+                             and (item[2] <= (x + w)) and (item[3] <= (y + h)))
 
-    return bboxes
+    return bboxes[bboxes_filter]
 
 
 @accepts_probs
@@ -60,16 +56,16 @@ class RandomCrop(Augmentation):
 
         x = random.randint(0, crop_width)
         y = random.randint(0, crop_height)
-        reduced_bboxes = np.array(
-            get_bboxes_in_cropped_area(x, y, crop_width, crop_height, bboxes))
+        reduced_bboxes = get_bboxes_in_cropped_area(x, y, crop_width,
+                                                    crop_height, bboxes)
 
         # if no bbox, get_aug return false; and recall .get_aug
-        if len(reduced_bboxes) == 0 and len(bboxes) > 0:
+        if reduced_bboxes.size == 0 and bboxes.size > 0:
             return self.augment(img, bboxes, iteration - 1)
 
         cropped_img = img[y:y + crop_height, x:x + crop_width]
 
-        # u need the ratio for bounding boxes and images.
+        # you need the ratio for bounding boxes and images.
         width_ratio_resize = width / cropped_img.shape[1]
         height_ratio_resize = img.shape[0] / cropped_img.shape[0]
         resized_cropped_img = cv2.resize(cropped_img, (width, height))
