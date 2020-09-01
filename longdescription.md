@@ -301,6 +301,58 @@ Randomly rotate the given image.
 <tr>
 
 <td style="width: 20%">
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#Resize">Resize</a></b>
+<br/>
+Resize an image without preserving aspect ratio.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/Resize-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/Resize.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/Resize-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/Resize-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#ResizeMaintainAspectRatio">ResizeMaintainAspectRatio</a></b>
+<br/>
+Resize an image while preserving aspect ratio.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/ResizeMaintainAspectRatio-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/ResizeMaintainAspectRatio.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/ResizeMaintainAspectRatio-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/ResizeMaintainAspectRatio-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
 <b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#Rotate">Rotate</a></b>
 <br/>
 Rotate the given image.
@@ -631,4 +683,4 @@ augmentation, augmented images are OpenCV images in RGB format.
 ## Development
 
 To learn more about how to develop Discolight (e.g., adding additional
-augmentatations), see the guide in [https://github.com/datature/discolight/blob/master/doc/develop.md](doc/develop.md).
+augmentatations), see the guide in [doc/develop.md](https://github.com/datature/discolight/blob/master/doc/develop.md).

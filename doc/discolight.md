@@ -704,6 +704,123 @@ The probability that this augmentation will be applied
 
 
 
+## Resize
+
+Resize an image without preserving aspect ratio\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/Resize-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Resize.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Resize-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Resize-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**height** *(int in range \[0, Inf\])* = 512<br/>
+The height of the resized image
+
+
+
+**interpolation** *(INTER\_NEAREST \| INTER\_LINEAR \| INTER\_AREA \| INTER\_CUBIC \| INTER\_LANCZOS4)* = INTER\_LINEAR<br/>
+The interpolation type
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+**width** *(int in range \[0, Inf\])* = 512<br/>
+the width of the resized image
+
+
+
+
+
+
+
+
+
+## ResizeMaintainAspectRatio
+
+Resize an image while preserving aspect ratio\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/ResizeMaintainAspectRatio-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ResizeMaintainAspectRatio.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ResizeMaintainAspectRatio-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ResizeMaintainAspectRatio-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**input\_dim** *(int in range \[0, Inf\])* = 512<br/>
+The new length of the shortest dimension
+
+
+
+**interpolation** *(INTER\_NEAREST \| INTER\_LINEAR \| INTER\_AREA \| INTER\_CUBIC \| INTER\_LANCZOS4)* = INTER\_LINEAR<br/>
+The interpolation type
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
+
 ## Rotate
 
 Rotate the given image\.
