@@ -30,7 +30,8 @@ class PascalVOC(AnnotationLoader):
                             "The folder where the annotations are stored", str,
                             "", True)
 
-    def parse_xml_bounding_box(self, bndbox):
+    @staticmethod
+    def parse_xml_bounding_box(bndbox):
         """Parse a bounding box from an XML <bndbox> tag."""
         xmin = None
         ymin = None
@@ -92,7 +93,7 @@ class PascalVOC(AnnotationLoader):
             if obj_tag.tag != "bndbox":
                 continue
 
-            xmin, ymin, xmax, ymax = self.parse_xml_bounding_box(obj_tag)
+            xmin, ymin, xmax, ymax = PascalVOC.parse_xml_bounding_box(obj_tag)
 
         additional_info = {
             "name": name,
