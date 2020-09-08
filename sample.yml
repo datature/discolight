@@ -15,10 +15,9 @@ output:
     options:
       directory: ./output_folder
   annotations:
-    writer: FourCornersCSV
+    writer: YOLODarknet
     options:
-      annotations_file: ./output_folder/aug_annotations.csv
-      normalized: true
+      annotations_folder: ./output_folder
 augmentations:
   - name: RandomCrop
   - name: Sequence
