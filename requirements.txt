@@ -12,3 +12,4 @@ pytest>=5.4.3
 coverage>=5.2
 pydocstyle>=5.0.2
 pyyaml>=5.3.1
+defusedxml>=0.6.0

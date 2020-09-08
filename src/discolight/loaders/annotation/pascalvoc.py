@@ -1,6 +1,6 @@
 """A Pascal VOC annnotation loader."""
 import glob
-import xml.etree.ElementTree as ET
+import defusedxml.ElementTree as ET
 from discolight.params.params import Params
 from discolight.annotations import BoundingBox, ImageWithAnnotations
 from .types import AnnotationLoader
@@ -30,7 +30,37 @@ class PascalVOC(AnnotationLoader):
                             "The folder where the annotations are stored", str,
                             "", True)
 
-    def parse_xml_bounding_box(self, obj):
+    def parse_xml_bounding_box(self, bndbox):
+        """Parse a bounding box from an XML <bndbox> tag."""
+        xmin = None
+        ymin = None
+        xmax = None
+        ymax = None
+
+        for bndbox_tag in bndbox:
+
+            if bndbox_tag.tag == "xmin":
+                xmin = float(bndbox_tag.text)
+                continue
+
+            if bndbox_tag.tag == "ymin":
+                ymin = float(bndbox_tag.text)
+                continue
+
+            if bndbox_tag.tag == "xmax":
+                xmax = float(bndbox_tag.text)
+                continue
+
+            if bndbox_tag.tag == "ymax":
+                ymax = float(bndbox_tag.text)
+                continue
+
+        if xmin is None or ymin is None or xmax is None or ymax is None:
+            raise ValueError("Annotation missing complete bounding box")
+
+        return xmin, ymin, xmax, ymax
+
+    def parse_xml_object(self, obj):
         """Parse an annotation from an XML <object> tag."""
         name = ""
         pose = ""
@@ -62,26 +92,7 @@ class PascalVOC(AnnotationLoader):
             if obj_tag.tag != "bndbox":
                 continue
 
-            for bndbox_tag in obj_tag:
-
-                if bndbox_tag.tag == "xmin":
-                    xmin = float(bndbox_tag.text)
-                    continue
-
-                if bndbox_tag.tag == "ymin":
-                    ymin = float(bndbox_tag.text)
-                    continue
-
-                if bndbox_tag.tag == "xmax":
-                    xmax = float(bndbox_tag.text)
-                    continue
-
-                if bndbox_tag.tag == "ymax":
-                    ymax = float(bndbox_tag.text)
-                    continue
-
-            if xmin is None or ymin is None or xmax is None or ymax is None:
-                raise ValueError("Annotation missing complete bounding box")
+            xmin, ymin, xmax, ymax = self.parse_xml_bounding_box(obj_tag)
 
         additional_info = {
             "name": name,
@@ -121,7 +132,7 @@ class PascalVOC(AnnotationLoader):
             if tag.tag != "object":
                 continue
 
-            annotations.append(self.parse_xml_bounding_box(tag))
+            annotations.append(self.parse_xml_object(tag))
 
         if image_filename is None:
             raise ValueError("Image filename not specified")

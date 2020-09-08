@@ -29,7 +29,7 @@ setuptools.setup(
     install_requires=[
         'yamale>=3.0.1', 'numpy>=1.19.0', 'opencv-python>=4.3.0.36',
         'scikit-image>=0.17.2', 'Pillow>=7.2.0', 'Jinja2>=2.11.2',
-        'tqdm>=4.47.0'
+        'tqdm>=4.47.0', 'defusedxml>=0.6.0'
     ],
     entry_points={'console_scripts': [
         'discolight=discolight.run:main',

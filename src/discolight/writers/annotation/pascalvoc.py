@@ -2,8 +2,11 @@
 import os
 import shutil
 import xml.etree.cElementTree as ET
+import defusedxml
 from discolight.params.params import Params
 from .types import AnnotationWriter
+
+defusedxml.defuse_stdlib()
 
 
 class PascalVOC(AnnotationWriter):
