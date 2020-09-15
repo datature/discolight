@@ -4,6 +4,8 @@ from fixtures.pascalvoc import (pascalvoc_imageset,
                                 pascalvoc_additional_values_imageset)
 from fixtures.yolodarknet import (yolodarknet_imageset,
                                   yolodarknet_equiv_csv_imageset)
+from fixtures.yolokeras import (yolokeras_imageset,
+                                yolokeras_equiv_csv_imageset)
 from fixtures.sample_query import sample_query
 from fixtures.bad_bboxes import query_bad_bboxes
 

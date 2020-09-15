@@ -15,9 +15,9 @@ output:
     options:
       directory: ./output_folder
   annotations:
-    writer: YOLODarknet
+    writer: YOLOKeras
     options:
-      annotations_folder: ./output_folder
+      annotations_file: ./output_folder/annotations.txt
 augmentations:
   - name: RandomCrop
   - name: Sequence
