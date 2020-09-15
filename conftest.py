@@ -1,3 +1,4 @@
+from fixtures.coco import (coco_imageset, coco_equiv_csv_imageset)
 from fixtures.sample_image import sample_image, sample_image_wh_bboxes
 from fixtures.pascalvoc import (pascalvoc_imageset,
                                 pascalvoc_equiv_csv_imageset,

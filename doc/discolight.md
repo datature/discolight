@@ -1,6 +1,22 @@
 # Annotation Loaders
 
 
+## COCO
+
+A COCO annotation loader\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the JSON file containing the annotations
+
+
+
+
+
+
+
 ## FourCornersCSV
 
 Loads annotations from a CSV file in the following format\.
@@ -102,6 +118,22 @@ The path to the TXT file containing the annotations
 
 
 # Annotation Writers
+
+
+## COCO
+
+A COCO annotation writer\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the JSON file to write the annotations to
+
+
+
+
+
 
 
 ## FourCornersCSV
