@@ -1,6 +1,22 @@
 # Annotation Loaders
 
 
+## COCO
+
+A COCO annotation loader\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the JSON file containing the annotations
+
+
+
+
+
+
+
 ## FourCornersCSV
 
 Loads annotations from a CSV file in the following format\.
@@ -24,6 +40,22 @@ whether the bounding box coordinates are stored in a normalized format
 
 
 
+## PascalVOC
+
+A Pascal VOC annotation loader\.
+
+### Parameters
+
+
+**annotations\_folder** *(str)*, required<br/>
+The folder where the annotations are stored
+
+
+
+
+
+
+
 ## WidthHeightCSV
 
 Loads annotations from a CSV file in the following format\.
@@ -40,6 +72,43 @@ The path to the CSV file containing the annotations
 
 **normalized** *(bool)* = True<br/>
 whether the bounding box coordinates are stored in a normalized format
+
+
+
+
+
+
+
+## YOLODarknet
+
+A YOLO Darknet annotation loader\.
+
+### Parameters
+
+
+**annotations\_folder** *(str)*, required<br/>
+The folder where the annotations are stored
+
+
+
+**image\_ext** *(str)* = jpg<br/>
+The file extension for loaded images
+
+
+
+
+
+
+
+## YOLOKeras
+
+A YOLO Keras annotation loader\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the TXT file containing the annotations
 
 
 
@@ -51,6 +120,22 @@ whether the bounding box coordinates are stored in a normalized format
 # Annotation Writers
 
 
+## COCO
+
+A COCO annotation writer\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the JSON file to write the annotations to
+
+
+
+
+
+
+
 ## FourCornersCSV
 
 Writes annotations to a CSV file in the following format\.
@@ -74,6 +159,32 @@ whether the bounding box coordinates should be normalized before saving
 
 
 
+## PascalVOC
+
+A Pascal VOC annotation writer\.
+
+### Parameters
+
+
+**annotations\_folder** *(str)*, required<br/>
+the directory to save annotation files to
+
+
+
+**clean\_directory** *(bool)* = True<br/>
+whether to forcibly ensure the output directory is empty
+
+
+
+**database** *(str)* = <br/>
+The name of the source database
+
+
+
+
+
+
+
 ## WidthHeightCSV
 
 Writes annotations to a CSV file in the following format\.
@@ -90,6 +201,43 @@ The path to the CSV file to write the annotations to
 
 **normalized** *(bool)* = True<br/>
 whether the bounding box coordinates should be normalized before saving
+
+
+
+
+
+
+
+## YOLODarknet
+
+A YOLO Darknet annotation writer\.
+
+### Parameters
+
+
+**annotations\_folder** *(str)*, required<br/>
+the directory to save annotation files to
+
+
+
+**clean\_directory** *(bool)* = True<br/>
+whether to forcibly ensure the output directory is empty
+
+
+
+
+
+
+
+## YOLOKeras
+
+A YOLO Keras annotation writer\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the TXT file to write the annotations to
 
 
 

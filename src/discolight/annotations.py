@@ -7,13 +7,21 @@ class BoundingBox:
 
     """A bounding box for an image annotation."""
 
-    def __init__(self, x_min, y_min, x_max, y_max, class_idx):
+    def __init__(self,
+                 x_min,
+                 y_min,
+                 x_max,
+                 y_max,
+                 class_idx,
+                 additional_info=None):
         """Construct a new bonding box object."""
         self.x_min = float(x_min)
         self.y_min = float(y_min)
         self.x_max = float(x_max)
         self.y_max = float(y_max)
         self.class_idx = int(class_idx)
+        self.additional_info = (additional_info
+                                if additional_info is not None else {})
 
     def __str__(self):
         """Return a string representation of the bounding box."""
