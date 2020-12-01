@@ -197,6 +197,32 @@ Add motionblur to a given image.
 <tr>
 
 <td style="width: 20%">
+<b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#OneOf">OneOf</a></b>
+<br/>
+Perform a randomly selected augmentation on the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/OneOf-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/OneOf.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/OneOf-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="https://raw.githubusercontent.com/datature/discolight/master/doc/images/OneOf-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
 <b><a href="https://github.com/datature/discolight/blob/master/doc/discolight.md#RandomCrop">RandomCrop</a></b>
 <br/>
 Randomly crops the given image.
