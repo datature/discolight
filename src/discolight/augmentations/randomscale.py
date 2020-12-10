@@ -31,7 +31,6 @@ class RandomScale(Augmentation):
 
     def augment(self, img, bboxes):
         """Augment an image."""
-
         scale_factor_x = random.uniform(*self.scale_range)
         scale_factor_y = random.uniform(*self.scale_range)
 

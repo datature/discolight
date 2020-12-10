@@ -30,7 +30,6 @@ class RandomShear(Augmentation):
 
     def augment(self, img, bboxes):
         """Augment an image."""
-
         shear_factor = random.uniform(*self.shear_range)
 
         return Shear(shear_factor=shear_factor).augment(img, bboxes)
