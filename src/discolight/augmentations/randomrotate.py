@@ -28,7 +28,9 @@ class RandomRotate(Augmentation):
         return Params().add(
             "angle_range",
             "The range from which the random angle will be chosen",
-            NumericalRange(-360.0, 360.0), (-10.0, 10.0))
+            NumericalRange(-360.0, 360.0),
+            (-10.0, 10.0),
+        )
 
     def augment(self, img, bboxes):
         """Augment an image."""
