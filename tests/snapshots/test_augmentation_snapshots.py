@@ -99,7 +99,7 @@ def test_augmentation(augmentation, snapshot, tmp_path, sample_image):
         os.path.join("./snapshots/augmentations/{}-bboxes.npy".format(
             augmentation.__name__)))
 
-    assert np.array_equal(
+    assert np.allclose(
         aug_bboxes,
         snapshot_bboxes), "Bounding boxes for {} do not match".format(
             augmentation.__name__)
@@ -141,7 +141,7 @@ def test_disco_constructed_augmentation_same_as_factory_constructed(
     snapshot_bboxes = np.load(
         os.path.join("./snapshots/augmentations/{}-bboxes.npy".format(name)))
 
-    assert np.array_equal(
+    assert np.allclose(
         aug_bboxes,
         snapshot_bboxes), "Bounding boxes for {} do not match".format(name)
     assert filecmp.cmp(os.path.join(tmp_path, "aug_image.jpg"),
