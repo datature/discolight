@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("longdescription.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="discolight",
-    version="0.0.1",
+    version="0.3.0",
     author="Hongnan Gao, Ian Duncan, Keechin Goh",
     author_email="discolight@datature.io",
     description="Flashy, ravey and state-of-the-art image augmentations to "
@@ -29,7 +29,7 @@ setuptools.setup(
     install_requires=[
         'yamale>=3.0.1', 'numpy>=1.19.0', 'opencv-python>=4.3.0.36',
         'scikit-image>=0.17.2', 'Pillow>=7.2.0', 'Jinja2>=2.11.2',
-        'tqdm>=4.47.0'
+        'tqdm>=4.47.0', 'defusedxml>=0.6.0'
     ],
     entry_points={'console_scripts': [
         'discolight=discolight.run:main',

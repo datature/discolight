@@ -145,6 +145,110 @@ Horizontally flips the given image.
 <tr>
 
 <td style="width: 20%">
+<b><a href="doc/discolight.md#ImageCompression">ImageCompression</a></b>
+<br/>
+Apply a compression effect to the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ImageCompression-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ImageCompression.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ImageCompression-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ImageCompression-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#MotionBlur">MotionBlur</a></b>
+<br/>
+Add motionblur to a given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/MotionBlur-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/MotionBlur.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/MotionBlur-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/MotionBlur-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#OneOf">OneOf</a></b>
+<br/>
+Perform a randomly selected augmentation on the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/OneOf-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/OneOf.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/OneOf-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/OneOf-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#RandomCrop">RandomCrop</a></b>
+<br/>
+Randomly crops the given image.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomCrop-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomCrop.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomCrop-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/RandomCrop-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
 <b><a href="doc/discolight.md#RandomEraser">RandomEraser</a></b>
 <br/>
 Randomly erase a rectangular area in the given image.
@@ -216,6 +320,58 @@ Randomly rotate the given image.
 
 <td style="width: 20%; vertical-align: bottom">
 <img src="doc/images/RandomRotate-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#Resize">Resize</a></b>
+<br/>
+Resize an image without preserving aspect ratio.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Resize-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Resize.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Resize-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/Resize-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="width: 20%">
+<b><a href="doc/discolight.md#ResizeMaintainAspectRatio">ResizeMaintainAspectRatio</a></b>
+<br/>
+Resize an image while preserving aspect ratio.
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ResizeMaintainAspectRatio-input.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ResizeMaintainAspectRatio.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ResizeMaintainAspectRatio-input-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
+</td>
+
+<td style="width: 20%; vertical-align: bottom">
+<img src="doc/images/ResizeMaintainAspectRatio-bboxes.jpg" width="100px" height="75px" style="display: block; width: 100%"/>
 </td>
 
 </tr>

@@ -41,7 +41,7 @@ the contents of the repository folder:
 <tr>
 
 <td style="width: 20%">
-<b><a href="doc/discolight.md#{{ augmentation.name }}">{{augmentation.name}}</a></b>
+<b><a href="{{ discolight_md_url }}#{{ augmentation.name }}">{{augmentation.name}}</a></b>
 <br/>
 {{ augmentation.description | firstline }}
 </td>
@@ -189,4 +189,4 @@ augmentation, augmented images are OpenCV images in RGB format.
 ## Development
 
 To learn more about how to develop Discolight (e.g., adding additional
-augmentatations), see the guide in [doc/develop.md](doc/develop.md).
+augmentatations), see the guide in [doc/develop.md]({{ develop_md_url }}).

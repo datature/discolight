@@ -54,20 +54,24 @@ class Rotate(Augmentation):
         if len(rotated_img_resized.shape) == 2:
             rotated_img_resized = rotated_img_resized.reshape(height, width, 1)
             # code below transform the bboxes accordingly.
-        corners = bbox_utilities.get_corners(bboxes)
-        corners = np.hstack((corners, bboxes[:, 4:]))
-        corners[:, :8] = bbox_utilities.rotate_box(corners[:, :8], angle,
-                                                   center_x, center_y, height,
-                                                   width)
-        new_bbox = bbox_utilities.get_enclosing_box(corners)
-        scale_factor_x = rotated_img.shape[1] / width
-        scale_factor_y = rotated_img.shape[0] / height
-        new_bbox[:, :4] = new_bbox[:, :4] / [
-            scale_factor_x,
-            scale_factor_y,
-            scale_factor_x,
-            scale_factor_y,
-        ]
-        bboxes = new_bbox
-        bboxes = bbox_utilities.clip_box(bboxes, [0, 0, width, height], 0.25)
+
+        if bboxes.size > 0:
+            corners = bbox_utilities.get_corners(bboxes)
+            corners = np.hstack((corners, bboxes[:, 4:]))
+            corners[:, :8] = bbox_utilities.rotate_box(corners[:, :8], angle,
+                                                       center_x, center_y,
+                                                       height, width)
+            new_bbox = bbox_utilities.get_enclosing_box(corners)
+            scale_factor_x = rotated_img.shape[1] / width
+            scale_factor_y = rotated_img.shape[0] / height
+            new_bbox[:, :4] = new_bbox[:, :4] / [
+                scale_factor_x,
+                scale_factor_y,
+                scale_factor_x,
+                scale_factor_y,
+            ]
+            bboxes = new_bbox
+            bboxes = bbox_utilities.clip_box(bboxes, [0, 0, width, height],
+                                             0.25)
+
         return rotated_img_resized, bboxes

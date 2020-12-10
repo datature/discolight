@@ -50,6 +50,8 @@ def test_augmentation(augmentation, snapshot, tmp_path, sample_image):
 
     aug_img, aug_bboxes = augmentation.augment(img.copy(), bboxes.copy())
 
+    aug_img_only = augmentation.get_img(img.copy())
+
     if isinstance(augmentation, ColorAugmentation):
 
         assert np.array_equal(
@@ -68,6 +70,9 @@ def test_augmentation(augmentation, snapshot, tmp_path, sample_image):
         image_writer.write_image("{}-image.jpg".format(augmentation.__name__),
                                  aug_img)
 
+        image_writer.write_image(
+            "{}-imageonly.jpg".format(augmentation.__name__), aug_img_only)
+
     if snapshot["update_snapshots"]:
 
         if not os.path.isdir("./snapshots/augmentations"):
@@ -83,22 +88,33 @@ def test_augmentation(augmentation, snapshot, tmp_path, sample_image):
                          "{}-image.jpg".format(augmentation.__name__)),
             "./snapshots/augmentations/{}-image.jpg".format(
                 augmentation.__name__))
+        shutil.copy(
+            os.path.join(tmp_path,
+                         "{}-imageonly.jpg".format(augmentation.__name__)),
+            "./snapshots/augmentations/{}-imageonly.jpg".format(
+                augmentation.__name__))
         return
 
     snapshot_bboxes = np.load(
         os.path.join("./snapshots/augmentations/{}-bboxes.npy".format(
             augmentation.__name__)))
 
-    assert np.array_equal(
+    assert np.allclose(
         aug_bboxes,
         snapshot_bboxes), "Bounding boxes for {} do not match".format(
             augmentation.__name__)
 
     assert filecmp.cmp(
         os.path.join(tmp_path, "{}-image.jpg".format(augmentation.__name__)),
-        "./snapshots/augmentations/{}-image.jpg".format(
-            augmentation.__name__)), "Images for {} do not match".format(
-                augmentation.__name__)
+        "./snapshots/augmentations/{}-image.jpg".format(augmentation.__name__)
+    ), "Images from augment for {} do not match".format(augmentation.__name__)
+
+    assert filecmp.cmp(
+        os.path.join(tmp_path,
+                     "{}-imageonly.jpg".format(augmentation.__name__)),
+        "./snapshots/augmentations/{}-imageonly.jpg".format(
+            augmentation.__name__)
+    ), "Images from get_img for {} do not match".format(augmentation.__name__)
 
 
 def test_disco_constructed_augmentation_same_as_factory_constructed(
@@ -125,7 +141,7 @@ def test_disco_constructed_augmentation_same_as_factory_constructed(
     snapshot_bboxes = np.load(
         os.path.join("./snapshots/augmentations/{}-bboxes.npy".format(name)))
 
-    assert np.array_equal(
+    assert np.allclose(
         aug_bboxes,
         snapshot_bboxes), "Bounding boxes for {} do not match".format(name)
     assert filecmp.cmp(os.path.join(tmp_path, "aug_image.jpg"),

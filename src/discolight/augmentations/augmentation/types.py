@@ -146,7 +146,7 @@ class Augmentation(ABC):
 
     def get_img(self, img):
         """Perform the augmentation on an image with no bounding boxes."""
-        bboxes = np.zeros((1, 5))
+        bboxes = np.empty((0, 5))
         img, _ = self.augment(img, bboxes)
         return img
 

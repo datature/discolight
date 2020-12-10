@@ -1,6 +1,22 @@
 # Annotation Loaders
 
 
+## COCO
+
+A COCO annotation loader\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the JSON file containing the annotations
+
+
+
+
+
+
+
 ## FourCornersCSV
 
 Loads annotations from a CSV file in the following format\.
@@ -24,6 +40,22 @@ whether the bounding box coordinates are stored in a normalized format
 
 
 
+## PascalVOC
+
+A Pascal VOC annotation loader\.
+
+### Parameters
+
+
+**annotations\_folder** *(str)*, required<br/>
+The folder where the annotations are stored
+
+
+
+
+
+
+
 ## WidthHeightCSV
 
 Loads annotations from a CSV file in the following format\.
@@ -40,6 +72,43 @@ The path to the CSV file containing the annotations
 
 **normalized** *(bool)* = True<br/>
 whether the bounding box coordinates are stored in a normalized format
+
+
+
+
+
+
+
+## YOLODarknet
+
+A YOLO Darknet annotation loader\.
+
+### Parameters
+
+
+**annotations\_folder** *(str)*, required<br/>
+The folder where the annotations are stored
+
+
+
+**image\_ext** *(str)* = jpg<br/>
+The file extension for loaded images
+
+
+
+
+
+
+
+## YOLOKeras
+
+A YOLO Keras annotation loader\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the TXT file containing the annotations
 
 
 
@@ -51,6 +120,22 @@ whether the bounding box coordinates are stored in a normalized format
 # Annotation Writers
 
 
+## COCO
+
+A COCO annotation writer\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the JSON file to write the annotations to
+
+
+
+
+
+
+
 ## FourCornersCSV
 
 Writes annotations to a CSV file in the following format\.
@@ -74,6 +159,32 @@ whether the bounding box coordinates should be normalized before saving
 
 
 
+## PascalVOC
+
+A Pascal VOC annotation writer\.
+
+### Parameters
+
+
+**annotations\_folder** *(str)*, required<br/>
+the directory to save annotation files to
+
+
+
+**clean\_directory** *(bool)* = True<br/>
+whether to forcibly ensure the output directory is empty
+
+
+
+**database** *(str)* = <br/>
+The name of the source database
+
+
+
+
+
+
+
 ## WidthHeightCSV
 
 Writes annotations to a CSV file in the following format\.
@@ -90,6 +201,43 @@ The path to the CSV file to write the annotations to
 
 **normalized** *(bool)* = True<br/>
 whether the bounding box coordinates should be normalized before saving
+
+
+
+
+
+
+
+## YOLODarknet
+
+A YOLO Darknet annotation writer\.
+
+### Parameters
+
+
+**annotations\_folder** *(str)*, required<br/>
+the directory to save annotation files to
+
+
+
+**clean\_directory** *(bool)* = True<br/>
+whether to forcibly ensure the output directory is empty
+
+
+
+
+
+
+
+## YOLOKeras
+
+A YOLO Keras annotation writer\.
+
+### Parameters
+
+
+**annotations\_file** *(str)*, required<br/>
+The path to the TXT file to write the annotations to
 
 
 
@@ -358,6 +506,243 @@ The probability that this augmentation will be applied
 
 
 
+## ImageCompression
+
+Apply a compression effect to the given image\.
+
+This function is a lossy JPEG compression operation\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ImageCompression-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+**strength** *(int in range \[0, 100\])* = 1<br/>
+Compression strength
+
+
+
+
+
+
+
+
+
+## MotionBlur
+
+Add motionblur to a given image\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/MotionBlur-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/MotionBlur.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/MotionBlur-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/MotionBlur-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**direction** *(DOWN \| UP \| RIGHT \| LEFT \| TOPRIGHT \| TOPLEFT \| BOTTOMLEFT \| BOTTOMRIGHT)* = DOWN<br/>
+direction in which the blur is pointer towards
+
+
+
+**kernel\_size** *(int in range \[0, Inf\])* = 10<br/>
+Specify the kernel size, greater the size, the more the motion
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+Sample image augmented with options:
+```
+kernel_size: 100
+```
+
+
+
+
+
+## OneOf
+
+Perform a randomly selected augmentation on the given image\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/OneOf-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/OneOf.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/OneOf-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/OneOf-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**augmentations** *(augmentation\_list)* = \[\]<br/>
+
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+Sample image augmented with options:
+```
+augmentations:
+- name: GrayScale
+  options: {}
+- name: Rotate
+  options:
+    angle: 47
+```
+
+
+
+
+
+## RandomCrop
+
+Randomly crops the given image\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/RandomCrop-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomCrop.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomCrop-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomCrop-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**max\_height** *(float in range \[0, 1\])* = 0\.7<br/>
+Maximum height of cropped area \(normalized\)
+
+
+
+**max\_width** *(float in range \[0, 1\])* = 0\.7<br/>
+Maximum width of cropped area \(normalized\)
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+Sample image augmented with options:
+```
+max_height: 0.9
+max_width: 0.9
+```
+
+
+
+
+
 ## RandomEraser
 
 Randomly erase a rectangular area in the given image\.
@@ -514,6 +899,123 @@ Randomly rotate the given image\.
 
 **angle\_range** *(range in \[\-360\.0, 360\.0\])* = \(\-10\.0, 10\.0\)<br/>
 The range from which the random angle will be chosen
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
+
+## Resize
+
+Resize an image without preserving aspect ratio\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/Resize-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Resize.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Resize-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/Resize-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**height** *(int in range \[0, Inf\])* = 512<br/>
+The height of the resized image
+
+
+
+**interpolation** *(INTER\_NEAREST \| INTER\_LINEAR \| INTER\_AREA \| INTER\_CUBIC \| INTER\_LANCZOS4)* = INTER\_LINEAR<br/>
+The interpolation type
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+**width** *(int in range \[0, Inf\])* = 512<br/>
+the width of the resized image
+
+
+
+
+
+
+
+
+
+## ResizeMaintainAspectRatio
+
+Resize an image while preserving aspect ratio\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/ResizeMaintainAspectRatio-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ResizeMaintainAspectRatio.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ResizeMaintainAspectRatio-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/ResizeMaintainAspectRatio-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**input\_dim** *(int in range \[0, Inf\])* = 512<br/>
+The new length of the shortest dimension
+
+
+
+**interpolation** *(INTER\_NEAREST \| INTER\_LINEAR \| INTER\_AREA \| INTER\_CUBIC \| INTER\_LANCZOS4)* = INTER\_LINEAR<br/>
+The interpolation type
 
 
 
