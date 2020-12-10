@@ -25,10 +25,9 @@ class RandomTranslate(Augmentation):
     @staticmethod
     def params():
         """Return a Params object describing constructor parameters."""
-        return Params().add(
-            "tranlate_range",
-            "The translate range should be within 0 and 1",
-            NumericalRange(0, 1), (0.2, 0.2))
+        return Params().add("translate_range",
+                            "The translate range should be within 0 and 1",
+                            NumericalRange(0, 1), (0.2, 0.2))
 
     def augment(self, img, bboxes):
         """Augment an image."""
@@ -36,4 +35,5 @@ class RandomTranslate(Augmentation):
         translate_factor_x = random.uniform(*self.translate_range)
         translate_factor_y = random.uniform(*self.translate_range)
 
-        return Translate(translate_x=translate_factor_x, translate_y=translate_factor_y).augment(img, bboxes)
+        return Translate(translate_x=translate_factor_x,
+                         translate_y=translate_factor_y).augment(img, bboxes)

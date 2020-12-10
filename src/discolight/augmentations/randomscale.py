@@ -26,10 +26,9 @@ class RandomScale(Augmentation):
     @staticmethod
     def params():
         """Return a Params object describing constructor parameters."""
-        return Params().add(
-            "scale_range",
-            "The scale range should be bigger than -1",
-            NumericalRange(-1, math.inf), (0.2, 0.2))
+        return Params().add("scale_range",
+                            "The scale range should be bigger than -1",
+                            NumericalRange(-1), (0.2, 0.2))
 
     def augment(self, img, bboxes):
         """Augment an image."""
@@ -37,4 +36,5 @@ class RandomScale(Augmentation):
         scale_factor_x = random.uniform(*self.scale_range)
         scale_factor_y = random.uniform(*self.scale_range)
 
-        return Scale(scale_x=scale_factor_x, scale_y=scale_factor_y).augment(img, bboxes)
+        return Scale(scale_x=scale_factor_x,
+                     scale_y=scale_factor_y).augment(img, bboxes)
