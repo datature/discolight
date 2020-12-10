@@ -1,6 +1,5 @@
 """An augmentation to randomly rotate an image."""
 import random
-import math
 from discolight.params.params import Params
 from .augmentation.types import Augmentation, NumericalRange
 from .shear import Shear
@@ -26,7 +25,8 @@ class RandomShear(Augmentation):
     @staticmethod
     def params():
         """Return a Params object describing constructor parameters."""
-        return Params().add("shear_range", "The shear range has no bounds", NumericalRange(), (0.2, 0.2))
+        return Params().add("shear_range", "The shear range has no bounds",
+                            NumericalRange(), (0.2, 0.2))
 
     def augment(self, img, bboxes):
         """Augment an image."""

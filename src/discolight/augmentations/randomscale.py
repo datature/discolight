@@ -1,6 +1,5 @@
 """An augmentation to randomly rotate an image."""
 import random
-import math
 from discolight.params.params import Params
 from .augmentation.types import Augmentation, NumericalRange
 from .scale import Scale
