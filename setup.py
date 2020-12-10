@@ -5,7 +5,7 @@ with open("longdescription.md", "r") as fh:
 
 setuptools.setup(
     name="discolight",
-    version="0.3.0",
+    version="0.4.0",
     author="Hongnan Gao, Ian Duncan, Keechin Goh",
     author_email="discolight@datature.io",
     description="Flashy, ravey and state-of-the-art image augmentations to "

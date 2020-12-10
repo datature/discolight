@@ -913,6 +913,159 @@ The probability that this augmentation will be applied
 
 
 
+## RandomScale
+
+Randomly scale the given image\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/RandomScale-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomScale.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomScale-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomScale-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+**scale\_range** *(range in \[\-1, Inf\])* = \(0\.2, 0\.2\)<br/>
+The scale range should be bigger than \-1
+
+
+
+
+
+
+
+
+
+## RandomShear
+
+Randomly shear the given image\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/RandomShear-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomShear.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomShear-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomShear-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+**shear\_range** *(range in \[\-Inf, Inf\])* = \(0\.2, 0\.2\)<br/>
+The shear range has no bounds
+
+
+
+
+
+
+
+
+
+## RandomTranslate
+
+Randomly Translate the given image\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/RandomTranslate-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomTranslate.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomTranslate-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/RandomTranslate-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+**translate\_range** *(range in \[0, 1\])* = \(0\.2, 0\.2\)<br/>
+The translate range should be within 0 and 1
+
+
+
+
+
+
+
+
+
 ## Resize
 
 Resize an image without preserving aspect ratio\.
