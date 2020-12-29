@@ -726,6 +726,16 @@ Maximum width of cropped area \(normalized\)
 
 
 
+**min\_height** *(float in range \[0, 1\])* = 0\.1<br/>
+Minimum height of cropped area \(normalized\)
+
+
+
+**min\_width** *(float in range \[0, 1\])* = 0\.1<br/>
+Minimum width of cropped area \(normalized\)
+
+
+
 **probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
 The probability that this augmentation will be applied
 
