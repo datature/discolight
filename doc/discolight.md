@@ -299,6 +299,62 @@ the directory to save images to
 # Augmentations
 
 
+## CoarseDropout
+
+Randomly erases a percentage of the given image using squares\.
+
+### Example
+<table style="width: 100%">
+<tr>
+<td><b>Input Image</b></td>
+<td><b>Augmented Image</b></td>
+<td><b>Input Image<br/>(with Bounding Boxes)</b></td>
+<td><b>Augmented Image<br/>(with Bounding Boxes)</b></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom">
+<img src="images/CoarseDropout-input.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/CoarseDropout.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/CoarseDropout-input-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+<td style="vertical-align: bottom">
+<img src="images/CoarseDropout-bboxes.jpg" width="235px" height="176px" style="display: block; width: 100%"/>
+</td>
+
+</tr>
+</table>
+
+### Parameters
+
+
+**deleted\_area** *(float)* = 0\.1<br/>
+The percentage of image that will be dropped
+
+
+
+**num\_rectangles** *(int)* = 25<br/>
+The number of rectangles that will be dropped
+
+
+
+**probs** *(float in range \[0\.0, 1\.0\])* = 1\.0<br/>
+The probability that this augmentation will be applied
+
+
+
+
+
+
+
+
+
 ## ColorTemperature
 
 Changes the color temperature of the input image\.
